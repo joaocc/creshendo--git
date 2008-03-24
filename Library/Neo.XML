@@ -1,0 +1,2308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Neo</name>
+    </assembly>
+    <members>
+        <member name="T:Neo.SqlClient.SqlCommandBuilder">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Neo.Database.GenericSql92Builder">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.IQualifierVisitor">
+            <summary>
+            Callback interface for objects that can visit a <c>Qualifier</c> objects.
+            </summary>
+            <remarks>
+            The value returned from the individual methods is returned from the
+            <c>AcceptQualifier</c> method.
+            </remarks>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.#ctor(System.Data.DataTable,Neo.Database.IDbImplementationFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Database.GenericSql92Builder"/> class.
+            </summary>
+            <param name="aTable">A table.</param>
+            <param name="aParamFactory">A param factory.</param>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.WriteSelect(Neo.Core.IFetchSpecification)">
+            <summary>
+            Writes the select.
+            </summary>
+            <param name="fetchSpec">The fetch spec.</param>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.VisitColumnQualifier(Neo.Core.Qualifiers.ColumnQualifier)">
+            <summary>
+            Visits the column qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.VisitPropertyQualifier(Neo.Core.Qualifiers.PropertyQualifier)">
+            <summary>
+            Visits the property qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.VisitAndQualifier(Neo.Core.Qualifiers.AndQualifier)">
+            <summary>
+            Visits the and qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.VisitOrQualifier(Neo.Core.Qualifiers.OrQualifier)">
+            <summary>
+            Visits the or qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.VisitPathQualifier(Neo.Core.Qualifiers.PathQualifier)">
+            <summary>
+            Visits the path qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.WriteInsert(System.Data.DataRow,System.Collections.IList)">
+            <summary>
+            Writes the insert.
+            </summary>
+            <param name="row">The row.</param>
+            <param name="columnList">The column list.</param>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.WriteUpdate(System.Data.DataRow)">
+            <summary>
+            Writes the update.
+            </summary>
+            <param name="row">The row.</param>
+        </member>
+        <member name="M:Neo.Database.GenericSql92Builder.WriteDelete(System.Data.DataRow)">
+            <summary>
+            Writes the delete.
+            </summary>
+            <param name="row">The row.</param>
+        </member>
+        <member name="P:Neo.Database.GenericSql92Builder.UsesDelimitedIdentifiers">
+            <summary>
+            Gets or sets a value indicating whether [uses delimited identifiers].
+            </summary>
+            <value>
+            	<c>true</c> if [uses delimited identifiers]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Neo.Database.GenericSql92Builder.Command">
+            <summary>
+            Gets the command.
+            </summary>
+            <value>The command.</value>
+        </member>
+        <member name="P:Neo.Database.GenericSql92Builder.Parameters">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <value>The parameters.</value>
+        </member>
+        <member name="M:Neo.SqlClient.SqlCommandBuilder.#ctor(System.Data.DataTable,Neo.Database.IDbImplementationFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.SqlClient.SqlCommandBuilder"/> class.
+            </summary>
+            <param name="aTable">A table.</param>
+            <param name="aParamFactory">A param factory.</param>
+        </member>
+        <member name="M:Neo.SqlClient.SqlCommandBuilder.WriteSelect(Neo.Core.IFetchSpecification)">
+            <summary>
+            Writes the select.
+            </summary>
+            <param name="fetchSpec">The fetch spec.</param>
+        </member>
+        <member name="M:Neo.SqlClient.SqlCommandBuilder.VisitColumnQualifier(Neo.Core.Qualifiers.ColumnQualifier)">
+            <summary>
+            Visits the column qualifier.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Neo.Framework.GenericObjectFactory`1">
+            <summary>Generic Wrapper around the FactoryMethods
+            </summary>
+            <typeparam name="T">An IEntityObject</typeparam>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.#ctor(Neo.Core.ObjectContext,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Framework.GenericObjectFactory`1"/> class.
+            </summary>
+            <param name="aContext">A context.</param>
+            <param name="objectType">Type of the object.</param>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindFirst(System.String,System.Object[])">
+            <summary>
+            Finds the first.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindFirst(Neo.Core.Qualifier)">
+            <summary>
+            Finds the first.
+            </summary>
+            <param name="q">The q.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.CreateObject(System.Object[])">
+            <summary>
+            Creates the object.
+            </summary>
+            <param name="pkvalues">The pkvalues.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindObject(System.Object[])">
+            <summary>
+            Finds the object.
+            </summary>
+            <param name="pkvalues">The pkvalues.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindAllObjects">
+            <summary>
+            Finds all objects.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.Find(Neo.Core.IFetchSpecification)">
+            <summary>
+            Finds the specified fetch spec.
+            </summary>
+            <param name="fetchSpec">The fetch spec.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.Find(Neo.Core.Qualifier)">
+            <summary>
+            Finds the specified qualifier.
+            </summary>
+            <param name="qualifier">The qualifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.Find(System.String,System.Object[])">
+            <summary>
+            Finds the specified qualifier format.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindWithLimit(System.Int32,System.String,System.Object[])">
+            <summary>
+            Finds the with limit.
+            </summary>
+            <param name="limit">The limit.</param>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.GenericObjectFactory`1.FindUnique(System.String,System.Object[])">
+            <summary>
+            Finds the unique.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Neo.Framework.GenericObjectFactory`1.Context">
+            <summary>
+            Gets the current ObjectContext.
+            </summary>
+            <value>The context.</value>
+        </member>
+        <member name="P:Neo.Framework.GenericObjectFactory`1.EntityMap">
+            <summary>
+            Gets the EntityMap for this EntityObject.
+            </summary>
+            <value>The entity map.</value>
+        </member>
+        <member name="T:Neo.Core.IEntityMap">
+            <summary>
+            Describes the mapping from ADO.NET concepts, such as DataTable and DataColumn, to
+            the corresponding entity object concepts; and vice versa.
+            </summary>
+            <remarks>
+            EntityMaps should never be instantiated directly. Use the following code to
+            retrieve an <c>IEntityMap</c> for a given type:
+            <code>
+            IEntityMap map = context.EntityMapFactory.GetMap(typeof(TheType));
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.GetPkInitializer">
+            <summary>
+            Gets an object to create primary keys
+            </summary>
+            <returns>An object to create primary keys for this entity</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.GetColumnForAttribute(System.String)">
+            <summary>
+            Translates between Attribute name and column name
+            </summary>
+            <param name="attribute">attribute name</param>
+            <returns>corresponding column name</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.GetRelationInfo(System.String)">
+            <summary>
+            Translates between Relation name and relation info.
+            </summary>
+            <param name="relation">relation name</param>
+            <returns>corresponding relation info</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.GetRelationName(Neo.Core.Util.RelationInfo)">
+            <summary>
+            Translates between Relation name and relation info.
+            </summary>
+            <returns>corresponding relation name</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.CreateInstance(System.Data.DataRow,Neo.Core.ObjectContext)">
+            <summary>
+            Creates an instance for this entity, a blank entity object
+            </summary>
+            <param name="row">The row that is represented by this object</param>
+            <param name="context">The context with which the object is associated with</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.UpdateSchemaInDataSet(System.Data.DataSet,Neo.Core.SchemaUpdate)">
+            <summary>
+            Adds or updates ADO.NET schema information for the entity to the data set.
+            </summary>
+            <param name="aDataSet">The dataset to work on</param>
+            <param name="update">Flags specifying what kind of schema information to add/update</param>
+        </member>
+        <member name="M:Neo.Core.IEntityMap.UpdateSchema(System.Data.DataTable,Neo.Core.SchemaUpdate)">
+            <summary>
+            Adds or updates ADO.NET schema information for the entity in the table.
+            </summary>
+            <remarks>
+            The table passed must match the entity map's.
+            </remarks>
+            <param name="table">The table to work on</param>
+            <param name="update">Flags specifying what kind of schema information to add/update</param>		
+        </member>
+        <member name="P:Neo.Core.IEntityMap.Factory">
+            <summary>
+            The <c>IEntityMapFactory</c> object used to generate an instance of this object
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.ObjectType">
+            <summary>
+            This object&apos;s type
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.ConcreteObjectType">
+            <summary>
+            The type that is really created. Should be a subclass of ObjectType
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.TableName">
+            <summary>
+            Table Name (usually a SQL table name, but may be other sort)
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.PrimaryKeyColumns">
+            <summary>
+            All primary key columns for this table
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.Columns">
+            <summary>
+            All columns within this table
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.Attributes">
+            <summary>
+            All attributes within this type
+            </summary>
+            <remarks>
+            The name Attribute refers to Entity-Relationship modelling terminology. An
+            attribute is usually implemented using a property in the corresponding type.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.IEntityMap.Relations">
+            <summary>
+            All relations withing this type
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Util.RelationInfo">
+            <summary>
+            Describes a relation between two entities.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Transactions.TransactionSink">
+            <summary>
+            Provides the implementation for a transaction sink that uses the Remoting infrastructure.
+            </summary>
+            <remarks>
+            The function of the transaction sink is to participate in the sink chain, intercepting and hosting transactional
+            methods in a transactional enviroment using the Enterprise Services infrastructure and delegate it's execution.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Transactions.TransactionSink.#ctor(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMessageSink)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Transactions.TransactionSink"/> class.
+            </summary>
+            <param name="target"></param>
+            <param name="nextSink">The next sink in the channel sink chain.</param>
+        </member>
+        <member name="M:Neo.Core.Transactions.TransactionSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)">
+            <summary>
+            Synchronously processes the provided message.
+            </summary>
+            <param name="message">The message to process.</param>
+            <returns>The response to the processed message.</returns>
+        </member>
+        <member name="M:Neo.Core.Transactions.TransactionSink.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)">
+            <summary>
+            Asynchronously processes the provided message
+            </summary>
+            <param name="message">The message to process.</param>
+            <param name="replySink">The sink that will receive the reply to the provided message.</param>
+            <returns>An <see cref="T:System.Runtime.Remoting.Messaging.IMessageCtrl"/> that provides a way to control the asynchronous message after it has been dispatched.</returns>
+            <remarks>NOT SUPPORTED</remarks>
+        </member>
+        <member name="P:Neo.Core.Transactions.TransactionSink.NextSink">
+            <summary>
+            Gets the next message sink in the sink chain.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Transactions.TransactionEnvironment.InvokeMethod(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMethodCallMessage,System.Boolean)">
+            <summary>
+            Invokes a method in the target environment.
+            </summary>
+            <param name="target">The object instance that owns the message.</param>
+            <param name="message">The message (method and arguments) to be executed.</param>
+            <param name="autoComplete">Whether to complete the transaction if invokation was successful.</param>
+            <returns>Returns the invokation result.</returns>
+        </member>
+        <member name="T:Neo.Framework.EntityObjectSurrogate">
+            <summary>
+            Base class for all EntityObject surrogates. A surrogate is a lightweight representation of an entity disconnected from the data source.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.EntityObjectSurrogate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Framework.EntityObjectSurrogate"/> class.
+            </summary>
+        </member>
+        <member name="T:Neo.Framework.ObjectListBase">
+            <summary>
+            Summary description for ObjectListBase.
+            </summary>
+        </member>
+        <member name="T:Neo.Framework.ObjectCollectionBase">
+            <summary>
+            Summary description for ObjectCollectionBase.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.ObjectListBase.MakeReadOnly">
+            <summary>
+            Makes the read only.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.ObjectListBase.Sort(System.Collections.IComparer)">
+            <summary>
+            Sorts the specified comparer.
+            </summary>
+            <param name="comparer">The comparer.</param>
+        </member>
+        <member name="M:Neo.Framework.ObjectListBase.Sort(System.String,Neo.Core.SortDirection)">
+            <summary>
+            Sorts the specified prop name.
+            </summary>
+            <param name="propName">Name of the prop.</param>
+            <param name="dir">The dir.</param>
+        </member>
+        <member name="P:Neo.Framework.ObjectListBase.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Neo.Core.IEntityObject">
+            <summary>
+            Interface required for objects that are managed by an <c>ObjectContext</c>
+            </summary>
+            <remarks>
+            The object must also implement a constructor taking an <c>ObjectContext</c> and
+            a <c>DataRow</c>.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.IEntityObject.Context">
+            <summary>
+            The ObjectContext object containing this <c>IEntityObject</c>
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IEntityObject.Row">
+            <summary>
+            The Row object from which properties are derived.
+            </summary>
+            <remarks>
+            Modifications to this Row via object properties are persisted back into the 
+            underlying store. It is perfectly acceptable, while most of the time not
+            advisable, to modify the row directly; it is guaranteed to be in sync with
+            the object&apos;s properties.
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.SchemaUpdate">
+            <summary>
+            Flags for specifying which aspects of the schema an <c>EntityMap</c> should write into
+            a <c>DataTable</c>.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.SchemaUpdate.Basic">
+            <summary>
+            Write the table definition
+            </summary>
+        </member>
+        <member name="F:Neo.Core.SchemaUpdate.Constraints">
+            <summary>
+            Write the constraints
+            </summary>
+        </member>
+        <member name="F:Neo.Core.SchemaUpdate.Relations">
+            <summary>
+            Write all related table and the relations between this table and the others
+            </summary>
+        </member>
+        <member name="F:Neo.Core.SchemaUpdate.Full">
+            <summary>
+            Write everything
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.EqualsPredicate">
+            <summary>
+            Predicate that returns true if the value is equal to the value stored in the 
+            predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.IPredicate">
+            <summary>
+            Describes a predicate that can be applied to a value.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.NotEqualPredicate">
+            <summary>
+            Predicate that returns true if the value is not equal to the value stored in the 
+            predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.OrQualifier">
+            <summary>
+            A qualifier that combines a number of qualifiers, evaluating to true if any of the
+            qualifiers evaluate to true.
+            </summary>
+            <remarks>
+            Uses short-circuit evaluation, i.e. stops evaluating its qualifiers when the first one
+            returns true.
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.ClauseQualifier">
+            <summary>
+            Abstract base class for qualifiers that combines a number of qualifiers.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifier">
+            <summary>
+            Qualifiers define criteria for object selections.
+            </summary>
+            <remarks>There is a class hierarchy of different qualifiers to express different types
+            of qualification but normally qualifiers are constructed using formats:
+            <code>
+            q = Qualifier.Format("Name = {0}", input);
+            </code>
+            Formats can use inlined values and comprise multiple clauses:
+            <code>
+            q = Qualifier.Format("Name = &apos;Haruki&apos;");
+            q = Qualifier.Format("Name = {0} and locked = false", input);
+            </code>
+            Formats can contain brackets and paths spanning multiple entities:
+            <code>
+            q = Qualifier.Format("Publisher.Name = {0}", pubname);
+            q = Qualifier.Format("TitleAuthor.Title.(TheTitle like 'A%' or TheTitle like 'B%')");
+            </code>
+            Formats provide a shortcut for simple matches:
+            <code>q = new Qualifier.Format("Name", input);</code>
+            Qualifiers are used in conjunction with <c>FetchSpecification</c> or can be used to 
+            evaluate whether an object matches their criteria:
+            <code>if(q.EvaluateWithObject(anAuthor))
+                doSomething(anAuthor);</code>
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Qualifier.Format(System.String)">
+            <summary>
+            Creates a <c>Qualifier</c> for the given query.
+            </summary>
+            <param name="qformat">string version of test</param>
+            <returns><c>Qualifier</c> object for the query</returns>
+        </member>
+        <member name="M:Neo.Core.Qualifier.Format(System.String,System.Object[])">
+            <summary>
+            Creates a <c>Qualifier</c> for the given query.
+            </summary>
+            <param name="formatString">string version of the query</param>
+            <param name="values">positional parameters for the query string</param>
+            <returns><c>Qualifier</c> object for the query</returns>
+        </member>
+        <member name="M:Neo.Core.Qualifier.FromPropertyDictionary(System.Collections.IDictionary)">
+            <summary>
+            Creates a <c>Qualifier</c> which tests for the supplied property/value pairs.
+            </summary>
+            <param name="queryValues">property/value pairs to be compared</param>
+            <returns><c>Qualifier</c> object for the query</returns>
+        </member>
+        <member name="M:Neo.Core.Qualifier.EvaluateWithObject(Neo.Core.IEntityObject)">
+            <summary>
+            Returns whether the supplied IEntityObject matches the criteria of this qualifier.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifier.AcceptVisitor(Neo.Core.Qualifiers.IQualifierVisitor)">
+            <summary>
+            Begins traversal of the qualifier. The visitor passed in will receive methods from
+            the <c>IQualifierVisitor</c> interface as subqualifiers are reached during 
+            traversal.
+            </summary>
+            <remarks>
+            This method is not normally used from applications.
+            </remarks>
+            <param name="visitor">The visitor that receives the call-back methods</param>
+            <returns>The object returned from the vistor for this qualifier</returns>
+        </member>
+        <member name="T:Neo.Core.IObjectQualifier">
+            <summary>
+            Some qualifier classes can evaluate against regular objects, not only 
+            against <c>IEntityObjects</c>. These qualifiers implement <c>IObjectQualifier</c>.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.IObjectQualifier.EvaluateWithObject(System.Object)">
+            <summary>
+            Performs this qualifier&apos;s action agains the supplied object
+            </summary>
+            <param name="anObject">object to be tested</param>
+            <returns><c>true</c> if the object meets this qualifier&apos;s requirements</returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.ColumnQualifier">
+            <summary>
+            A qualifier that compares a value to the value stored in a given column of the 
+            <c>DataRow</c> that underlies the <c>EntityObject</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Parser.TokenStack">
+            <summary>
+            Internal class used by <c>Tokenizer</c> and <c>QualifierParser</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Framework.ObjectRelation`1">
+            <summary>
+            The <see cref="T:Neo.Framework.ObjectRelation`1"/> class wraps an ordinary <see cref="T:Neo.Framework.ObjectRelationBase"/> to provide
+            a type-safe collection compile-time.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <remarks>
+            The <see cref="T:Neo.Framework.ObjectRelation`1"/> class is a descendant of the <see cref="T:Neo.Framework.ObjectRelationBase"/> class
+            and is the base class for the set of objects which are part of a relation.
+            </remarks>
+            <author>Paul Gielens</author>
+        </member>
+        <member name="T:Neo.Framework.ObjectRelationBase">
+            <summary>
+            This is to be subclassed to provide strongly typed representations of the set
+            of objects which are part of a relation.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelationBase.OnRowDeleting(System.Object,System.Data.DataRowChangeEventArgs)">
+            <summary>
+            Called when [row deleting].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Data.DataRowChangeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelationBase.OnColumnChanging(System.Object,System.Data.DataColumnChangeEventArgs)">
+            <summary>
+            Called when [column changing].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Data.DataColumnChangeEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelationBase.Touch">
+            <summary>
+            Forces a load of data from the database.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelationBase.InvalidateCache">
+            <summary>
+            Invalidates the cache, losing all changes.
+            </summary>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.#ctor(Neo.Core.IEntityObject,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Framework.ObjectRelation`1"/> class.
+            </summary>
+            <param name="eo">The eo.</param>
+            <param name="aRelation">A relation.</param>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.Add(`0)">
+            <summary>
+            Adds the specified new entity.
+            </summary>
+            <param name="newEntity">The new entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.Remove(`0)">
+            <summary>
+            Removes the specified existing entity.
+            </summary>
+            <param name="existingEntity">The existing entity.</param>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.Contains(`0)">
+            <summary>
+            Determines whether [contains] [the specified existing entity].
+            </summary>
+            <param name="existingEntity">The existing entity.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified existing entity]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.IndexOf(`0)">
+            <summary>
+            Indexes the of.
+            </summary>
+            <param name="existingEntity">The existing entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.GetReadOnlyList">
+            <summary>
+            Gets the read only list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.GetSortedList(System.String,Neo.Core.SortDirection)">
+            <summary>
+            Gets the sorted list.
+            </summary>
+            <param name="propName">Name of the prop.</param>
+            <param name="dir">The dir.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.Find(System.String,System.Object[])">
+            <summary>
+            Finds the specified qualifier format.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.FindUnique(System.String,System.Object[])">
+            <summary>
+            Finds the unique.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Framework.ObjectRelation`1.FindFirst(System.String,System.Object[])">
+            <summary>
+            Finds the first.
+            </summary>
+            <param name="qualifierFormat">The qualifier format.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Neo.Framework.ObjectRelation`1.Item(System.Int32)">
+            <summary>
+            Gets the item at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Neo.Core.LifecycleCreateAttribute">
+            <summary>
+            Marks a method to be called after the creation of an <c>IEntityObject</c>.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.LifecycleCreateAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Neo.Core.SortDirection">
+            <summary>
+            Determines the direction of sorting, and case sensitivity. Used by 
+            <c>PropertyComparer</c>.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.SortDirection.Ascending">
+            <summary> Ascending, case-sensitive alphabetic sort</summary>
+        </member>
+        <member name="F:Neo.Core.SortDirection.Descending">
+            <summary> Decending, case-sensitive alphabetic sort</summary>
+        </member>
+        <member name="F:Neo.Core.SortDirection.AscendingCaseInsensitive">
+            <summary> Ascending, non case-sensitive alphabetic sort</summary>
+        </member>
+        <member name="F:Neo.Core.SortDirection.DescendingCaseInsensitive">
+            <summary> Decending, non case-sensitive alphabetic sort</summary>
+        </member>
+        <member name="T:Neo.Core.PropertyComparer">
+            <summary>
+            Concrete <c>IComparer</c> used to compare properties between EntityObject instances
+            </summary>
+            <remarks>
+            This comparer will only compare objects by a single property.
+            Multiple property comparisons are not supported
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.PropertyComparer.#ctor(System.String,Neo.Core.SortDirection)">
+            <summary>
+            Constructor. Sets property name and sort direction to be used in subsequent sorts.
+            </summary>
+            <param name="aPropName">Name of property value to compare</param>
+            <param name="aDirection">Sort direction and case matching</param>
+        </member>
+        <member name="M:Neo.Core.PropertyComparer.#ctor(System.String,Neo.Core.SortDirection,System.Globalization.CultureInfo)">
+            <summary>
+            Constructor. Sets property name and sort direction to be used in subsequent sorts.
+            </summary>
+            <param name="aPropName">Name of property value to compare</param>
+            <param name="aDirection">Sort direction and case matching</param>
+            <param name="culture">Culture used when performing string comparisons</param>
+        </member>
+        <member name="M:Neo.Core.PropertyComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares one <c>IEntityObject</c> instance with another using the value of <c>Property</c>
+            </summary>
+            <param name="x">First object to compare</param>
+            <param name="y">Second object to compare</param>
+            <returns>
+            <c>0</c>, if the objects are the same,
+            <c>1</c>, if x &gt; y,
+            <c>-1</c> if x &gt; y
+            </returns>
+        </member>
+        <member name="M:Neo.Core.PropertyComparer.Sort(System.Collections.ArrayList)">
+            <summary>
+            Uses <c>ArrayList</c>&apos; QuickSort implementation to sort the supplied list.
+            </summary>
+            <param name="list">list to be sorted</param>
+        </member>
+        <member name="P:Neo.Core.PropertyComparer.Property">
+            <summary>
+            Name of property to compare when sorting.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.PropertyComparer.SortDirection">
+            <summary>
+            Sort direction (Ascending, Descending).
+            </summary>
+        </member>
+        <member name="T:Neo.Core.PkChangeTable">
+            <summary>
+            Used to redistribute database generated keys.
+            </summary>
+            <remarks>
+            When working with database generated (native) primary keys, Neo uses temporary (negative) 
+            primary key values until an object is saved to the store. The data stores must provide a 
+            mapping from these temporary keys to the actual db values by returning a 
+            <c>PkChangeTable</c> from the SaveChangesInObjectContext method.
+            <code>
+            table = new PkChangeTable("jobs");
+            table.AddPkChange(row["job_id"], actualKeyVal);</code>
+            When an <c>ObjectContext</c> is connected directly to an <c>IDataStore</c> it handles the 
+            key mapping internally but in distributed environments it is possible to pass the change 
+            table between different processes as follows.
+            <code>
+            ds = clientContext.GetChanges();
+            // now this ds is passed to the server, which could use another context
+            serverContext.ImportData(ds)
+            pkctArray = serverContext.SaveChanges();
+            // the pkctArray is passed back to the client process which needs to apply them
+            clientContext.UpdatePrimaryKeys(pkctArray);
+            clientContext.AcceptChanges();
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.PkChangeTable.#ctor(System.String)">
+            <summary>
+            Default constructor. Creates a blank change table for a database table
+            </summary>
+            <param name="aTableName">name of table whose primary keys are changing</param>
+        </member>
+        <member name="M:Neo.Core.PkChangeTable.GetEnumerator">
+            <summary>
+            Returns an enumarator for the changes and thus allows the use of <c>foreach</c> 
+            with the table.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Core.PkChangeTable.AddPkChange(System.Object,System.Object)">
+            <summary>
+            Adds a new entry to the table.
+            </summary>
+            <param name="oldValue">original primary key value</param>
+            <param name="newValue">new primary key value</param>
+        </member>
+        <member name="P:Neo.Core.PkChangeTable.TableName">
+            <summary>
+            Name of table for this <c>PkChangeTable</c> object
+            </summary>
+        </member>
+        <member name="P:Neo.Core.PkChangeTable.Count">
+            <summary>
+            Count of primary key changes for this table
+            </summary>
+        </member>
+        <member name="P:Neo.Core.PkChangeTable.Item(System.Int32)">
+            <summary>
+            Returns <c>ChangeRecord</c> struct at this index
+            </summary>
+        </member>
+        <member name="T:Neo.Core.PkChangeTable.ChangeRecord">
+            <summary>
+            A simple <c>struct</c> holding the old and new values for a change.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.PkChangeTable.ChangeRecord.OldValue">
+            <summary>
+            Original primary key value
+            </summary>
+        </member>
+        <member name="F:Neo.Core.PkChangeTable.ChangeRecord.NewValue">
+            <summary>
+            New primary key value
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Util.ObjectTable">
+            <summary>
+            Summary description for ObjectTable.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.RelationalPredicateBase">
+            <summary>
+            Abstract base class for predicates that compare values, i.e. determine the ordering
+            of two values.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.LessThanPredicate">
+            <summary>
+            Predicate that returns true if the value is less than the value stored in the 
+            predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.GreaterThanPredicate">
+            <summary>
+            Predicate that returns true if the value is greater than the value stored in the 
+            predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.GreaterOrEqualPredicate">
+            <summary>
+            Predicate that returns true if the value is greater or equal to the value stored in 
+            the predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.LessOrEqualPredicate">
+            <summary>
+            Predicate that returns true if the value is less or equal to the value stored in 
+            the predicate.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.IEntityMapFactory">
+            <summary>
+            Provides <c>IEntityMap</c> implementations for given types
+            and/or table names.
+            </summary>
+            <remarks>
+            EntityMaps should never be instantiated directly. Use the following code to
+            retrieve an <c>IEntityMap</c> for a given type:
+            <code>
+            IEntityMap map = context.EntityMapFactory.GetMap(typeof(TheType));
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.IEntityMapFactory.GetAllMaps">
+            <summary>
+            Gets a collection of all maps
+            </summary>
+            <returns>A collection of all Object Type Maps</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMapFactory.GetMap(System.Type)">
+            <summary>
+            Gets a map to translate between a type and a table
+            </summary>
+            <param name="type">Type to map</param>
+            <returns>IEntityMap object matching the supplied type</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMapFactory.GetMap(System.String)">
+            <summary>
+            Gets a map to translate between a table and a type
+            </summary>
+            <param name="tablename">Table Name to map</param>
+            <returns>IEntityMap object matching the supplied table name</returns>
+        </member>
+        <member name="M:Neo.Core.IEntityMapFactory.AddCustomType(System.Type,Neo.Core.IEntityMap)">
+            <summary>
+            Adds a custom mapping. Note that multiple types can be mapped to one
+            <c>IEntityMap</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Parser.TokenType">
+            <summary>
+            Specifies the type of a <c>Token</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Parser.Token">
+            <summary>
+            Internal class used by the <c>QualifierParser</c>.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.Parser.Token.Type">
+            <summary>
+            The type of the token.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.Parser.Token.Value">
+            <summary>
+            The value of the token.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Parser.Token.#ctor(Neo.Core.Parser.TokenType,System.Object)">
+            <summary>
+            Initializes a new instance of the <c>Token</c> class.
+            </summary>
+            <param name="aType">Type of the token</param>
+            <param name="aValue">Value of the token</param>
+        </member>
+        <member name="T:Neo.Core.IPkInitializer">
+            <summary>
+            Contains a single method which must initialise a new database row. 
+            If PK generation scheme involves PK values provided by the application they 
+            are passed in.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.IPkInitializer.InitializeRow(System.Data.DataRow,System.Object)">
+            <summary>
+            Sets up primary key for the supplied row
+            </summary>
+            <param name="row">row requiring primary key</param>
+            <param name="argument">extra information needed to set primary key values</param>
+        </member>
+        <member name="T:Neo.Core.FetchSpecification">
+            <summary>
+            Defines which objects should be fetched from a datastore. This class is a straight-forward 
+            implementation of this interface which allows to set all aspects directly.
+            </summary>
+            <remarks>
+            The Code Generator creates query templates for each entity that also implement
+            <c>IFetchSpecification</c> and provide a strongly typed API.
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.IFetchSpecification">
+            <summary>
+            Defines which objects should be fetched from a context or datastore.
+            </summary>
+            <remarks>
+            The <c>FetchSpecification</c> class is a straigh-forward implementation of this interface 
+            which allows to set all aspects directly. The Code Generator creates query templates for 
+            each entity that also implement <c>IFetchSpecification</c> and provide a strongly typed API.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.EntityMap">
+            <summary>
+            Entity map used to specify the entity from which to fetch the objects.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.Qualifier">
+            <summary>
+            The <c>Qualifier</c> to apply to the fetched objects.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.FetchLimit">
+            <summary>
+            The maximum number of objects to return, or -1 for no limit.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.RefreshStrategy">
+            <summary>
+            If true, objects in memory will be updated with the values returned by
+            the fetch. If false, in-memory values for objects that the context knew about 
+            before the fetch are kept.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.SortOrderings">
+            <summary>
+            An array of <c>PropertyComparer</c> that describes how the returned objects are to
+            be sorted. First comparer has highest precedence.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.IFetchSpecification.Spans">
+            <summary>
+            An array of paths to entities from which related objects are fetched with this
+            query.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.#ctor">
+            <summary>
+            Creates an empty fetch specification.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.#ctor(Neo.Core.IEntityMap)">
+            <summary>
+            Creates a fetch specification for the given entity without limit and qualifier.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.#ctor(Neo.Core.IEntityMap,Neo.Core.Qualifier)">
+            <summary>
+            Creates a fetch specification for the given entity with the given qualifier.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.#ctor(Neo.Core.IEntityMap,Neo.Core.Qualifier,System.Int32)">
+            <summary>
+            Creates a fetch specification for the given entity with the given qualifier and fetch limit.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.ToString">
+            <summary>
+            Returns a textual description of the fetch specification.
+            </summary>
+            <remarks>
+            Note that this is not parsable by a qualifier.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.AddSortOrdering(System.String,Neo.Core.SortDirection)">
+            <summary>
+            Creates a new <c>PropertyComparer</c> from the arguments and adds it to the end of
+            the list of SortOrderings.
+            </summary>
+            <param name="aPropName">property to sort on</param>
+            <param name="aDirection">direction</param>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.AddSpan(System.String)">
+            <summary>
+            Adds the property path to the list of spans.
+            </summary>
+            <param name="aSpan">path to be added</param>
+            <remarks>
+            See Spans property for details.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.FetchSpecification.AddSpans(System.String[])">
+            <summary>
+            Adds the property paths to the list of spans.
+            </summary>
+            <param name="someSpans">paths to be added</param>
+            <remarks>
+            See Spans property for details.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.EntityMap">
+            <summary>
+            The <c>EntityMap</c> for the entity to fetch the objects from.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.Qualifier">
+            <summary>
+            The <c>Qualifier</c> to apply to the fetched objects.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.FetchLimit">
+            <summary>
+            The maximum number of objects to return, or -1 for no limit.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.RefreshStrategy">
+            <summary>
+            If true, objects in memory will be updated with the values returned by
+            the fetch. If false, which is the default, in-memory values for objects
+            that the context knew about before the fetch are kept.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.SortOrderings">
+            <summary>
+            An array of <c>PropertyComparer</c> that describes how the returned objects are to
+            be sorted. First comparer has highest precedence.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.FetchSpecification.Spans">
+             <summary>
+             An array of property paths to entities that should be fetch alongside the main
+             entity.
+             </summary>
+             <remarks>
+             Specifying a path will fetch all entities along that path. So, specifying
+             "TitleAuthor.Author" for a query on the Title entity, will result in all title 
+            author link objects and all corresponding authors to be fetched.
+             </remarks>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.AndQualifier">
+            <summary>
+            A qualifier that combines a number of qualifiers, evaluating to true if all of the
+            qualifiers evaluate to true.
+            </summary>
+            <remarks>
+            Uses short-circuit evaluation, i.e. stops evaluating its qualifiers when the first one
+            returns false.
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.Parser.QualifierParser">
+            <summary>
+            Internal class used to create a tree of qualifier objects from a format string.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Parser.QualifierParser.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor. Creates a new parser.
+            </summary>
+            <param name="qformat">The format to parse</param>
+            <param name="someParameters">The position paramters for the format</param>
+        </member>
+        <member name="M:Neo.Core.Parser.QualifierParser.GetQualifier">
+            <summary>
+            Parses the format and creates the qualifier objects.
+            </summary>
+            <returns>The top-level qualifier</returns>
+        </member>
+        <member name="T:Neo.Core.IDataStore">
+            <summary>
+            Concrete implementations of this interface can be used to persist objects.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.IDataStore.FetchRows(Neo.Core.IFetchSpecification)">
+            <summary>
+            Gets rows from the underlying store matching the supplied specification.
+            </summary>
+            <param name="fetchSpec">An <c>IFetchSpecification</c> describing which rows to retrieve</param>
+            <returns>A <c>DataTable</c> containing all matching rows.</returns>
+        </member>
+        <member name="M:Neo.Core.IDataStore.SaveChangesInObjectContext(Neo.Core.ObjectContext)">
+            <summary>
+            Analyses the supplied context and pushes the changed rows back into the 
+            underlying store.
+            </summary>
+            <remarks>
+            Note that only for the 'native' primary key generation scheme, which leaves
+            the key generation to the database, anything is returned.
+            </remarks>
+            <param name="context">The context to save</param>
+            <returns>A list of <c>PkChangeTable</c> objects containing new persistent keys</returns>
+        </member>
+        <member name="T:Neo.Framework.QueryTemplate">
+            <summary>
+            A good base class for your query templates. CodeGen/Norque uses these.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.RefreshStrategy">
+            <summary>
+            Values for specifying which refresh strategy <c>ObjectContext</c> should use for known
+            objects retrieved by a fetch.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.RefreshStrategy.Keep">
+            <summary>
+            Keep what is in memory, ignore values from refetched objects.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.RefreshStrategy.Update">
+            <summary>
+            Update object in memory, overwrite local changes with database contents.
+            </summary>
+        </member>
+        <member name="F:Neo.Core.RefreshStrategy.Merge">
+            <summary>
+            Update object in memory, but keep local changes
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Util.ObjectHelper">
+            <summary>
+            Class containing several static methods that 
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Util.InvalidPropertyException">
+            <summary>
+            Thrown when a property that was accessed using reflection does not exist on a type.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Util.InvalidPropertyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the InvalidPropertyException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.Util.QueryChecker">
+            <summary>
+            You can use this class to decorate any data store. It checks for queries
+            which have neither limit nor qualifier and throws an exception.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.Util.QueryChecker.TypeFilter">
+            <summary>
+            A regular expression string that specifies which types are allowed to have unqualified queries.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.ColumnChangeHandler">
+            <summary>
+            Delegate method used by <c>ObjectContext</c> to notify column change observers.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.RowChangeHandler">
+            <summary>
+            Delegate method used by <c>ObjectContext</c> to notify row change observers.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.EntityObjectChangedHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:Neo.Core.ObjectContext.EntityObjectChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.EntityObjectChangeEventArgs">
+            <summary>
+            Provides data for the <see cref="T:Neo.Core.EntityObjectChangedHandler"/>.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.EntityObjectChangeEventArgs.EntityObject">
+            <summary>
+            Gets the object upon which an action has occurred.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.EntityObjectChangeEventArgs.Action">
+            <summary>
+            Gets the action that has occurred on a <see cref="T:Neo.Core.IEntityObject"/>.		
+            </summary>
+        </member>
+        <member name="T:Neo.Core.EntityObjectAction">
+            <summary>
+            Describes an action performed on an <see cref="T:Neo.Core.IEntityObject"/>.
+            </summary>
+            <remarks>A <see cref="T:Neo.Core.EntityObjectAction"/> is returned as part of the 
+            <see cref="T:Neo.Core.EntityObjectChangeEventArgs"/> to indicate the action that was 
+            taken on a <see cref="T:Neo.Core.IEntityObject"/> to raise the event.
+            <para>Use the members of this enumeration to determine the action that has 
+            occurred on a <see cref="T:Neo.Core.IEntityObject"/> with respect to the 
+            <see cref="T:Neo.Core.ObjectContext"/> to which it belongs.</para>
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.ObjectContext">
+            <summary>
+            Central class in the Neo core which manages <c>IEntityObject</c>s.
+            </summary>
+            <remarks>
+            <para>
+            ObjectContext uses an <c>IDataStore</c> implementation to retrieve objects and save
+            changes. It relies on its internal DataSet to track changes, i.e. creates, updates and 
+            deletes. 
+            </para>
+            <para>
+            Generated classes, such as subclasses of <c>ObjectFactory</c>, provide a strongly typed 
+            API for much of the functionality in ObjectContext.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.#ctor">
+            <summary>
+            Creates empty context which uses the <c>DefaultEntityMapFactory</c>.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.#ctor(System.Data.DataSet)">
+            <summary>
+            Constructor. Takes data from the supplied data set into this context.
+            </summary>
+            <param name="aDataSet">data to be imported</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.#ctor(System.Data.DataSet,Neo.Core.IEntityMapFactory)">
+            <summary>
+            Constructor. Takes data from the supplied data set into this context
+            and uses a custom <c>IEntityMapFactory</c> to find maps.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.#ctor(Neo.Core.IDataStore)">
+            <summary>
+            Constructor. Uses the supplied data store for persistence.
+            </summary>
+            <remarks>
+            Data from the store is usually loaded on demand.
+            </remarks>
+            <param name="aDataStore">data to be imported</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.#ctor(Neo.Core.ObjectContext,System.Boolean)">
+            <summary>
+            Constructor. Takes data from the supplied parent context into this context.
+            </summary>
+            <remarks>
+            Data from a parent context is normally copied to improve performace. If 
+            the parent context is huge it might improve overall performance to enable 
+            on-demand copying.
+            </remarks>
+            <param name="parentContext">data to be imported</param>
+            <param name="copyInCtor">whether to copy the parent intially or load data on 
+            demand</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.Clear">
+            <summary>
+            Clears and resets the this context.
+            </summary>
+            <remarks>
+            This makes the context effectively forget all object and their changes.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetChanges">
+            <summary>
+            Gets all changes made to the ObjectContext in the form of a diffgram <c>DataSet</c>.
+            </summary>
+            <returns>all changes made to the main DataSet</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.HasChanges">
+            <summary>
+            Determines whether there are any changes to objects managed by this context.
+            </summary>
+            <returns><c>true</c> if changes have been made</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.AcceptChanges">
+            <summary>
+            Marks all changes as having been persisted.
+            </summary>
+            <remarks>
+            Use this in conjunction with GetChanges() to implement alternative
+            persistence operations, in client/server scenarios for example.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.SaveChanges">
+            <summary>
+            Persists data changes in this context to the data store.
+            </summary>
+            <returns>list of primary keys that were changed during the operation (only for 
+            native scheme)</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.SaveChangesTransactionAware">
+            <summary>
+            Persists data changes in this context to the data store.
+            </summary>
+            <returns>list of primary keys that were changed during the operation (only for 
+            native scheme)</returns>
+            <remarks>
+            This method will work with an existing Enterprise Services transaction, voting 
+            commit if the save is successfull and abort if any problem occurs.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.RegisterForTableEvents(System.Data.DataTable)">
+            <summary>
+            Sets up event handlers for the supplied DataTable
+            </summary>
+            <param name="table">DataTable object to which event handlers should be added</param>
+            <remarks>Adds event handlers for RowDeleting event and RowChanging event</remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.SendPkColumnChangingEvents(System.Data.DataRow)">
+            <summary>
+            Raises events for primary key column changes
+            </summary>
+            <param name="row">row containing primary key</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetPrimaryKeyValuesForRow(Neo.Core.IEntityMap,System.Data.DataRow,System.Data.DataRowVersion)">
+            <summary>
+            Gets all values for primary key columns of the supplied row
+            </summary>
+            <param name="emap">IEntityMap object holding entity definition</param>
+            <param name="row">row holding primary key values</param>
+            <param name="ver">DataRowVersion to use for lookup</param>
+            <returns>Array of primary key values</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObjectForRow(System.Data.DataRow)">
+            <summary>
+            Finds row in the existing DataSet and either returns the IEntityObject
+            representation of it, or creates the representation.
+            </summary>
+            <param name="aRow">row containing data to be found</param>
+            <returns>IEntityObject instance representing the supplied row</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.OnEntityObjectChanged(Neo.Core.EntityObjectChangeEventArgs)">
+            <summary>
+            Raises the <see cref="E:Neo.Core.ObjectContext.EntityObjectChanged"/> event.
+            </summary>
+            <param name="e">A <see cref="T:Neo.Core.EntityObjectChangeEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.RegisterForColumnChanges(Neo.Core.ColumnChangeHandler,System.String,System.String)">
+            <summary>
+            Registers an observer for column change events.
+            </summary>
+            <param name="handler">delegate to be called</param>
+            <param name="tableName">table name the observer is interested in</param>
+            <param name="columnName">column the observer is inerested in</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.UnRegisterForColumnChanges(Neo.Core.ColumnChangeHandler,System.String,System.String)">
+            <summary>
+            Unregisters and observer for column change events.
+            </summary>
+            <param name="handler">delegate that was registered before</param>
+            <param name="tableName">table name the delegate wishes to stop observing</param>
+            <param name="columnName">column name the delegate wishes to stop observing</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.RegisterForRowChanges(Neo.Core.RowChangeHandler,System.String)">
+            <summary>
+            Registers an observer for row change events. Only sent for delete events!
+            </summary>
+            <param name="handler">delgate to be called</param>
+            <param name="tableName">table name the observer is interested in</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.UnRegisterForRowChanges(Neo.Core.RowChangeHandler,System.String)">
+            <summary>
+            Unregisters an observer for row change events.
+            </summary>
+            <param name="handler">delegate that was registered before</param>
+            <param name="tableName">table name the delegate wishes to stop observing</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.ImportRow(System.Data.DataRow)">
+            <summary>
+            Adds a <c>DataRow</c> to the context. This creates a corresponding object if 
+            necessary.
+            </summary>
+            <param name="aRow">row to import</param>
+            <returns><c>IEntityObject</c> representing the row</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.ImportRowsFromTable(System.Data.DataTable,Neo.Core.RefreshStrategy)">
+            <summary>
+            Adds all rows for a table to the context. This creates the corresponding objects if
+            required.
+            </summary>
+            <param name="newTable">table to be added</param>
+            <param name="refreshStrategy">how to manage objects already known to the context</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.MergeData(System.Data.DataSet)">
+            <summary>
+            Merges the supplied DataSet with the data in the context. This creates, deletes and 
+            changes objects as required.
+            </summary>
+            <param name="aDataSet"><c>DataSet</c> to be merged</param>
+            <returns>List of <c>IEntityObject</c>s affected by merge.</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.UpdatePrimaryKeys(System.Collections.ICollection)">
+            <summary>
+            Updates the primary keys for the objects managed by this context.
+            </summary>
+            <remarks>
+            This is used in client/server scenarios where a datastore in a different process
+            persisted the changes and returned the keys as generated by the database.
+            </remarks>
+            <param name="changeTables">list of tables describing the key changes</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.UpdatePrimaryKeys(Neo.Core.PkChangeTable)">
+            <summary>
+            Updates the primary keys for the objects managed by this context.
+            </summary>
+            <remarks>
+            The context should not have any nested objects while the keys are updated.
+            </remarks>
+            <param name="changeTable">table describing the key changes for a <c>DataTable</c>
+            </param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.CreateObject(System.Type,System.Object[])">
+            <summary>
+            Creates a new <c>IEntityObject</c> with all of the required primary key values
+            </summary>
+            <remarks>
+            It is usually better to use the strongly typed API on the factory for the
+            required entity or the untyped API on <c>ObjectFactory</c>.
+            </remarks>
+            <param name="objectType"><c>IEntityObject</c> type to be created</param>
+            <param name="pkvalues">array holding the correct number of primary key values
+            or null if the pk scheme generates its own keys, e.g. GUID and native schemes.</param>
+            <returns>the newly created object</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.RecycleRow(System.Data.DataRow)">
+            <summary>
+            Takes a row and <c>null</c>s all non-PK values.
+            </summary>
+            <param name="row">DataRow to be recycled</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.DeleteObject(Neo.Core.IEntityObject)">
+            <summary>
+            Marks object as deleted. This will delete the corresponding row from persistent 
+            storage when the changes are saved.
+            </summary>
+            <param name="eo"><c>IEntityObject</c> to be deleted</param>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.IsObjectDeleteEvent(System.Data.DataRowChangeEventArgs)">
+            <summary>
+            Determines whether the change event is for a deletion, or rollback for an added row.
+            </summary>
+            <param name="e">DataRowChangeEventArgs giving row properties</param>
+            <returns><c>true</c> if the change event is for a deletion, or rollback for an added
+            row</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetAllRegisteredObjects">
+            <summary>
+            Gets all non-deleted objects that the context manages.
+            </summary>
+            <returns>all rows registered in the internal dataset</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetLocalObject(Neo.Core.IEntityObject)">
+            <summary>
+            Looks up the supplied <c>IEntityObject</c> in this context. Throws if the object is not
+            present in this context.
+            </summary>
+            <remarks>
+            <para>
+            Use this when you have a set of objects in a parent context and need references
+            to them in a child context; or vice versa.
+            </para>
+            <para>
+            This method does not trigger the lazy-loading functionality.
+            </para>
+            </remarks>
+            <param name="eo"><c>IEntityObject</c> to find</param>
+            <returns>instance of supplied <c>IEntityObject</c> in this context</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetLocalObjects(System.Collections.IList)">
+            <summary>
+            Creates a new list of <c>EntityObject</c>s based upon the supplied list,
+            but using its internal representation of those objects.
+            </summary>
+            <param name="eoList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetDeletedObjects">
+            <summary>
+            Gets all objects managed by this context that are marked for deletion.
+            </summary>
+            <returns>list of objects marked for deletion</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObjectFromTable(System.String,System.Object[])">
+            <summary>
+            Retrieves an object based on table name and primary key values.
+            </summary>
+            <param name="tableName">name of table</param>
+            <param name="pkvalues">primary keys identifying the object</param>
+            <returns>object matching primary keys, if found</returns>
+            <remarks>Any results are merged with this context. Tries to use cached version, if that is available</remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObject(Neo.Core.Util.ObjectId)">
+            <summary>
+            Retrieves an object based on its <c>ObjectId</c>.
+            </summary>
+            <param name="oid">the id of the object</param>
+            <returns>object matching primary keys, if found</returns>
+            <remarks>Any results are merged with this context. Tries to use cached version, if that is available</remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObjectsFromTable(System.String,System.String,System.Object)">
+            <summary>
+            Retrieves objects based on table name and value for a given column.
+            </summary>
+            <param name="tableName">table name</param>
+            <param name="columnName">column containing values to test</param>
+            <param name="queryValue">value required for match</param>
+            <returns>all matching objects</returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObjects(Neo.Core.IFetchSpecification)">
+            <summary>
+            Retrieves all objects matching the supplied specification
+            </summary>
+            <param name="fetchSpec"><c>IFetchSpecification</c> object describing the objects</param>
+            <returns>matching objects</returns>
+            <remarks>
+            This method merges results from the data store, if present, and internal objects.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetReferencingObjects(Neo.Core.IEntityObject,System.Boolean)">
+            <summary>
+            Gets all objects in other entities that have references to the object passed in.
+            </summary>
+            <param name="theObject">the object to start from</param>
+            <param name="excludeCascades"><t>true</t> to ignore reference from tables into
+            which the object&apos;s table cascades deletes.</param>
+            <returns>related objects</returns>
+            <remarks>
+            This method is useful to find out whether a given object can be deleted in
+            the data store.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.Neo#Core#IDataStore#FetchRows(Neo.Core.IFetchSpecification)">
+            <summary>
+            Gets rows from the data store according to the specification
+            </summary>
+            <param name="fetchSpec">IFetchSpecification object describing what rows to fetch</param>
+            <returns>Always returns <c>null</c></returns>
+            <remarks>
+            Do not use this method directly. It may be removed in future releases.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.Neo#Core#IDataStore#SaveChangesInObjectContext(Neo.Core.ObjectContext)">
+            <summary>
+            Saves changes in the child context into this context.
+            </summary>
+            <remarks>
+            Do not use this method directly. It may be removed in future releases.
+            </remarks>
+            <param name="childContext">child context that is to be saved</param>
+            <returns>Always returns <c>null</c></returns>
+        </member>
+        <member name="M:Neo.Core.ObjectContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Serializes this instance.
+            </summary>
+            <param name="info">the SerializationInfo into which the context will be written</param>
+            <param name="context">not used</param>
+            <remarks>
+            When serialising a connected context, i.e. a context that has a data store, care must be
+            taken that the data store is serialisable. By default many stores do not persist security
+            info, which means that connections attempts after deserialisation will fail.
+            </remarks>
+        </member>
+        <member name="E:Neo.Core.ObjectContext.EntityObjectChanged">
+            <summary>
+            Occurs when a <see cref="T:Neo.Core.IEntityObject"/> has changed successfully.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.DataSet">
+            <summary>
+            The DataSet containing this ObjectContext&apos;s data.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.DataStore">
+            <summary>
+            The DataStore used for persistence.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.IgnoresDataStore">
+            <summary>
+            If set to true the context will ignore its store when searching for objects.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.EntityMapFactory">
+            <summary>
+            The EntityMapFactory used to retrieve instances of <c>IEntityMap</c> which map 
+            objects to <c>DataTable</c> and vice versa.
+            </summary>
+            <remarks>
+            While settable it is not advisable to change  the factory after objects have been
+            loaded/created.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.ExtendedProperties">
+            <summary>
+            A property collection instance that can be used to store application specific
+            information in the context.
+            </summary>
+            <remarks>
+            The context completely ignores the contents of the property collection. It is
+            meant as convenience to avoid having to subclass ObjectContext just because 
+            some extra properties are needed.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.ObjectTable">
+            <summary>
+            The <c>ObjectTable</c> used by this context.
+            </summary>
+            <remarks>
+            The context uses an <c>ObjectTable</c> to maintain the mappings from <c>ObjectId</c> to
+            <c>DataRow</c> instances. It also keeps information about deleted objects. 
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.RowPending">
+            <summary>
+            Marks row as being processed and change events for it to be ignored.
+            </summary>
+            <remarks>
+            This is used during object creation because for some objects the PK is also a FK
+            and when the PK is set in the row the context doesn't have the corresponding object 
+            for that row in its tables and thus observers wouldn't be able to look it up. The 
+            context resends the events after its data structures are okay.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.ObjectContext.CanLoadFromStore">
+            <summary>
+            If <c>true</c> the context will try to access its store when it looks for objects.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Parser.QualifierParserException">
+            <summary>
+            Exception thrown by the <c>QualifierParser</c> if the format contains errors.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.NeoException">
+            <summary>
+            General Neo exception and base class for other Neo exceptions.
+            </summary>
+            <remarks>
+            All exception that are thrown as a part of the normal operation of Neo are subclasses
+            of this type. In case of internal errors, other exceptions might be thrown.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.NeoException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the NeoException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="M:Neo.Core.Parser.QualifierParserException.#ctor(System.String,Neo.Core.Parser.Tokenizer)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="message">Reason for the error</param>
+            <param name="tokenizer"><c>Tokenizer</c> positioned at the error</param>
+        </member>
+        <member name="M:Neo.Core.Parser.QualifierParserException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the QualifierParserException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.Util.DefaultEntityMapFactory">
+            <summary>
+            Default implementation of IEntityMapFactory.
+            </summary>
+            <remarks>
+            Caches entity maps in memory.
+            As a side effect it brings all assemblies that the current app depends on into memory.
+            To avoid loading certain assemblies that are known not to contain entity maps use
+            the AddAssemblyFilters method.
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.Util.EntityMapFactoryBase">
+            <summary>
+            A useful base class for implementing custom entity map factories.
+            </summary>
+            <remarks>
+            You do not have to use this base class, of course it is sufficient to
+            implement the IEntityMapFactory interface to be a valid factory.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.EnsureMapsAreRegistered">
+            <summary>
+            Checks whether Maps are registered. If not, processes assemblies in the current 
+            domain.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.RegisterEntityMaps">
+            <summary>
+            Abstract method that should be used to implement assembly discovery. 
+            </summary>
+            <remarks>
+            It is expected that this method calls RegisterEntityMapsInAssembly
+            which is defined in this baseclass.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.RegisterEntityMapsInAssembly(System.Reflection.Assembly)">
+            <summary>
+            Runs through all concrete classes in the assembly and adds all <c>IEntityMap</c> 
+            classes to the list of registered types, if they are not already registered.
+            </summary>
+            <param name="assembly">Assembly to be examined</param>
+            <remarks>
+            When registered, an instance of each <c>IEntityMap</c> class is added to the 
+            internal maps for rapid lookup as required.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.IsIEntityMap(System.Type,System.Object)">
+            <summary>
+            Determines whether the supplied type is a concrete subclass of <c>IEntityMap</c>
+            </summary>
+            <param name="typeObj">Class to be checked</param>
+            <param name="criteriaObj">Not used</param>
+            <returns><c>true</c> if this is a concrete class and a subclass of <c>IEntityMap</c></returns>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.GetRegisteredTypes">
+            <summary>
+            Gets all registered types, forcing a mapping check if necessary
+            </summary>
+            <returns>All registered types</returns>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.AddCustomType(System.Type,Neo.Core.IEntityMap)">
+            <summary>
+            Adds a custom mapping from an object type to an <c>EntityMap</c>.
+            </summary>
+            <remarks>
+            Most of the mappings are defined by the EntityMaps that are created by the factory.
+            Certain additional mappings, for mocks or stubs for example, may be required at
+            runtime.
+            </remarks>
+            <param name="objType">the type</param>
+            <param name="map">the entity map</param>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.GetAllMaps">
+            <summary>
+            Gets a collection of all Object Type Maps
+            </summary>
+            <returns>A collection of all Object Type Maps</returns>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.GetMap(System.Type)">
+            <summary>
+            Gets the corresponding map for a type 
+            </summary>
+            <param name="type">Type to map</param>
+            <returns>IEntityMap object matching the supplied Type</returns>
+        </member>
+        <member name="M:Neo.Core.Util.EntityMapFactoryBase.GetMap(System.String)">
+            <summary>
+            Gets the corresponding map for a table name 
+            </summary>
+            <param name="tablename">Table Name to map</param>
+            <returns>IEntityMap object matching the supplied table name</returns>
+        </member>
+        <member name="M:Neo.Core.Util.DefaultEntityMapFactory.#ctor">
+            <summary>
+            Initialises a new instance of this class.
+            </summary>
+            <remarks>
+            Only create new instances if the shared one cannot be used.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Util.DefaultEntityMapFactory.AddToAssemblyFilters(System.String)">
+            <summary>
+            Adds a regular expression to the assembly filters.
+            </summary>
+            <param name="partialName">expression to add</param>
+        </member>
+        <member name="P:Neo.Core.Util.DefaultEntityMapFactory.SharedInstance">
+            <summary>
+            Gets the shared instance of this class.
+            </summary>
+            <remarks>
+            It is possible to create further instances but unless there is a specific need for
+            one it is advisable to use the shared one because this avoids the overhead of 
+            searching through the assemblies multiple times.
+            </remarks>
+        </member>
+        <member name="P:Neo.Core.Util.DefaultEntityMapFactory.AssemblyFilters">
+            <summary>
+            List of regular expressions that describe assemblies which should be ignored by
+            the discovery process because they are known to not contain <c>EntityMap</c>s.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.PropertyQualifier">
+            <summary>
+            A qualifier that compares a value to the value of a property of an <c>EntityObject</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.DataStoreSaveException">
+            <summary>
+            General DataStore exception, thrown when saves fail.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.DataStoreSaveException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the DataStoreSaveException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="P:Neo.Core.DataStoreSaveException.Errors">
+            <summary>
+            An array of <c>ErrorInfo</c> for rows that caused problems and the corresponding error message.
+            </summary>
+        </member>
+        <member name="P:Neo.Core.DataStoreSaveException.ObjectId">
+            <summary>
+            The <c>ObjectId</c> for the row that cause the problem, if there was exactly one error.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.NotUniqueException">
+            <summary>
+            Thrown when a unique value is expected but none or more than one was found.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.NotUniqueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the NotUniqueException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.InvalidDbNullException">
+            <summary>
+            Thrown when a database <c>null</c> is not valid for a given attribute or column.
+            </summary>
+            <remarks>
+            You can implement HandleNullValue on your entity objects to deal with <c>null</c> 
+            values arriving from the database, e.g. convert <c>null</c> into zero for an 
+            <c>int</c>.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.InvalidDbNullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the InvalidDbNullException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.ObjectNotFoundException">
+            <summary>
+            Thrown when an object was not found when looking for it via a foreign key.
+            </summary>
+            <remarks>
+            An exception is thrown because this condition indicates a data integrity problem.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.ObjectNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the ObjectNotFoundException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.InvalidQueryException">
+            <summary>
+            Thrown when a query is invalid.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.InvalidQueryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the InvalidQueryException class with serialized data.
+            </summary>
+            <param name="si">The SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+            <param name="sc">The StreamingContext that contains contextual information about the source or destination. </param>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.PathQualifier">
+            <summary>
+            A qualifier that describes a path of relations to follow before evaluating another
+            qualifier.
+            </summary>
+        </member>
+        <member name="T:Neo.Framework.EntityObject">
+            <summary>
+            A good base class for your entity objects. CodeGen/Norque uses these.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Util.ObjectId">
+            <summary>
+            A unique identifier for an object comprising its table name and pk values. You should not
+            need to access instances of ObjectId directly.
+            </summary>
+        </member>
+        <member name="T:Neo.Core.Parser.Tokenizer">
+            <summary>
+            Internal class used by the <c>QualifierParser</c>.
+            </summary>
+        </member>
+        <member name="T:Neo.Framework.ObjectList`1">
+            <summary>
+            The <see cref="T:Neo.Framework.ObjectList`1"/> class wraps an ordinary <see cref="T:Neo.Framework.ObjectListBase"/> to provide
+            a type-safe collection compile-time.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <remarks>
+            The <see cref="T:Neo.Framework.ObjectList`1"/> class is a descendant of the <see cref="T:Neo.Framework.ObjectListBase"/> class
+            and is the base class of all generic lists.
+            </remarks>
+            <author>Paul Gielens</author>
+        </member>
+        <member name="T:Neo.Core.Util.SingleAssemblyEntityMapFactory">
+            <summary>
+            This class is not used internally by NEO.
+            You should subclass this class, to provide an entityMapFactory restricted to a single assembly:
+            Useful when you are using more than one schema at a time and the table names clash.
+            For example when migrating data between two databases.
+            </summary>
+            <remarks>
+            The minimal subclass is:
+            public class MyEntityMapFactory : SingleAssemblyEntityMapFactory
+            {
+              public override Assembly GetContainingAssembly()
+              {
+            	return typeof(MyEntityMapFactory).Assembly;
+              }
+            }
+            then use...
+            context = new ObjectContext();
+            context.Factory = new MyEntityMapFactory();
+            
+            A more useful factory might be:
+            
+            public class SingletonEntityMapFactory : SingleAsssemblyEntityMapFactory
+            {
+            	private static SingletonEntityMapFactory sharedInstance;
+            	public SingletonEntityMapFactory() : base()
+            	{
+            	}
+                public static SingletonEntityMapFactory SharedInstance
+                {
+            	    get
+                    { 
+            	        if(sharedInstance == null)
+            	        sharedInstance = new SingletonEntityMapFactory();
+            	        return sharedInstance;
+                    }
+                }
+              public override Assembly GetContainingAssembly()
+              {
+            	return typeof(SingletonEntityMapFactory).Assembly;
+              }
+            }
+            
+            and use:
+            context.Factory = SingletonEntityMapFactory.SharedInstance;
+            </remarks>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.StringPredicateBase">
+            <summary>
+            Abstract base class for predicates that work with string values.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StringPredicateBase.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.StringPredicateBase"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StringPredicateBase.SetPredicateValue(System.Object)">
+            <summary>
+            Sets the predicate value.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="P:Neo.Core.Qualifiers.StringPredicateBase.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.StringArrayPredicateBase">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StringArrayPredicateBase.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.StringArrayPredicateBase"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StringArrayPredicateBase.SetPredicateValue(System.Object)">
+            <summary>
+            Sets the predicate value.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="P:Neo.Core.Qualifiers.StringArrayPredicateBase.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.LikePredicate">
+            <summary>
+            Predicate that returns true if the string matches the pattern.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.LikePredicate.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.LikePredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.LikePredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.LikePredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.CaseInsensitiveEqualsPredicate">
+            <summary>
+            Predicate that returns true if the string is equal to the string stored in the
+            predicate not taking case into account.
+            </summary>
+            <remarks>
+            This predicate does not necessarily translate into SQL.
+            </remarks>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.CaseInsensitiveEqualsPredicate.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.CaseInsensitiveEqualsPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.CaseInsensitiveEqualsPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.CaseInsensitiveEqualsPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.StartsWithPredicate">
+            <summary>
+            Predicate that returns true if the string begins with the string stored in the
+            predicate.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StartsWithPredicate.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.StartsWithPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StartsWithPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.StartsWithPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.EndsWithPredicate">
+            <summary>
+            Predicate that returns true if the string ends with the string stored in the
+            predicate.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.EndsWithPredicate.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.EndsWithPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.EndsWithPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.EndsWithPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.ContainsPredicate">
+            <summary>
+            Predicate that returns true if the string contains the string stored in the
+            predicate.
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsPredicate.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.ContainsPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.ContainsAndPredicate">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsAndPredicate.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.ContainsAndPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsAndPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsAndPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="T:Neo.Core.Qualifiers.ContainsOrPredicate">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsOrPredicate.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Neo.Core.Qualifiers.ContainsOrPredicate"/> class.
+            </summary>
+            <param name="aValue">A value.</param>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsOrPredicate.IsTrueForValue(System.Object,System.Object)">
+            <summary>
+            Determines whether [is true for value] [the specified a value].
+            </summary>
+            <param name="aValue">A value.</param>
+            <param name="nullVal">The null val.</param>
+            <returns>
+            	<c>true</c> if [is true for value] [the specified a value]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Neo.Core.Qualifiers.ContainsOrPredicate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+    </members>
+</doc>

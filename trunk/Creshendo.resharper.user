@@ -1,0 +1,400 @@
+<Configuration>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Deftemplate">
+      <Item value="AllSlots" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Slot">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine" priority="1" />
+      <Item value="Read" priority="0" />
+      <Item value="OpenStandardInput" priority="0" />
+      <Item value="OpenStandardOutput" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:int">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Random">
+      <Item value="Next" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics">
+      <Item value="CodeAnalysis" priority="0" />
+      <Item value="TraceListener" priority="1" />
+      <Item value="Trace" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime.Now">
+      <Item value="Ticks" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetProperties" priority="0" />
+      <Item value="GetMethods" priority="0" />
+      <Item value="IsArray" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="FullName" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="PropertyType" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="GetGetMethod" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodInfo">
+      <Item value="GetParameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.ParameterInfo">
+      <Item value="ParameterType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@">
+      <Item value="Length" priority="2" />
+      <Item value="manners16" priority="0" />
+      <Item value="ToString" priority="1" />
+      <Item value="testAssertTwoObjects" priority="0" />
+      <Item value="MainTest" priority="0" />
+      <Item value="ObjectBindingTest1" priority="0" />
+      <Item value="RuleCompiler" priority="0" />
+      <Item value="close" priority="0" />
+      <Item value="run" priority="0" />
+      <Item value="Message" priority="0" />
+      <Item value="Equals" priority="1" />
+      <Item value="GenericHashPerformance" priority="0" />
+      <Item value="Run" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:object">
+      <Item value="Equals" priority="0" />
+      <Item value="GetHashCode" priority="0" />
+      <Item value="ToString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ArrayList">
+      <Item value="GetEnumerator" priority="0" />
+      <Item value="Add" priority="2" />
+      <Item value="ToArray" priority="0" />
+      <Item value="AddRange" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System">
+      <Item value="IO" priority="1" />
+      <Item value="Collections" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO">
+      <Item value="FileStream" priority="0" />
+      <Item value="TextWriter" priority="0" />
+      <Item value="StreamWriter" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.IEnumerator">
+      <Item value="MoveNext" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.ActivationList">
+      <Item value="size" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.ReturnVector">
+      <Item value="Iterator" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.GC">
+      <Item value="GetTotalMemory" priority="0" />
+      <Item value="Collect" priority="0" />
+      <Item value="WaitForPendingFinalizers" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary&lt;string,System.Collections.Generic.Dictionary&lt;string,string&gt;&gt;">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Creshendo.Util.ResourceBundle.parentDict">
+      <Item value="ContainsKey" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary&lt;string,string&gt;">
+      <Item value="ContainsKey" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringComparison">
+      <Item value="InvariantCultureIgnoreCase" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.UnitTests.Model.Account">
+      <Item value="PropertyChanged" priority="0" />
+      <Item value="First" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.PropertyChangedHandlerEventArgs">
+      <Item value="PropertyName" priority="0" />
+      <Item value="OldValue" priority="0" />
+      <Item value="NewValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.EventInfo">
+      <Item value="GetRemoveMethod" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:string">
+      <Item value="Equals" priority="0" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Entry[]">
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Entry">
+      <Item value="Value" priority="0" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Defclass">
+      <Item value="DelegateType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Hashtable">
+      <Item value="ContainsKey" priority="0" />
+      <Item value="Remove" priority="0" />
+      <Item value="Count" priority="1" />
+      <Item value="Clear" priority="0" />
+      <Item value="Keys" priority="1" />
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ICollection">
+      <Item value="GetEnumerator" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Map">
+      <Item value="keySet" priority="0" />
+      <Item value="Get" priority="0" />
+      <Item value="entrySet" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToBoolean" priority="1" />
+      <Item value="ToUInt64" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.Assembly">
+      <Item value="Location" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileInfo">
+      <Item value="Exists" priority="0" />
+      <Item value="FullName" priority="1" />
+      <Item value="Create" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.IList">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextReader">
+      <Item value="Peek" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Rete">
+      <Item value="printWorkingMemory" priority="0" />
+      <Item value="addPrintWriter" priority="0" />
+      <Item value="MessageRouter" priority="0" />
+      <Item value="close" priority="2" />
+      <Item value="fire" priority="0" />
+      <Item value="CurrentFocus" priority="0" />
+      <Item value="Watch" priority="0" />
+      <Item value="ObjectCount" priority="0" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console.Out">
+      <Item value="Flush" priority="0" />
+      <Item value="Close" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Messagerouter.MessageRouter.CommandThread">
+      <Item value="Abort" priority="0" />
+      <Item value="IsAlive" priority="0" />
+      <Item value="Instance" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Messagerouter.MessageRouter">
+      <Item value="ShutDown" priority="1" />
+      <Item value="messageQueue" priority="0" />
+      <Item value="Message" priority="1" />
+      <Item value="closeChannel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:log4net.ILog">
+      <Item value="Logger" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@log4net.Config">
+      <Item value="XmlConfigurator" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.HashMap2.ObjectEntry">
+      <Item value="Value" priority="2" />
+      <Item value="GetHashCode" priority="1" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.DictionaryEntry">
+      <Item value="Key" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="AppendLine" priority="0" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="Duration" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Module">
+      <Item value="ActivationCount" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rule.Defrule">
+      <Item value="toPPString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Name" priority="0" />
+      <Item value="ManagedThreadId" priority="0" />
+      <Item value="ThreadState" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread.CurrentThread">
+      <Item value="ManagedThreadId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.IMap">
+      <Item value="GetEnumerator" priority="0" />
+      <Item value="Get" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Collections">
+      <Item value="Generic" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Array">
+      <Item value="Sort" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:K">
+      <Item value="Equals" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:V">
+      <Item value="Equals" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Activator">
+      <Item value="CreateInstance" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.IHashMapEntry&lt;string,string&gt;">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.GenericHashMap&lt;string,string&gt;">
+      <Item value="Keys" priority="1" />
+      <Item value="ContainsValue" priority="0" />
+      <Item value="Remove" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.ICollection&lt;K&gt;">
+      <Item value="CopyTo" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List&lt;string&gt;">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.GenericHashMap&lt;K,V&gt;">
+      <Item value="newEntryEnumerator" priority="0" />
+      <Item value="ContainsValue" priority="0" />
+      <Item value="ContainsKey" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.IHashMapEntry&lt;K,V&gt;">
+      <Item value="Hash" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Collections.Generic">
+      <Item value="List" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List&lt;object&gt;">
+      <Item value="CopyTo" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Queue&lt;T&gt;">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.ProducerConsumerQueue&lt;object&gt;">
+      <Item value="Produce" priority="0" />
+      <Item value="Consume" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.CompileMessageEventArgs">
+      <Item value="EventType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.IRuleCompiler">
+      <Item value="RuleAdded" priority="0" />
+      <Item value="RuleRemoved" priority="0" />
+      <Item value="CompileError" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Collections.ProducerConsumerQueue&lt;Creshendo.Util.Messagerouter.MessageEventArgs&gt;">
+      <Item value="Produce" priority="1" />
+      <Item value="Consume" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.IFact[]">
+      <Item value="Length" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.Index">
+      <Item value="_facts" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Messagerouter.ICommunicationChannel">
+      <Item value="Command" priority="0" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Messagerouter.CommandEventArgs">
+      <Item value="ChannelID" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Logging.DefaultLogger">
+      <Item value="Fatal" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Messagerouter.MessageEventArgs">
+      <Item value="Message" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Creshendo.Util.Rete.EventType">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <EditorManager>
+    <RecentFiles>
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:ICommunicationChannel.cs" caret="776" scrollPosition="0|0" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:CompileMessageEventArgs.cs" caret="587" scrollPosition="0|3" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:AbstractMessageEventArgs.cs" caret="1531" scrollPosition="0|34" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:MessageEventArgs.cs" caret="1115" scrollPosition="0|29" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Parser/d:Clips2/f:SimpleCharStream.cs" caret="5842" scrollPosition="0|165" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:StringChannelImpl.cs" caret="1038" scrollPosition="0|24" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:MessageRouterImp.cs" caret="5868" scrollPosition="0|147" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:CLIPSInterpreter.cs" caret="1127" scrollPosition="0|12" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:ILanguageAdapter.cs" caret="2076" scrollPosition="0|22" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:CLIPSLanguageAdapter.cs" caret="2044" scrollPosition="0|21" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Functions/f:EvalFunction.cs" caret="4139" scrollPosition="0|104" />
+      <File id="864D02AA-1689-4E51-93B1-6CBAC7190F22/f:NotNodeTest.cs" caret="3799" scrollPosition="0|84" />
+      <File id="864D02AA-1689-4E51-93B1-6CBAC7190F22/f:RulesetBenchmark2.cs" caret="1097" scrollPosition="0|27" />
+      <File id="864D02AA-1689-4E51-93B1-6CBAC7190F22/f:MemoryBenchmark.cs" caret="812" scrollPosition="0|9" />
+      <File id="864D02AA-1689-4E51-93B1-6CBAC7190F22/f:MemoryBenchmark2.cs" caret="850" scrollPosition="0|13" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Collections/f:GenericHashMap.cs" caret="6456" scrollPosition="0|191" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:RootNode.cs" caret="1299" scrollPosition="0|23" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Logging/f:TraceLogger.cs" caret="423" scrollPosition="0|3" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Logging/f:Log4netLogger.cs" caret="907" scrollPosition="0|21" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Messagerouter/f:StreamChannelImpl.cs" caret="2567" scrollPosition="0|49" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Logging/f:ILogger.cs" caret="371" scrollPosition="0|0" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:ZJBetaNode.cs" caret="1160" scrollPosition="0|93" />
+      <File id="E5323A73-CE55-4D7E-ACD1-2B11448EC4C5/f:Program.cs" caret="1837" scrollPosition="0|12" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:BaseJoin.cs" caret="9625" scrollPosition="0|223" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:DefaultWM.cs" caret="19594" scrollPosition="0|536" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:DefaultRuleCompiler.cs" caret="8893" scrollPosition="0|0" />
+      <File id="9D196D14-9007-49A1-91E4-6388B7953927/d:Util/d:Rete/f:Rete.cs" caret="60106" scrollPosition="0|25" />
+    </RecentFiles>
+  </EditorManager>
+  <FileStructureView>
+    <AutoScrollToSource>False</AutoScrollToSource>
+    <TrackCaretLocation>False</TrackCaretLocation>
+  </FileStructureView>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <ReFormatCode>
+    <ReorderMembers>True</ReorderMembers>
+    <OptimizeUsings>True</OptimizeUsings>
+    <RemoveRedundantThis>True</RemoveRedundantThis>
+    <ShortenReferences>True</ShortenReferences>
+  </ReFormatCode>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <SharedSolutionDisabledTemplatesManager>
+    <DisabledTemplates />
+  </SharedSolutionDisabledTemplatesManager>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>False</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <Providers />
+  </UnitTestRunner>
+  <UserSolutionDisabledTemplatesManager>
+    <DisabledTemplates />
+  </UserSolutionDisabledTemplatesManager>
+</Configuration>
