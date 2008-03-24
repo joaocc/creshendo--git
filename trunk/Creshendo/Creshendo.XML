@@ -4586,6 +4586,14 @@
             <summary> 
             </summary>
         </member>
+        <member name="T:Creshendo.Util.Logging.Log4netLogger">
+            <author>  Peter Lin
+            
+            A quick and simple logger. To make it easier for other classes to
+            log and not have to import log4j stuff. 
+            
+            </author>
+        </member>
         <member name="T:Creshendo.Functions.Math.Ceil">
             <author>  Nikolaus Koemm
             
@@ -11688,14 +11696,6 @@
         <member name="M:Creshendo.Util.Rule.AndCondition.addNewAlphaNodes(Creshendo.Util.Rete.BaseNode)">
             <summary> not implemented currently
             </summary>
-        </member>
-        <member name="T:Creshendo.Util.Logging.Log4netLogger">
-            <author>  Peter Lin
-            
-            A quick and simple logger. To make it easier for other classes to
-            log and not have to import log4j stuff. 
-            
-            </author>
         </member>
     </members>
 </doc>

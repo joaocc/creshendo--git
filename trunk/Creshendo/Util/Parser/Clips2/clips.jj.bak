@@ -1,0 +1,1764 @@
+options {
+  OPTIMIZE_TOKEN_MANAGER = true;
+  JAVA_UNICODE_ESCAPE = false;
+  UNICODE_INPUT = true;
+  STATIC = false;
+}
+
+PARSER_BEGIN(CLIPSParser)
+
+namespace Creshendo.Util.Parser.Clips2;
+
+using System;
+using System.IO;
+using System.Collections;
+using Creshendo.Functions;
+using Creshendo.Util.Rete;
+using Creshendo.Util.Rule;
+
+public class CLIPSParser {
+
+    protected Rete engine = null;
+
+    public CLIPSParser(Rete eng, StreamReader stream)
+    {
+        engine = eng;
+    }
+
+    public CLIPSParser(Rete eng, Stream stream)
+    {
+        engine = eng;
+    }
+
+    public void close() {
+        engine = null;
+        if (token != null) {
+            token.Clear();
+            token = null;
+        }
+        if (jj_nt != null) {
+            jj_nt.Clear();
+            jj_nt = null;
+        }
+        if (jj_scanpos != null) {
+            jj_scanpos.Clear();
+            jj_scanpos = null;
+        }
+        if (jj_lastpos != null) {
+            jj_lastpos.Clear();
+            jj_lastpos = null;
+        }
+        try {
+            jj_input_stream.inputStream.close();
+        } catch (IOException e) {
+            // later on log the error
+        }
+    }
+}
+
+PARSER_END(CLIPSParser)
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| ";;" : IN_COMMENT
+}
+
+/* COMMENTS */
+
+< IN_COMMENT >
+MORE : 
+{ 
+  <  ~[] >
+|
+  < COMMENT_TEXT: ( (["0"-"9"])|(["a"-"z"]) )+ >
+}
+
+< IN_COMMENT >
+SKIP :
+{
+  < END_COMMENT: ("\r" | "\n" | "\r\n") > : DEFAULT
+}
+
+TOKEN :
+{
+  < LBRACE: "(" >
+| < RBRACE: ")" >
+| < INTEGER_LITERAL: ["0"-"9"] (["0"-"9"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)?
+      | "." (["0"-"9"])+ (<EXPONENT>)?
+      | (["0"-"9"])+ <EXPONENT>
+  >
+| < #EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < STRING_LITERAL:
+      ("\"" ((~["\"","\\"]) | ("\\" ( ["\\","\""] )))* "\"") |
+      ("\'" ((~["\'","\\"]) | ("\\" ( ["\\","\'"] )))* "\'")
+  >
+| < BIND: ("?"(<LETTER>|<DIGIT>)+) >
+| < BIND2: ("?"(<LETTER>|<DIGIT>)+"&:") >
+| < BIND3: ("?*"(<LETTER>|<DIGIT>)+"*") >
+| < BIND4: ("$?"(<LETTER>|<DIGIT>)+) >
+| < BIND5: ("?"(<LETTER>|<DIGIT>)+"&~") >
+| < BINDING: "bind" >
+| < BOOLEAN: "BOOLEAN" >
+| < AGGREGATE: "aggregate" >
+| < ASSERT: "assert" >
+| < ASSERTTEMPORAL: "assert-temporal" >
+| < AUTOFOCUS: "auto-focus" >
+| < ALLOWEDVALUES: "allowed-values" >
+| < CHAININGDIRECTION: "chaining-direction" >
+| < COMMAND: "command" >
+| < DECLARE: "declare" >
+| < DEFCLASS: "defclass" >
+| < DEFFACT: "deffact" >
+| < DEFFUNCTION: "deffunction" >
+| < DEFGENERIC: "defgeneric" >
+| < DEFGLOBAL: "defglobal" >
+| < DEFINSTANCE: "definstance" >
+| < DEFMETHOD: "defmethod" >
+| < DEFMODULE: "defmodule" >
+| < DEFRULE: "defrule" >
+| < DEFTEMPLATE: "deftemplate" >
+| < DESCRIBECLASS: "describe-class" >
+| < DEFAULTVALUE: "default" >
+| < DOUBLE: "DOUBLE" >
+| < EXISTS: "exists" >
+| < EFFECTIVE: "effective-date" >
+| < EXPIRATION: "expiration-date" >
+| < FACTINDEX: "fact-index" >
+| < FLOAT: "FLOAT" >
+| < INTEGER: "INTEGER" >
+| < INTERVALTIME: "interval-time" >
+| < LOGICAL: "logical" >
+| < LONG: "LONG" >
+| < MODIFY: "modify" >
+| < MULTISLOT: "multislot" >
+| < NOAGENDA: "no-agenda" >
+| < NOLOOP: "no-loop" >
+| < NUMBER: "NUMBER" >
+| < NOTCE: "not" >
+| < REMEMBERMATCH: "remember-match" >
+| < RETRACT: "retract" >
+| < RULEVERSION: "rule-version" >
+| < RELATIVETIME: "relative-time" >
+| < SALIENCE: "salience" >
+| < SEND: "send" >
+| < SHORT: "SHORT" >
+| < SLOT: "slot" >
+| < STRING: "STRING" >
+| < SYMBOL: "symbol" >
+| < TEMPORALACTIVATION: "temporal-activation" >
+| < TEMPORAL: "temporal" >
+| < TEST: "test" >
+| < TRUE: "TRUE" >
+| < TRUE2: "true" >
+| < TYPEDEF: "type" >
+| < FALSE: "FALSE" >
+| < FALSE2: "false" >
+| < NIL: "nil" >
+| < ARROW: "=>" >
+| < ASSIGN: "<-" >
+| < SEMICOLON: ";" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < MULTIPLY: "*" >
+| < DIVIDE: "/" >
+| < GT1: ">" >
+| < GT2: "gt" >
+| < LT1: "<" >
+| < LT2: "lt" >
+| < EQ1: "==" >
+| < EQ2: "eq" >
+| < LE1: "<=" >
+| < LE2: "le" >
+| < GE1: ">=" >
+| < GE2: "ge" >
+| < NE1: "!=" >
+| < NE2: "ne" >
+| < AND1: "and" >
+| < AND2: "&" >
+| < OR1: "or" >
+| < OR2: "|" >
+| < TILDA: "~" >
+| < IDENTIFIER: (<LETTER>|<DIGIT>|<TYPEDEF>|<TILDA>|["_",":","-","$",".","@","/"])+ >
+|
+  < LETTER:
+      [
+       "\u0024",
+       "\u0041"-"\u005a",
+       "\u005f",
+       "\u0061"-"\u007a",
+       "\u00c0"-"\u00d6",
+       "\u00d8"-"\u00f6",
+       "\u00f8"-"\u00ff",
+       "\u0100"-"\u1fff",
+       "\u3040"-"\u318f",
+       "\u3300"-"\u337f",
+       "\u3400"-"\u3d2d",
+       "\u4e00"-"\u9fff",
+       "\uf900"-"\ufaff"
+      ]
+  >
+|
+  < DIGIT:
+      [
+       "\u0030"-"\u0039",
+       "\u0660"-"\u0669",
+       "\u06f0"-"\u06f9",
+       "\u0966"-"\u096f",
+       "\u09e6"-"\u09ef",
+       "\u0a66"-"\u0a6f",
+       "\u0ae6"-"\u0aef",
+       "\u0b66"-"\u0b6f",
+       "\u0be7"-"\u0bef",
+       "\u0c66"-"\u0c6f",
+       "\u0ce6"-"\u0cef",
+       "\u0d66"-"\u0d6f",
+       "\u0e50"-"\u0e59",
+       "\u0ed0"-"\u0ed9",
+       "\u1040"-"\u1049"
+      ]
+  >
+|
+  < PATH_LITERAL:
+      (<LETTER>|<DIGIT>|["_",":","-","\\","/","."])+
+  >
+}
+
+Object basicExpr() :
+{
+  Object exp = null;
+  Token obj = null;
+  ShellFunction func = null;
+  Parameter[] pms = null;
+  ShellBoundParam sbp = null;
+}
+{
+  obj = getBindType()
+  {
+    func = new ShellFunction();
+    func.setName("echo");
+    sbp = new ShellBoundParam();
+    sbp.setDefglobalName(obj.image);
+    pms = new ShellBoundParam[]{sbp};
+    func.setParameters(pms);
+    return func;
+  }
+|
+  (<LBRACE> exp = expr() <RBRACE>)
+  {
+    return exp;
+  }
+|
+  <EOF>
+  {
+    return null;
+  }
+}
+
+// main expression for loading a data file
+ArrayList loadExpr() :
+{
+  ArrayList facts = new ArrayList();
+}
+{
+  (loadAllExpr(facts))+
+  {
+    return facts;
+  }
+}
+
+// this method is used to load data
+void loadAllExpr(ArrayList list) :
+{
+  ValueParam[] param = null;
+}
+{
+  param = assertBody()
+  {
+    list.Add(param);
+  }
+}
+
+// typeExpr is only responsible for parsing string and bigdecimal types
+Object typeExpr() :
+{
+  Token exp;
+}
+{
+  exp = <STRING_LITERAL>
+  {
+    String strlit = exp.image;
+    strlit = ParserUtils.getStringLiteral(strlit);
+    return strlit;
+  }
+|
+  exp = <INTEGER_LITERAL>
+  {
+    // we use BigDecimal
+    return new BigDecimal(exp.image);
+  }
+|
+  exp = <FLOATING_POINT_LITERAL>
+  {
+    // we use float, double
+    return new BigDecimal(exp.image);
+  }
+|
+  exp = <PATH_LITERAL>
+  {
+    return exp.image;
+  }
+}
+
+Object expr() :
+{
+  Token exp = null;
+  Token exp2 = null;
+  Token exp3 = null;
+  String body;
+  ValueParam param;
+  Deffact fact;
+  Deftemplate templ;
+  Defrule rule;
+  ShellFunction func;
+  DeffunctionFunction dffunc;
+  ArrayList list = new ArrayList();
+  ValueParam[] pms;
+  ArrayList infunc = new ArrayList();
+}
+{
+  exp = <ASSERT> <LBRACE> exp2 = <IDENTIFIER>
+  (assertContents(list))+ <RBRACE>
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    pms = new ValueParam[2];
+    pms[0] = new ValueParam(Constants.STRING_TYPE,exp2.image);
+    pms[1] = new ValueParam(Constants.OBJECT_TYPE,list.toArray());
+    func.setParameters(pms);
+    exp = null;
+    return func;
+  }
+|
+  exp = <ASSERTTEMPORAL> <LBRACE> exp2 = <IDENTIFIER>
+  (assertContents(list))+ <RBRACE>
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    pms = new ValueParam[2];
+    pms[0] = new ValueParam(Constants.STRING_TYPE,exp2.image);
+    pms[1] = new ValueParam(Constants.OBJECT_TYPE,list.toArray());
+    func.setParameters(pms);
+    exp = null;
+    return func;
+  }
+|
+  exp = <RETRACT> (exp2 = <BIND> | exp2 = <INTEGER_LITERAL>)
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    Parameter[] rpms = new Parameter[1];
+    if (exp2.image.startsWith("?")) {
+      BoundParam bp = new BoundParam();
+      bp.setVariableName(exp2.image);
+      rpms[0] = bp;
+    } else {
+      ValueParam vp = new ValueParam(Constants.BIG_DECIMAL, new BigDecimal(exp2.image));
+      rpms[0] = vp;
+    }
+    func.setParameters(rpms);
+    exp = null;
+    exp2 = null;
+    return func;
+  }
+|
+  exp = <MODIFY> exp2 = <BIND> assertContents(list)
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    BoundParam bp = new BoundParam();
+    bp.setVariableName(exp2.image);
+    list.Add(0,bp);
+    func.setParameters(ParameterUtils.slotToParameters(list));
+    exp = null;
+    return func;
+  }
+|
+  exp = <DEFTEMPLATE>
+  templ = templateExpr()
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    pms = new ValueParam[1];
+    pms[0] = new ValueParam(Constants.OBJECT_TYPE,templ);
+    func.setParameters(pms);
+    return func;
+  }
+|
+  exp = <DEFMODULE>
+  body = getIdentifier()
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    pms = new ValueParam[1];
+    pms[0] = new ValueParam(Constants.STRING_TYPE,body);
+    func.setParameters(pms);
+    return func;
+  }
+|
+  exp = <DEFRULE>
+  rule = ruleBody() 
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    pms = new ValueParam[1];
+    pms[0] = new ValueParam(Constants.OBJECT_TYPE,rule);
+    func.setParameters(pms);
+    return func;
+  }
+|
+  exp = <DEFCLASS> ((valueParams(list))+)?
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    func.setParameters(ParameterUtils.convertParameters(list));
+    list.Clear();
+    return func;
+  }
+|
+  exp = <DEFFUNCTION>
+  exp2 = <IDENTIFIER> <LBRACE>
+  ((bindingParams(list))+)? <RBRACE> <LBRACE>
+  (ruleAction(infunc))? <RBRACE>
+  {
+    dffunc = new DeffunctionFunction();
+    dffunc.setName(exp2.image);
+    dffunc.setParameters(ParameterUtils.convertParameters(list));
+    dffunc.setFunction(infunc);
+    list.Clear();
+    return dffunc;
+  }
+|
+  // example: (bind ?*x* 9)
+  <BINDING> exp = getBindType() (valueParams(list))+
+  {
+    func = new ShellFunction();
+    func.setName("bind");
+    list.Add(0,new ValueParam(Constants.STRING_TYPE,exp.image.substring(1)));
+    func.setParameters(ParameterUtils.convertParameters(list));
+    list.Clear();
+    return func;
+  }
+|
+  (exp = <PLUS>|
+   exp = <MINUS>|
+   exp = <MULTIPLY>|
+   exp = <DIVIDE>|
+   exp = <GT1>|
+   exp = <GT2>|
+   exp = <LT1>|
+   exp = <LT2>|
+   exp = <EQ1>|
+   exp = <EQ2>|
+   exp = <LE1>|
+   exp = <LE2>|
+   exp = <GE1>|
+   exp = <GE2>) (valueParams(list))+
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    func.setParameters(ParameterUtils.convertParameters(list));
+    list.Clear();
+    return func;
+  }
+|
+  exp = <IDENTIFIER> ((valueParams(list))+)?
+  {
+    func = new ShellFunction();
+    func.setName(exp.image);
+    func.setParameters(ParameterUtils.convertParameters(list));
+    list.Clear();
+    return func;
+  }
+}
+
+void valueParams(ArrayList list) :
+{
+  Object exp;
+  Token tok;
+  ValueParam vp = null;
+}
+{
+  LOOKAHEAD(<LBRACE>)<LBRACE>exp = expr()<RBRACE>
+  {
+    ShellFunction subfunc = (ShellFunction)exp;
+    FunctionParam2 fp2 = new FunctionParam2();
+    fp2.setFunctionName(subfunc.getName());
+    fp2.setEngine(engine);
+    fp2.setParameters(subfunc.getParameters());
+    list.Add(fp2);
+  }
+|
+  exp = typeExpr()
+  {
+    vp = new ValueParam();
+      vp.Value = exp;
+    if (exp is BigDecimal) {
+      vp.ValueType = Constants.BIG_DECIMAL;
+    } else if (exp is String) {
+      vp.ValueType = Constants.STRING_TYPE;
+    }
+    list.Add(vp);
+  }
+|
+  exp = <IDENTIFIER>
+  {
+    vp = new ValueParam();
+    vp.ValueType = Constants.STRING_TYPE;
+    if (exp is Token) {
+      vp.Value =  ((Token)exp).image ;
+    } else {
+      vp.Value = exp;
+    }
+    list.Add(vp);
+  }
+|
+  exp = <TRUE>
+  {
+    vp = new ValueParam();
+    vp.Value = new Boolean(true);
+    list.Add(vp);
+  }
+|
+  exp = <TRUE2>
+  {
+    vp = new ValueParam();
+    vp.Value = new Boolean(true);
+    list.Add(vp);
+  }
+|
+  exp = <FALSE>
+  {
+    vp = new ValueParam();
+    vp.Value = new Boolean(false);
+    list.Add(vp);
+  }
+|
+  exp = <FALSE2>
+  {
+    vp = new ValueParam();
+    vp.Value = new Boolean(false);
+    list.Add(vp);
+  }
+|
+  // in some cases, the parameters may be a binding to a variable
+  tok = getBindType()
+  {
+    BoundParam bp = new BoundParam();
+    if (tok.kind == CLIPSParserConstants.BIND4) {
+      bp.setVariableName(tok.image.substring(2));
+      bp.setIsMultislot(true);
+    } else {
+      bp.setVariableName(tok.image);
+    }
+    list.Add(bp);
+  }
+}
+
+/**
+ * bindingParams is meant to parse the params for a deffunction
+ */
+void bindingParams(ArrayList list) :
+{
+  Object exp;
+  Token tok;
+  ValueParam vp = null;
+}
+{
+  tok = getBindType()
+  {
+    BoundParam bp = new BoundParam();
+    if (tok.kind == CLIPSParserConstants.BIND4) {
+      bp.setVariableName(tok.image.substring(2));
+      bp.setIsMultislot(true);
+    } else {
+      bp.setVariableName(tok.image);
+    }
+    list.Add(bp);
+  }
+}
+
+Token getBindType() :
+{
+  Token exp;
+}
+{
+  exp = <BIND3>
+  {
+    return exp;
+  }
+|
+  exp = <BIND>
+  {
+    return exp;
+  }
+|
+  exp = <BIND4>
+  {
+    return exp;
+  }
+}
+
+/**
+ * this is for convienance
+ */
+String getIdentifier() :
+{
+  Token exp;
+}
+{
+  exp = <IDENTIFIER>
+  {
+    return exp.image;
+  }
+}
+
+ValueParam[] assertBody() :
+{
+  Token exp;
+  ArrayList tokens = new ArrayList();
+  ValueParam[] param = null;
+}
+{
+  <LBRACE> exp = <IDENTIFIER> (assertContents(tokens))+ <RBRACE>
+  {
+    param = new ValueParam[2];
+    param[0] = new ValueParam(Constants.STRING_TYPE,exp.image);
+    param[1] = new ValueParam(Constants.OBJECT_TYPE,tokens.toArray());
+    tokens.Clear();
+    exp = null;
+    return param;
+  }
+}
+
+/* assert body */
+void assertContents(ArrayList tokens) :
+{
+  Token exp;
+  Object body = null;
+}
+{
+  <LBRACE> exp = <IDENTIFIER> (body = checkMultiSlot())? <RBRACE>
+  {
+    if (body != null) {
+      if (body.getClass().isArray()) {
+        MultiSlot msl = new MultiSlot(exp.image);
+        msl.Value = body;
+        tokens.Add(msl);
+      } else {
+        Slot s = new Slot(exp.image);
+        s.Value = body;
+        tokens.Add(s);
+      }
+    }
+    exp = null;
+    body = null;
+  }
+}
+
+Object checkMultiSlot() :
+{
+  Object body;
+  ArrayList artokens = new ArrayList();
+}
+{
+  LOOKAHEAD(<IDENTIFIER><IDENTIFIER>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  LOOKAHEAD(<STRING_LITERAL><STRING_LITERAL>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  LOOKAHEAD(<INTEGER_LITERAL><INTEGER_LITERAL>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  LOOKAHEAD(<FLOATING_POINT_LITERAL><FLOATING_POINT_LITERAL>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  LOOKAHEAD(<BIND><BIND>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  LOOKAHEAD(<BIND3><BIND3>) (arrayType(artokens))+
+  {
+    return artokens.toArray();
+  }
+|
+  body = slotValueType()
+  {
+    return body;
+  }
+}
+
+Object slotValueType() :
+{
+  Object body;
+  Token btoken;
+  boolean boolval;
+}
+{
+  btoken = getBindType()
+  {
+    // probably should refactor this later, instead of looking up the value directly
+    Object val = engine.getDefglobalValue(btoken.image);
+    if (val != null) {
+      return engine.getDefglobalValue(btoken.image);
+    } else {
+      BoundParam bp = new BoundParam();
+      bp.setVariableName(btoken.image);
+      return bp;
+    }
+  }
+|
+  body = typeExpr()
+  {
+    return body;
+  }
+|
+  boolval = trueFalse()
+  {
+    return new Boolean(boolval);
+  }
+|
+  btoken = <IDENTIFIER>
+  {
+    return btoken.image;
+  }
+}
+
+/* arrayType handles multislot tokens */
+void arrayType(ArrayList tokens) :
+{
+  Token tval;
+  Object val;
+}
+{
+  tval = <IDENTIFIER>
+  {
+    tokens.Add(tval.image);
+  }
+|
+  tval = <BIND>
+  {
+    if (tval.kind == CLIPSParserConstants.BIND) {
+      BoundParam bp = new BoundParam();
+      bp.setVariableName(tval.image);
+      tokens.Add(bp);
+    }
+  }
+|
+  tval = <BIND3>
+  {
+    if (tval.kind == CLIPSParserConstants.BIND3) {
+      BoundParam bp = new BoundParam();
+      bp.setVariableName(tval.image);
+      tokens.Add(bp);
+    }
+  }
+|
+  val = typeExpr()
+  {
+    tokens.Add(val);
+  }
+}
+
+/* templateExpr gets the slots of a deftemplate */
+Deftemplate templateExpr() :
+{
+  Token exp;
+  Deftemplate template;
+  ArrayList slots = new ArrayList();
+}
+{
+  /* javacc gives a warning for this, but not sure how to do it better */
+  exp = <IDENTIFIER> (templateBody(slots))+
+  {
+    Slot[] s = new Slot[slots.size()];
+    slots.toArray(s);
+    template = new Deftemplate(exp.image,null,s);
+    slots.Clear();
+    exp = null;
+    return template;
+  }
+}
+
+void templateBody(ArrayList slots) :
+{
+  Token sname;
+  int stype;
+  int sid;
+  Slot sl;
+  MultiSlot msl;
+  Object defaultvalue;
+}
+{
+  LOOKAHEAD(<LBRACE> <SLOT>)<LBRACE> <SLOT> sname = <IDENTIFIER> 
+  stype = slotType() defaultvalue = defaultValue() <RBRACE>
+  {
+    sid = slots.size();
+    sl = new Slot(sname.image);
+    sl.setId(sid);
+    sl.ValueType = stype;
+    sl.setDefaultValue(defaultvalue);
+    slots.Add(sl);
+    sname = null;
+  }
+|
+  LOOKAHEAD(<LBRACE> <MULTISLOT>)<LBRACE> <MULTISLOT> sname = <IDENTIFIER> <RBRACE>
+  {
+    sid = slots.size();
+    msl = new MultiSlot(sname.image);
+    msl.setId(sid);
+    slots.Add(msl);
+    sname = null;
+  }
+}
+
+int slotType() :
+{
+  int stype = -1;
+  int defaultType = 9;
+}
+{
+  /* the type declaration is optional, so question mark is used to tell javacc */
+  (LOOKAHEAD(<LBRACE> <TYPEDEF>) <LBRACE> <TYPEDEF> stype = getType() <RBRACE>)?
+  {
+    if (stype > -1) {
+      defaultType = stype;
+    }
+    return defaultType;
+  }
+}
+
+Object defaultValue() :
+{
+  Object defobj = null;
+}
+{
+  /* default value is optional */
+  (LOOKAHEAD(<LBRACE> <DEFAULTVALUE>) <LBRACE> <DEFAULTVALUE> defobj = typeExpr() <RBRACE>)?
+  {
+    return defobj;
+  }
+}
+
+int getType() :
+{
+  Token exp = null;
+}
+{
+  exp = <INTEGER>
+  {
+    exp = null;
+    return Constants.INT_PRIM_TYPE;
+  }
+|
+  exp = <SHORT>
+  {
+    exp = null;
+    return Constants.SHORT_PRIM_TYPE;
+  }
+|
+  exp = <LONG>
+  {
+    exp = null;
+    return Constants.LONG_PRIM_TYPE;
+  }
+|
+  exp = <FLOAT>
+  {
+    exp = null;
+    return Constants.FLOAT_PRIM_TYPE;
+  }
+|
+  exp = <DOUBLE>
+  {
+    exp = null;
+    return Constants.DOUBLE_PRIM_TYPE;
+  }
+|
+  exp = <SYMBOL>
+  {
+    exp = null;
+    return Constants.OBJECT_TYPE;
+  }
+|
+  exp = <STRING>
+  {
+    exp = null;
+    return Constants.STRING_TYPE;
+  }
+|
+  exp = <BOOLEAN>
+  {
+    exp = null;
+    return Constants.BOOLEAN_PRIM_TYPE;
+  }
+}
+
+Defrule ruleBody() :
+{
+  Token exp = null;
+  Token rulecomment = null;
+  Defrule rule;
+  ArrayList dec = new ArrayList();
+  ArrayList conditions = new ArrayList();
+  ArrayList actions = new ArrayList();
+}
+{
+  exp = <IDENTIFIER> (LOOKAHEAD(<STRING_LITERAL>)rulecomment=<STRING_LITERAL>)?
+  (LOOKAHEAD(<LBRACE><DECLARE>)ruleDeclaration(dec))? ((conditionElement(conditions))+)?
+  arrow() 
+  ruleActions(actions)
+  {
+    rule = new Defrule(exp.image);
+    if (rulecomment != null) {
+      rule.setComment(rulecomment.image);
+    }
+    rule.setRuleProperties(dec);
+    Iterator itr = conditions.iterator();
+    while (itr.hasNext()) {
+      rule.addCondition( (Condition)itr.next() );
+    }
+    
+    itr = actions.iterator();
+    while (itr.hasNext()) {
+      Object acn = itr.next();
+      if (acn is Function) {
+        FunctionAction faction = new FunctionAction();
+        faction.setFunction((Function)acn);
+        rule.addAction(faction);
+      } else if (acn is Action) {
+        rule.addAction( (Action)acn );
+      }
+    }
+    dec.Clear();
+    conditions.Clear();
+    actions.Clear();
+    exp = null;
+    return rule;
+  }
+}
+
+void ruleDeclaration(ArrayList list) :
+{
+  Token exp;
+}
+{
+  <LBRACE> exp = <DECLARE> (ruleProperty(list)) <RBRACE>
+  {
+  }
+}
+
+void ruleProperty(ArrayList list) :
+{
+  Object exp = null;
+  boolean tf = true;
+  String ver = null;
+  boolean remember = true;
+  boolean temporal = false;
+  boolean agenda = false;
+  String direction = null;
+  String date = null;
+}
+{
+  (LOOKAHEAD(<LBRACE><SALIENCE>)exp = salience())?
+  {
+    if (exp != null) {
+      Long intsal = new Long( ((Token)exp).image);
+      RuleProperty sal = new RuleProperty(RuleProperty.SALIENCE,intsal.intValue());
+      list.Add(sal);
+    }
+  }
+  (LOOKAHEAD(<LBRACE><AUTOFOCUS>)tf = autoFocus())?
+  {
+    RuleProperty auto = new RuleProperty(RuleProperty.AUTO_FOCUS,tf);
+    list.Add(auto);
+  }
+  (LOOKAHEAD(<LBRACE><RULEVERSION>) ver = ruleVersion())?
+  {
+    RuleProperty rp = new RuleProperty(RuleProperty.VERSION,ver);
+    list.Add(rp);
+  }
+  (LOOKAHEAD(<LBRACE><REMEMBERMATCH>) remember = remember())?
+  {
+    RuleProperty rmem = new RuleProperty(RuleProperty.REMEMBER_MATCH,remember);
+    list.Add(rmem);
+  }
+  (LOOKAHEAD(<LBRACE><EFFECTIVE>) date = effectiveDate())?
+  {
+    RuleProperty eff = new RuleProperty(RuleProperty.EFFECTIVE_DATE,date);
+    list.Add(eff);
+  }
+  (LOOKAHEAD(<LBRACE><EXPIRATION>) date = expirationDate())?
+  {
+    RuleProperty expr = new RuleProperty(RuleProperty.EXPIRATION_DATE,date);
+    list.Add(expr);
+  }
+  (LOOKAHEAD(<LBRACE><CHAININGDIRECTION>) direction = direction())?
+  {
+    RuleProperty dir = new RuleProperty(RuleProperty.DIRECTION,direction);
+    list.Add(dir);
+  }
+  (LOOKAHEAD(<LBRACE><NOAGENDA>) agenda = noAgenda())?
+  {
+    RuleProperty noagenda = new RuleProperty(RuleProperty.NO_AGENDA,agenda);
+    list.Add(noagenda);
+  }
+  (LOOKAHEAD(<LBRACE><TEMPORALACTIVATION>) temporal = temporalAct())?
+  {
+    RuleProperty tempprop = new RuleProperty(RuleProperty.TEMPORAL_ACTIVATION,temporal);
+    list.Add(tempprop);
+  }
+}
+
+Object salience() :
+{
+  Token exp = null;
+  Object val = null;
+}
+{
+  <LBRACE> exp = <SALIENCE> val = <INTEGER_LITERAL> <RBRACE>
+  {
+    exp = null;
+    if (val != null) {
+      return val;
+    } else {
+      return null;
+    }
+  }
+}
+
+boolean autoFocus() :
+{
+  Token exp;
+  boolean tf = false;
+}
+{
+  <LBRACE> exp = <AUTOFOCUS> tf = trueFalse() <RBRACE>
+  {
+    return tf;
+  }
+}
+
+String ruleVersion() :
+{
+  Token exp;
+}
+{
+  <LBRACE><RULEVERSION> (exp = <IDENTIFIER>| exp = <FLOATING_POINT_LITERAL> | exp = <INTEGER_LITERAL> )
+   <RBRACE>
+  {
+    return exp.image;
+  }
+}
+
+boolean remember() :
+{
+  Token exp;
+  boolean tf = false;
+}
+{
+  <LBRACE> exp = <REMEMBERMATCH> tf = trueFalse() <RBRACE>
+  {
+    return tf;
+  }
+}
+
+String direction() :
+{
+  Token exp;
+  String defaultDir = "forward";
+}
+{
+  <LBRACE><CHAININGDIRECTION> exp = <IDENTIFIER> <RBRACE>
+  {
+    if (exp != null && exp.image.equals("backward")) {
+      return exp.image;
+    } else {
+      return defaultDir;
+    }
+  }
+}
+
+boolean noAgenda() :
+{
+  Token exp;
+  boolean tf = false;
+}
+{
+  <LBRACE> exp = <NOAGENDA> tf = trueFalse() <RBRACE>
+  {
+    return tf;
+  }
+}
+
+String effectiveDate() :
+{
+  Token exp;
+  Token date;
+}
+{
+  <LBRACE> exp = <EFFECTIVE> date = <STRING_LITERAL> <RBRACE>
+  {
+    return date.image.substring(1,date.image.length() - 1);
+  }
+}
+
+String expirationDate() :
+{
+  Token exp;
+  Token date;
+}
+{
+  <LBRACE> exp = <EXPIRATION> date = <STRING_LITERAL> <RBRACE>
+  {
+    return date.image.substring(1,date.image.length() - 1);
+  }
+}
+
+boolean temporalAct() :
+{
+  Token exp;
+  boolean tf = false;
+}
+{
+  <LBRACE> exp = <TEMPORALACTIVATION> tf = trueFalse() <RBRACE>
+  {
+    return tf;
+  }
+}
+
+boolean trueFalse() :
+{
+}
+{
+  <TRUE>
+  {
+    return true;
+  }
+|
+  <TRUE2>
+  {
+    return true;
+  }
+|
+  <FALSE>
+  {
+    return false;
+  }
+|
+  <FALSE2>
+  {
+    return false;
+  }
+}
+
+// conditionalElement checks for object binding
+void conditionElement(ArrayList list) :
+{
+  Token exp;
+}
+{
+  // handle ?var <- (context (name startup) )
+  LOOKAHEAD(<BIND>) exp = <BIND> <ASSIGN> <LBRACE> CEType(list) <RBRACE>
+  {
+    ObjectCondition oc = (ObjectCondition)list.get(list.size() -1);
+    BoundConstraint bc = new BoundConstraint(oc.getTemplateName(),true);
+    bc.Value = exp.image.substring(1);
+    oc.addConstraint(bc,0);
+  }
+|
+  <LBRACE> CEType(list) <RBRACE>
+  {
+  }
+}
+
+// CEType checks the Conditional element to see if it's exist, not, test or plain
+void CEType(ArrayList list) :
+{
+  Token exp;
+  Token exp2;
+  Object etime;
+  Object nested = null;
+  ArrayList alpha = new ArrayList();
+  ObjectCondition oc = null;
+  TemporalCondition tmpc = null;
+  ArrayList parms = new ArrayList();
+}
+{
+  // (not (path (id ?seatID) (name ?g2) ) )
+  LOOKAHEAD(<NOTCE><LBRACE><IDENTIFIER><LBRACE>)
+  <NOTCE> <LBRACE> exp = <IDENTIFIER> ((templatePatterns(alpha))+)? <RBRACE>
+  {
+    oc = new ObjectCondition();
+    oc.setNegated(true);
+    oc.setTemplateName(exp.image);
+    Iterator itr = alpha.iterator();
+    while (itr.hasNext()) {
+      oc.addConstraint((Constraint)itr.next());
+    }
+    list.Add(oc);
+    alpha.Clear();
+    exp = null;
+  }
+|
+  // (not (test (> 3 2) ) )
+  <NOTCE> <LBRACE> nested = expr() <RBRACE>
+  {
+    TestCondition tc = new TestCondition();
+    tc.setNegated(true);
+    if (nested is Function) {
+      tc.setFunction((Function)nested);
+    }
+    list.Add(tc);
+  }
+|
+  // (temporal ?binding (relative-time n) (person (name "me") ) )
+  <TEMPORAL> temporalPattern(list)
+  {
+  }
+|
+  // (test (> ?var1 ?var2) )
+  <TEST> <LBRACE> nested = expr() <RBRACE>
+  {
+    tc = new TestCondition();
+    if (nested is Function) {
+      tc.setFunction((Function)nested);
+    }
+    list.Add(tc);
+  }
+|
+  <AND1> (<LBRACE> nested = expr() <RBRACE>)+
+  {
+    AndCondition ac = new AndCondition();
+    ac.addNestedConditionElement(nested);
+    list.Add(ac);
+  }
+|
+  <EXISTS> (<LBRACE> CEType(alpha) <RBRACE>)+
+  {
+    ExistCondition exc = null;
+    if (alpha.size() > 1) {
+      for (int iz=0; iz < alpha.size(); iz++) {
+        exc = ExistCondition.newExistCondition((ObjectCondition)alpha.get(iz));
+        list.Add(exc);
+      }
+    } else {
+      exc = ExistCondition.newExistCondition((ObjectCondition)alpha.get(0));
+      list.Add(exc);
+    }
+  }
+|
+  exp = <IDENTIFIER> ((templatePatterns(alpha))+)?
+  {
+    oc = new ObjectCondition();
+    oc.setTemplateName(exp.image);
+    Iterator itr = alpha.iterator();
+    while (itr.hasNext()) {
+      oc.addConstraint((Constraint)itr.next());
+    }
+    list.Add(oc);
+    alpha.Clear();
+    exp = null;
+  }
+}
+
+void temporalPattern(ArrayList list) :
+{
+  Token exp;
+  Token exp2;
+  Object etime;
+  Object itime;
+  Object nested = null;
+  ArrayList alpha = new ArrayList();
+  ObjectCondition oc = null;
+  TemporalCondition tmpc = null;
+  ArrayList parms = new ArrayList();
+}
+{
+  // (temporal ?binding (relative-time n) (person (name "me") ) )
+  LOOKAHEAD(<BIND> <LBRACE> <RELATIVETIME>)
+  exp2 = <BIND> 
+  <LBRACE> <RELATIVETIME> etime = typeExpr() <RBRACE> 
+  <LBRACE> exp = <IDENTIFIER> ((templatePatterns(alpha))+)? <RBRACE>
+  {
+    tmpc = new TemporalCondition();
+    tmpc.setTemplateName(exp.image);
+    tmpc.setVariableName(exp2.image.substring(1));
+    if (etime is BigDecimal) {
+      tmpc.setRelativeTime(((BigDecimal)etime).intValue());
+    }
+    Iterator itr = alpha.iterator();
+    while (itr.hasNext()) {
+      tmpc.addConstraint((Constraint)itr.next());
+    }
+    list.Add(tmpc);
+    alpha.Clear();
+    exp = null;
+  }
+|
+  // (temporal ?binding (interval-time n) (relative-time n) (person (name "me") ) )
+  exp2 = <BIND> 
+  <LBRACE> <INTERVALTIME> itime = typeExpr() (<LBRACE> (valueParams(parms))+ <RBRACE>)? <RBRACE>
+  <LBRACE> <RELATIVETIME> etime = typeExpr() <RBRACE>
+  <LBRACE> exp = <IDENTIFIER> ((templatePatterns(alpha))+)? <RBRACE>
+  {
+    tmpc = new TemporalCondition();
+    tmpc.setTemplateName(exp.image);
+    tmpc.setVariableName(exp2.image.substring(1));
+    if (itime is BigDecimal) {
+      tmpc.setIntervalTime(((BigDecimal)itime).intValue());
+    }
+    if (etime is BigDecimal) {
+      tmpc.setRelativeTime(((BigDecimal)etime).intValue());
+    }
+    tmpc.addFunction(parms);
+    Iterator itr = alpha.iterator();
+    while (itr.hasNext()) {
+      tmpc.addConstraint((Constraint)itr.next());
+    }
+    list.Add(tmpc);
+    alpha.Clear();
+    exp = null;
+  }
+}
+
+void templatePatterns(ArrayList list) :
+{
+  Token exp = null;
+}
+{
+  // (template (slot value) )
+  <LBRACE> exp = <IDENTIFIER> propertyType(list,exp) <RBRACE>
+  {
+    exp = null;
+  }
+}
+
+void propertyType(ArrayList list, Token identifier) :
+{
+  Token id = null;
+  Object body = null;
+  Token body2 = null;
+  boolean bval = false;
+  LiteralConstraint vc;
+  BoundConstraint bc;
+  OrLiteralConstraint orc;
+  AndLiteralConstraint andc;
+  ArrayList andor = new java.util.ArrayList();
+  MultiValue mv = null;
+}
+{
+  // (slot ?binding&:(> ?binding 3) )
+  LOOKAHEAD(<BIND2>) predicateFunc(list,identifier)
+  {
+    // do nothing
+  }
+|
+  // multislot bind
+  LOOKAHEAD(<BIND4>) body2 = <BIND4>
+  {
+    if (body2 != null) {
+      bc = new BoundConstraint();
+      bc.setName(identifier.image);
+      bc.Value = body2.image.substring(2);
+      bc.setIsMultislot(true);
+      list.Add(bc);
+    }
+  }
+|
+  // (slot ?binding)
+  LOOKAHEAD(<BIND><RBRACE>) body2 = <BIND>
+  {
+    if (body2 != null) {
+      bc = new BoundConstraint();
+      bc.setName(identifier.image);
+      bc.Value = body2.image.substring(1);
+      list.Add(bc);
+    }
+  }
+|
+  // (slot ~?binding)
+  LOOKAHEAD(<TILDA><BIND><RBRACE>) <TILDA> body2 = <BIND>
+  {
+    if (body2 != null) {
+      bc = new BoundConstraint();
+      bc.setName(identifier.image);
+      bc.Value = body2.image.substring(1);
+      bc.setNegated(true);
+      list.Add(bc);
+    }
+  }
+|
+  LOOKAHEAD((<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)<OR2>) body = typeExpr() 
+    (<OR2> orType(andor))+
+  {
+    if (body != null) {
+      orc = new OrLiteralConstraint();
+      orc.setName(identifier.image);
+      mv = new MultiValue(body);
+      orc.addValue(mv);
+      orc.addValues(andor);
+      list.Add(orc);
+    }
+  }
+|
+  LOOKAHEAD(<TILDA>(<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)<OR2>) <TILDA> body = typeExpr() 
+    (<OR2> orType(andor))+
+  {
+    if (body != null) {
+      orc = new OrLiteralConstraint();
+      orc.setName(identifier.image);
+      mv = new MultiValue(body);
+      mv.setNegated(true);
+      orc.addValue(mv);
+      orc.addValues(andor);
+      list.Add(orc);
+    }
+  }
+|
+  // also handles intrafact comparison of bindings
+  LOOKAHEAD((<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>|<BIND>)<AND2>) body = bindTypeExpr() 
+    (<AND2> andType(andor))+
+  {
+    if (body != null) {
+      if (body is String && ((String)body).startsWith("?") ) {
+        bc = new BoundConstraint();
+        bc.setName(identifier.image);
+        bc.Value =  ((String)body).substring(1) ;
+        bc.setIntraFactJoin(true);
+        bc.addIntrFactJoin(andor);
+        list.Add(bc);
+      } else {
+        andc = new AndLiteralConstraint();
+        andc.setName(identifier.image);
+        mv = new MultiValue(body);
+        andc.addValue(mv);
+        andc.addValues(andor);
+        list.Add(andc);
+      }
+    }
+  }
+|
+  LOOKAHEAD(<TILDA>(<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)<AND2>) <TILDA> body = typeExpr() 
+    (<AND2> andType(andor))+
+  {
+    if (body != null) {
+      andc = new AndLiteralConstraint();
+      andc.setName(identifier.image);
+      mv = new MultiValue(body);
+      mv.setNegated(true);
+      andc.addValue(mv);
+      andc.addValues(andor);
+      list.Add(andc);
+    }
+  }
+|
+  LOOKAHEAD(<TILDA>(<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)) <TILDA> body = typeExpr()
+  {
+    if (body != null) {
+      vc = new LiteralConstraint();
+      vc.setName(identifier.image);
+      vc.Value = body;
+      vc.setNegated(true);
+      list.Add(vc);
+    }
+  }
+|
+  // (slot value)
+  LOOKAHEAD(<IDENTIFIER>) id = <IDENTIFIER>
+  {
+    if (id != null) {
+      vc = new LiteralConstraint();
+      vc.setName(identifier.image);
+      vc.Value = id.image;
+      list.Add(vc);
+    }
+  }
+|
+  LOOKAHEAD(<TILDA><IDENTIFIER>) <TILDA> id = <IDENTIFIER>
+  {
+    if (id != null) {
+      vc = new LiteralConstraint();
+      vc.setName(identifier.image);
+      vc.Value = id.image;
+      vc.setNegated(true);
+      list.Add(vc);
+    }
+  }
+|
+  body = typeExpr()
+  {
+    if (body != null) {
+      vc = new LiteralConstraint();
+      vc.setName(identifier.image);
+      vc.Value = body;
+      list.Add(vc);
+    }
+  }
+|
+  bval = trueFalse()
+  {
+    vc = new LiteralConstraint();
+      vc.setName(identifier.image);
+      vc.Value =  new Boolean(bval);
+      list.Add(vc);
+  }  
+}
+
+// either a bind or typeExpr
+Object bindTypeExpr() :
+{
+  Token body = null;
+  Object value = null;
+}
+{
+  LOOKAHEAD(<BIND>) body = <BIND>
+  {
+    return body.image;
+  }
+|
+  LOOKAHEAD( (<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>) ) value = typeExpr()
+  {
+    return value;
+  }
+}
+
+// need to enhance to handling bindings
+void andType(ArrayList list) :
+{
+  Token body = null;
+  Object val = null;
+  MultiValue mv = null;
+  BoundConstraint bc;
+}
+{
+  LOOKAHEAD(<IDENTIFIER>) body = <IDENTIFIER>
+  {
+    if (body != null) {
+      mv = new MultiValue(body.image);
+      list.Add(mv);
+    }
+  }
+|
+  LOOKAHEAD(<TILDA>(<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)) <TILDA> val = typeExpr()
+  {
+    if (val != null) {
+      mv = new MultiValue(val,true);
+      list.Add(mv);
+    }
+  }
+|
+  // a binding ?bind
+  body = <BIND>
+  {
+    bc = new BoundConstraint();
+    bc.Value =  body.image.substring(1);
+    list.Add(bc);
+  }
+|
+  // a negated binding ~?bind
+  <TILDA> body = <BIND>
+  {
+    bc = new BoundConstraint();
+    bc.Value =  body.image.substring(1);
+    bc.setNegated(true);
+    list.Add(bc);
+  }
+|
+  val = typeExpr()
+  {
+    if (val != null) {
+      mv = new MultiValue(val);
+      list.Add(mv);
+    }
+  }
+}
+
+void orType(ArrayList list) :
+{
+  Token body = null;
+  Object val = null;
+  MultiValue mv = null;
+}
+{
+  LOOKAHEAD(<IDENTIFIER>) body = <IDENTIFIER>
+  {
+    if (body != null) {
+      mv = new MultiValue(body.image);
+      list.Add(mv);
+    }
+  }
+|
+  LOOKAHEAD(<TILDA>(<STRING_LITERAL>|<INTEGER_LITERAL>|<FLOATING_POINT_LITERAL>)) <TILDA> val = typeExpr()
+  {
+    if (val != null) {
+      mv = new MultiValue(val,true);
+      list.Add(mv);
+    }
+  }
+|
+  val = typeExpr()
+  {
+    if (val != null) {
+      mv = new MultiValue(val);
+      list.Add(mv);
+    }
+  }
+}
+
+void predicateFunc(ArrayList list, Token identifier) :
+{
+  Token varname = null;
+  String func = null;
+  ArrayList parms = new ArrayList();
+  Token bind = null;
+  Token val = null;
+}
+{
+  varname = <BIND2> <LBRACE> func = functionName() bind = <BIND> actionParams(parms) <RBRACE>
+  {
+    PredicateConstraint predc = new PredicateConstraint();
+    predc.setName(identifier.image);
+    predc.setVariableName(
+      varname.image.substring(1,varname.image.length() -2));
+    predc.setFunctionName(func);
+    BoundParam bp = new BoundParam();
+    bp.setVariableName(bind.image);
+    predc.addParameter(bp);
+    predc.addParameters(parms);
+    list.Add(predc);
+  }
+}
+
+String functionName() :
+{
+  Token fname = null;
+}
+{
+  fname = <IDENTIFIER>
+  {
+    return fname.image;
+  }
+|
+  (fname = <PLUS>|
+   fname = <MINUS>|
+   fname = <MULTIPLY>|
+   fname = <DIVIDE>|
+   fname = <GT1>|
+   fname = <GT2>|
+   fname = <LT1>|
+   fname = <LT2>|
+   fname = <EQ1>|
+   fname = <EQ2>|
+   fname = <LE1>|
+   fname = <LE2>|
+   fname = <GE1>|
+   fname = <GE2>)
+  {
+    return fname.image;
+  }
+}
+
+void arrow() :
+{
+  Token exp;
+}
+{
+  exp = <ARROW>
+  {
+    exp = null;
+  }
+}
+
+void ruleActions(ArrayList list) :
+{
+}
+{
+  ((<LBRACE> ruleAction(list) <RBRACE>)+)?
+  {
+  }
+}
+
+void ruleAction(ArrayList list) :
+{
+  Object exp;
+}
+{
+  exp = expr()
+  {
+    list.Add(exp);
+  }
+}
+
+void actionParams(ArrayList list) :
+{
+  Object exp;
+  ValueParam vp = null;
+}
+{
+  exp = <BIND>
+  {
+    if (exp is Token) {
+      BoundParam bp = new BoundParam();
+      bp.VariableName = ((Token)exp).image.substring(1);
+      list.Add(bp);
+    }
+  }
+|
+  exp = typeExpr()
+  {
+    vp = new ValueParam();
+    if (exp is Token) {
+      vp.Value =  ((Token)exp).image;
+    } else {
+      vp.Value = exp;
+    }
+    if (exp is long) {
+      vp.ValueType = Constants.LONG_PRIM_TYPE;
+    } else if (exp is float) {
+      vp.ValueType = Constants.DOUBLE_PRIM_TYPE;
+    } else if (exp is String) {
+      vp.ValueType = Constants.STRING_TYPE;
+    }
+    list.Add(vp);
+  }
+|
+  exp = <IDENTIFIER>
+  {
+    vp = new ValueParam();
+    vp.ValueType = Constants.STRING_TYPE;
+    if (exp is Token) {
+      vp.Value =  ((Token)exp).image;
+    } else {
+      vp.Value = exp;
+    }
+    list.Add(vp);
+  }
+}
