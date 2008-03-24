@@ -1,0 +1,1067 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D196D14-9007-49A1-91E4-6388B7953927}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Creshendo</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Creshendo</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>Creshendo.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\Math\Abs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\CreshendoResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreshendoResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Collections\GenericHashMap.cs" />
+    <Compile Include="Util\Collections\IGenericMap.cs" />
+    <Compile Include="Util\Collections\IHashMapEntry.cs" />
+    <Compile Include="Util\Collections\ProducerConsumerQueue.cs" />
+    <Compile Include="Util\EventsHelper.cs" />
+    <Compile Include="Util\GenericEventHandler.cs" />
+    <Compile Include="Util\Logging\ILogger.cs" />
+    <Compile Include="Util\Logging\TraceLogger.cs" />
+    <Compile Include="Util\Messagerouter\CommandEventArgs.cs" />
+    <Compile Include="Util\Messagerouter\DelegateImplementations.cs" />
+    <Compile Include="Util\Messagerouter\MessageRouterImp.cs" />
+    <Compile Include="Util\Parser\Clips2\CLIPSParser.cs" />
+    <Compile Include="Util\Parser\Clips2\CLIPSParserConstants.cs" />
+    <Compile Include="Util\Parser\Clips2\CLIPSParserTokenManager.cs" />
+    <Compile Include="Util\Parser\Clips2\ParseException.cs" />
+    <Compile Include="Util\Parser\Clips2\ParserUtils.cs" />
+    <Compile Include="Util\Parser\Clips2\SimpleCharStream.cs" />
+    <Compile Include="Util\Parser\Clips2\Token.cs" />
+    <Compile Include="Util\Parser\Clips2\TokenMgrError.cs" />
+    <Compile Include="Util\PropertyChangedHandler.cs" />
+    <Compile Include="Util\Rete\AbstractActivationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\AbstractCommunicationChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AbstractCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\AbstractConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AbstractMessageEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AbstractParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AbstractSlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AbstractTemporalNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Acos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IActivation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IActivationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Add.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Agenda.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IAlphaMemory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AlphaMemoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AlphaNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AlphaNodeAnd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AlphaNodeOr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\AlphaNodePredConstr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\IAnalysis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\AndCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\AndLiteralConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\AnyEqFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Asin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Exception\AssertException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\AssertFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\AssertTemporalFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Atan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BaseAlpha.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BaseAlpha2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BaseJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BaseNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BasicActivation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\BatchFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IBetaMemory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BetaMemoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\BindFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Binding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Binding2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BindValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\BooleanFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\BoundConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\BoundParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NTestNode.cs" />
+    <Compile Include="Util\Rete\Strategies\BreadthStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Ceil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ClassnameResolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ClearFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\CLIPSInterpreter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\CLIPSLanguageAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Collections\CollectionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\ICommunicationChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\CompileMessageEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ICompilerListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\CompilerProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Exception\CompileRuleException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\IComplexity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\CompositeIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\ICondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\IConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Const.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Constants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\IConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Exception\ConversionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ConversionUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Cos.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\DefaultComplexity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Logging\Log4netLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\DefaultReturnValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\DefaultReturnVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\DefaultRuleCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\DefaultWM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Defclass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DefclassFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Deffact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\DeffactSort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DeffunctionFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DeffunctionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DefglobalFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\DefglobalMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DefinstanceFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Defmodule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DefmoduleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\Defrule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DefruleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Deftemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\DeftemplateFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Degrees.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Strategies\DepthStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Divide.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\EchoFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\EngineEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\EngineEventListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\IEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\EqFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\EqHashIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\EqualityIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\ErrorSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\EvalFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Evaluate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Evenp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\EventCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Exception\ExecuteException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\ExistCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\ExistConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ExistJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ExistJoinFrst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ExistNeqJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ExistPredJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ExitFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Exp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IFact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\FactComparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\FactsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\FactTemplateComparator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Arrays.cs" />
+    <Compile Include="Util\BeanFilter.cs" />
+    <Compile Include="Util\BeanInfo.cs" />
+    <Compile Include="Util\FactUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\FalseFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\FireFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Floor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\FocusFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\IFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\FunctionAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\IFunctionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\FunctionParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\FunctionParam2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Multiply.cs" />
+    <Compile Include="Functions\Math\Oddp.cs" />
+    <Compile Include="Functions\GarbageCollectFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\Util\GenerateFacts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\GenerateFactsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\GetCurrentModuleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\GetMembertFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Greater.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\GreaterOrEqual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedAlphaMemoryImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedEqBNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedEqNJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedNeqAlphaMemory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedNotEqBNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\HashedNotEqNJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IHashIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\IfFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IFLIANode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Index.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\InitialFact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\InstanceofFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\InterestType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\InterpretedFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\IOFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\IOUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\JavaFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\ILanguageAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\LanguageNotSupportedException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\LazyAgendaFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Less.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\LessOrEqual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\LIANode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\LinkedActivation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\LinkedActivationList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ListDirectoryFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ListFunctionsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ListTemplatesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\LiteralConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\LoadFactsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\LoadFunctionGroupFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\LoadFunctionsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\LoadPackageFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MatchesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\MathFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Max.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MemberFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MemberTestFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MemoryFreeFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MemoryTotalFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MemoryUsedFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\MessageEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Messages.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\MillisecondTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Min.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ModifyFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IModule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ModulesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\MultiSlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\MultiValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\NeqFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\NewFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NoAgendaTNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NoAgendaTNode2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\NodeUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NoMemAnd.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NoMemANode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NoMemOr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NotEqHashIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\NotFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NotJoin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NotJoinFrst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\NSFact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\ObjectCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\ObjectConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ObjectTypeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\OrCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\OrderedFactTypeNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\OrLiteralConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ParameterUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Parser\IParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Pow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\PPrintNodeFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\PPrintRuleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\PPrintTemplateFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\PredicateBNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\PredicateConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IPrettyPrint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\PrintFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\PrintProfileFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ProfileFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\ProfileStats.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Radians.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Random.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Strategies\RecencyStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ResetFactsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ResetFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ResetObjectsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Rete.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Exception\RetractException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\RetractFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IReturnValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IReturnVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\RightMatchesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Rint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\RootNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Round.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\IRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IRuleCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\RuleEngineFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\RuleProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\RulesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\SaveFactsFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\SetFocusFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\SetMembertFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Shell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ShellBoundParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ShellFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Sin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Slot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Slot2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\SlotParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\SpoolFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Sqrt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Strategies\Strategies.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\IStreamChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\StreamChannelImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Messagerouter\StringChannelImpl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringCompareFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringIndexFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringLengthFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringLowerFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\StringParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringReplaceFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringTrimFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\StringUpperFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\SubStringFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Subtract.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\ISummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\Math\Tan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ITemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\TemplatesFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\TemplateValidation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\TemporalCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\TemporalConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TemporalDeffact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TemporalEqNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ITemporalFact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TemporalHashedAlphaMem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TemporalTNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TerminalNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TerminalNode2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TerminalNode3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\TestCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\Compiler\TestConditionCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\TestNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\TestRuleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\TrueFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UnDefruleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UnDeftemplateFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UnProfileFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UnWatchFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\UsageFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\ValidateRuleFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Introspector.cs" />
+    <Compile Include="Util\MethodDescriptor.cs" />
+    <Compile Include="Util\ObjectFilter.cs" />
+    <Compile Include="Util\PropertyChangeEvent.cs" />
+    <Compile Include="Util\PropertyChangeListener.cs" />
+    <Compile Include="Util\PropertyDescriptor.cs" />
+    <Compile Include="Util\RuntimeException.cs" />
+    <Compile Include="Util\IValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ValueParam.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\VersionFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rule\WarningSummary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions\WatchFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\IWorkingMemory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Rete\ZJBetaNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CreshendoResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGeneratorEx</Generator>
+      <LastGenOutput>CreshendoResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

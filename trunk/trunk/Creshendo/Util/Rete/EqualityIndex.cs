@@ -1,0 +1,76 @@
+/*
+* Copyright 2002-2006 Peter Lin
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://ruleml-dev.sourceforge.net/
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+* 
+*/
+using System;
+
+namespace Creshendo.Util.Rete
+{
+    /// <author>  Peter Lin<p/>
+    /// *
+    /// EqualityIndex is used specifically for deffacts to check if 2 facts are
+    /// equal. By equal, we mean the values of the facts are equal.
+    /// 
+    /// </author>
+    [Serializable]
+    public class EqualityIndex
+    {
+        private Deffact fact = null;
+        private int hashCode_Renamed_Field;
+
+        /// <summary> 
+        /// </summary>
+        public EqualityIndex(Deffact facts) 
+        {
+            fact = facts;
+            calculateHash();
+        }
+
+        /// <summary> This is a very simple implementation that gets the slot hash from
+        /// the deffact.
+        /// </summary>
+        private void calculateHash()
+        {
+            hashCode_Renamed_Field = ((Deffact) fact).slotHash();
+        }
+
+        /// <summary> The implementation is similar to the index class.
+        /// </summary>
+        public override bool Equals(Object val)
+        {
+            if (this == val)
+            {
+                return true;
+            }
+            if (val == null || !(val is EqualityIndex))
+            {
+                return false;
+            }
+            EqualityIndex eval = (EqualityIndex) val;
+            if (eval.fact.Deftemplate != fact.Deftemplate)
+            {
+                return false;
+            }
+            return eval.fact.slotEquals(fact);
+        }
+
+        /// <summary> Method simply returns the cached GetHashCode.
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return hashCode_Renamed_Field;
+        }
+    }
+}

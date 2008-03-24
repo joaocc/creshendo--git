@@ -1,0 +1,1 @@
+java -classpath D:\Src\MinosseCC minossecc clips.jj
