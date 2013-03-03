@@ -1,15 +1,15 @@
 using System;
 using System.IO;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class Benchmarks : FileTestBase
     {
         /*
-        [Test]
+        [TestMethod]
         public void manners128()
         {
             long ts = DateTime.Now.Ticks;
@@ -28,7 +28,7 @@ namespace Creshendo.UnitTests
         }
         */
 
-        [Test]
+        [TestMethod]
         public void manners16()
         {
             long ts = DateTime.Now.Ticks;
@@ -48,7 +48,7 @@ namespace Creshendo.UnitTests
             //AppDomain.Unload(AppDomain.CurrentDomain);
         }
 
-        [Test]
+        [TestMethod]
         public void manners64()
         {
             long ts = DateTime.Now.Ticks;

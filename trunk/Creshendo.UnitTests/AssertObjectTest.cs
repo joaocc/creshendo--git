@@ -2,14 +2,14 @@ using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rete.Exception;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class AssertObjectTest
     {
-        [Test]
+        [TestMethod]
         public void testAssertTwoObjects()
         {
             Console.WriteLine("start testAssertTwoObjects");
@@ -58,7 +58,7 @@ namespace Creshendo.UnitTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithInterface()
         {
             Console.WriteLine("-----------------------------");
@@ -92,7 +92,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclass()
         {
             Console.WriteLine("start testAssertWithSubclass");
@@ -125,7 +125,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclass2()
         {
             Console.WriteLine("\nstart testAssertWithSubclass2");
@@ -159,7 +159,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclass3()
         {
             Console.WriteLine("\nstart testAssertWithSubclass3");
@@ -193,7 +193,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclassWithParent()
         {
             Console.WriteLine("\nstart testAssertWithSubclassWithParent");
@@ -227,7 +227,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclassWithParent2()
         {
             Console.WriteLine("\nstart testAssertWithSubclassWithParent2");
@@ -261,7 +261,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertWithSubclassWithParent3()
         {
             Console.WriteLine("\nstart testAssertWithSubclassWithParent3");
@@ -296,7 +296,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testRepeatedAssert()
         {
             Console.WriteLine("start testRepatedAssert");
@@ -352,7 +352,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testSimpleAssert()
         {
             Console.WriteLine("start testSimpleAssert");

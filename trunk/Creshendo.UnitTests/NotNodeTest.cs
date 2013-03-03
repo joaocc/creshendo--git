@@ -20,14 +20,14 @@ using Creshendo.UnitTests.Model;
 using Creshendo.Util.Collections;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rete.Exception;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class NotNodeTest
     {
-        [Test]
+        [TestMethod]
         public void testAssertAndRetract()
         {
             // first create a rule engine instance
@@ -121,7 +121,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertLeftMultiple()
         {
             // first create a rule engine instance
@@ -180,7 +180,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testAssertLeftOne()
         {
             // first create a rule engine instance
@@ -232,7 +232,7 @@ namespace Creshendo.UnitTests
          * Assert several object down the right input
          */
 
-        [Test]
+        [TestMethod]
         public void testAssertRightMultiple()
         {
             // first create a rule engine instance
@@ -291,7 +291,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateNode()
         {
             Rete engine = new Rete();
@@ -300,7 +300,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateNode2()
         {
             // first create a rule engine instance
@@ -331,7 +331,7 @@ namespace Creshendo.UnitTests
          * Try asserting 10 objects and make sure the results are correct
          */
 
-        [Test]
+        [TestMethod]
         public void testMatch()
         {
             // first create a rule engine instance
@@ -415,7 +415,7 @@ namespace Creshendo.UnitTests
          * should have a match count of zero.
          */
 
-        [Test]
+        [TestMethod]
         public void testNoMatch()
         {
             // first create a rule engine instance
@@ -501,7 +501,7 @@ namespace Creshendo.UnitTests
          * propogated and retracted.
          */
 
-        [Test]
+        [TestMethod]
         public void testPropogateChange()
         {
             Console.WriteLine("testPropogateChange");
@@ -616,7 +616,7 @@ namespace Creshendo.UnitTests
          * goes from zero to one or one to zero.
          */
 
-        [Test]
+        [TestMethod]
         public void testPropogateChange2()
         {
             Console.WriteLine("testPropogateChange2");
@@ -746,7 +746,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testPropogateNoMatch()
         {
             Console.WriteLine("testPropogateNoMatch");

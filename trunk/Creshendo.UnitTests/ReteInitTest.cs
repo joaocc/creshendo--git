@@ -16,21 +16,21 @@
  */
 using System;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class ReteInitTest
     {
-        [Test]
+        [TestMethod]
         public void testInit()
         {
             Rete engine = new Rete();
             Assert.IsNotNull(engine);
         }
 
-        [Test]
+        [TestMethod]
         public void testInitModule()
         {
             Rete engine = new Rete();
@@ -47,7 +47,7 @@ namespace Creshendo.UnitTests
          *
          */
 
-        [Test]
+        [TestMethod]
         public void testNodeId()
         {
             Rete engine = new Rete();

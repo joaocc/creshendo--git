@@ -35,14 +35,14 @@ using System;
 using System.Collections;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class SimpleJoinTest
     {
-        [Test]
+        [TestMethod]
         public void testFiveRules()
         {
             int objCount = 25000;

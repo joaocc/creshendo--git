@@ -21,14 +21,14 @@ using Creshendo.UnitTests.Model;
 using Creshendo.Util.Parser.Clips2;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rete.Exception;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class AssertWRules : FileTestBase
     {
-        [Test]
+        [TestMethod]
         public void MainTest()
         {
             String rulefile = getRoot("account_5.clp");

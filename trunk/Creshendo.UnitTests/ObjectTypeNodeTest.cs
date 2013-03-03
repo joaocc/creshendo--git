@@ -14,14 +14,14 @@
  * limitations under the License.
  * 
  */
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class ObjectTypeNodeTest
     {
-        [Test]
+        [TestMethod]
         public void testCreate()
         {
             Assert.IsTrue(true);

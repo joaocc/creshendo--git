@@ -1,19 +1,19 @@
 using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class BasicTest
     {
-        [Test]
+        [TestMethod]
         public void First()
         {
         }
 
-        [Test]
+        [TestMethod]
         public void testOneSlot()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -29,7 +29,7 @@ namespace Creshendo.UnitTests
             Assert.IsNotNull(an.ToString(), "Should have a value.");
         }
 
-        [Test]
+        [TestMethod]
         public void testTwoSlots()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

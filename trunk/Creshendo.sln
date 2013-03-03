@@ -8,10 +8,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creshendo.Console", "Creshe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creshendo.Shell", "Creshendo.Shell\Creshendo.Shell.csproj", "{8BEC74CD-2D37-44AE-A3AC-E62658736C54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Creshendo", "Test.Creshendo\Test.Creshendo.csproj", "{DD089743-D48A-421D-AE91-1CBC07F8D4A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4EC18C7A-257C-4DC6-BC10-72EE86FDFF99}"
+	ProjectSection(SolutionItems) = preProject
+		Creshendo.vsmdi = Creshendo.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Creshendo.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +46,10 @@ Global
 		{8BEC74CD-2D37-44AE-A3AC-E62658736C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BEC74CD-2D37-44AE-A3AC-E62658736C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BEC74CD-2D37-44AE-A3AC-E62658736C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD089743-D48A-421D-AE91-1CBC07F8D4A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD089743-D48A-421D-AE91-1CBC07F8D4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD089743-D48A-421D-AE91-1CBC07F8D4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD089743-D48A-421D-AE91-1CBC07F8D4A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,26 +17,26 @@
 using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class BindingTest
     {
-        [TestFixtureSetUp]
+        [TestInitialize]
         public void setUp()
         {
             Console.WriteLine("this test does not do any setup");
         }
 
-        [TestFixtureTearDown]
+        [TestCleanup]
         public void tearDown()
         {
             Console.WriteLine("this test does not do any teardown");
         }
 
-        [Test]
+        [TestMethod]
         public void testSingleBinding()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -57,7 +57,7 @@ namespace Creshendo.UnitTests
             Assert.IsNotNull(btnode.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testThreeBinding()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -93,7 +93,7 @@ namespace Creshendo.UnitTests
             Assert.IsNotNull(btnode.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testThreeBinding2()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -129,7 +129,7 @@ namespace Creshendo.UnitTests
             Assert.IsNotNull(btnode.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testTwoBinding()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

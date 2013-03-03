@@ -21,14 +21,14 @@ using Creshendo.UnitTests.Model;
 using Creshendo.Util.Parser.Clips2;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rete.Exception;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class RulesetBenchmark2 : FileTestBase
     {
-        [Test]
+        [TestMethod]
         public void mainTest()
         {
             String rulefile = getRoot("share_5nodes.clp");

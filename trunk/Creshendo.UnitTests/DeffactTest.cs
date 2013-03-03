@@ -17,14 +17,14 @@
 using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class DeffactTest
     {
-        [Test]
+        [TestMethod]
         public void testCreateDeffact()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -46,7 +46,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(fact.toFactString());
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateDeffactWithNull()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -68,7 +68,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(fact.toFactString());
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateDeffactWithPrimitive()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

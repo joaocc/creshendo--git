@@ -17,11 +17,11 @@
 using System;
 using System.IO;
 using System.Text;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class SimpleDataGenerator : FileTestBase
     {
         // 10 country codes
@@ -121,7 +121,7 @@ namespace Creshendo.UnitTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void mainTest()
         {
             string file = "generated_file.clp";

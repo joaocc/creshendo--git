@@ -1,0 +1,6 @@
+(batch ./benchmark/parser/templates.clp)
+(bind ?*start* (ms-time) )
+(batch ./benchmark/parser/100K.dat)
+(bind ?*end* (ms-time) )
+(bind ?et (- ?*end* ?*start*) )
+(printout t "elpasedTime=" ?et crlf)
