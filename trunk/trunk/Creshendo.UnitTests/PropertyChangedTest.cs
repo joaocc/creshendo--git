@@ -2,11 +2,11 @@ using System;
 using System.Reflection;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class PropertyChangedTest
     {
         private int eCnt = 0;
@@ -17,7 +17,7 @@ namespace Creshendo.UnitTests
             eCnt++;
         }
 
-        [Test]
+        [TestMethod]
         public void BasicTest()
         {
             eCnt = 0;
@@ -36,7 +36,7 @@ namespace Creshendo.UnitTests
             Assert.AreEqual(0, eCnt);
         }
 
-        [Test]
+        [TestMethod]
         public void ReflectionTest()
         {
             eCnt = 0;

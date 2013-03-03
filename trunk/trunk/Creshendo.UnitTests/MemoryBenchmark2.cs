@@ -20,11 +20,11 @@ using System.IO;
 using Creshendo.Util.Parser.Clips2;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rete.Exception;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    //[TestFixture]
+    //[TestClass]
     public class MemoryBenchmark2 : FileTestBase
     {
         public static void main(String[] args)

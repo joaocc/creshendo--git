@@ -19,14 +19,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class DeclareClassTest
     {
-        [Test]
+        [TestMethod]
         public void testDeclareClass()
         {
             Rete engine = new Rete();
@@ -47,7 +47,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareClass2()
         {
             Rete engine = new Rete();
@@ -69,7 +69,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareClassInheritance()
         {
             Console.WriteLine("\ntestDeclareClassInheritance");
@@ -92,7 +92,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareClassInheritance2()
         {
             Console.WriteLine("\ntestDeclareClassInheritance2");
@@ -115,7 +115,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareClassInheritance3()
         {
             Console.WriteLine("\ntestDeclareClassInheritance3");
@@ -138,7 +138,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareClassInheritance4()
         {
             Console.WriteLine("\ntestDeclareClassInheritance3");
@@ -162,7 +162,7 @@ namespace Creshendo.UnitTests
             engine.close();
         }
 
-        [Test]
+        [TestMethod]
         public void testDeftemplate()
         {
             Rete engine = new Rete();

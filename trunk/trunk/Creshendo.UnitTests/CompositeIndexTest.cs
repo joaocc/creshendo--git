@@ -18,14 +18,14 @@ using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Collections;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class CompositeIndexTest
     {
-        [Test]
+        [TestMethod]
         public void testEqual()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -50,7 +50,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(ci.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testIndex()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -94,7 +94,7 @@ namespace Creshendo.UnitTests
             Assert.IsFalse(map.ContainsKey(ci5));
         }
 
-        [Test]
+        [TestMethod]
         public void testIndex2()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -138,7 +138,7 @@ namespace Creshendo.UnitTests
             Assert.IsFalse(map.ContainsKey(ci5));
         }
 
-        [Test]
+        [TestMethod]
         public void testNil()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -163,7 +163,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(ci.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testNotEqual()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -189,7 +189,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(ci.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testNotNil()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

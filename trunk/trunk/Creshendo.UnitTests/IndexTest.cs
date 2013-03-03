@@ -1,14 +1,14 @@
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Collections;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class IndexTest
     {
-        [Test]
+        [TestMethod]
         public void testFiveFacts()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -87,7 +87,7 @@ namespace Creshendo.UnitTests
             Assert.AreEqual(true, in1.Equals(in2));
         }
 
-        [Test]
+        [TestMethod]
         public void testHashMapIndex()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -174,7 +174,7 @@ namespace Creshendo.UnitTests
             Assert.AreEqual(true, map.ContainsKey(in2));
         }
 
-        [Test]
+        [TestMethod]
         public void testObjectEquals()
         {
             long l1 = 2;
@@ -182,7 +182,7 @@ namespace Creshendo.UnitTests
             Assert.AreEqual(l1, l2);
         }
 
-        [Test]
+        [TestMethod]
         public void testOneFact()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

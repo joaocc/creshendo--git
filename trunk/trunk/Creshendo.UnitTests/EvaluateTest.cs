@@ -16,14 +16,14 @@
  */
 using System;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class EvaluateTest
     {
-        [Test]
+        [TestMethod]
         public void testBoolean1()
         {
             Boolean t = true;
@@ -47,7 +47,7 @@ namespace Creshendo.UnitTests
             //Assert.IsFalse(Evaluate.evaluateEqual(f2, f3));
         }
 
-        [Test]
+        [TestMethod]
         public void testLess1()
         {
             Int32 int1 = Convert.ToInt32(1);
@@ -128,7 +128,7 @@ namespace Creshendo.UnitTests
                               Evaluate.evaluateLess(db1, db1));
         }
 
-        [Test]
+        [TestMethod]
         public void testLessEqual1()
         {
             Int32 int1 = Convert.ToInt32(1);
@@ -214,7 +214,7 @@ namespace Creshendo.UnitTests
          * it all works correctly
          */
 
-        [Test]
+        [TestMethod]
         public void testLessEqual2()
         {
             Console.WriteLine("testLessEqual2 -------");

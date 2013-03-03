@@ -9,14 +9,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rule;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class LoadRulesetTest : FileTestBase
     {
-        [Test]
+        [TestMethod]
         public void testLoadTest()
         {
             Rete engine = new Rete();

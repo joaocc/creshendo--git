@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rule;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class LoadRulesetWithJoinTest : FileTestBase
     {
-        [Test]
+        [TestMethod]
         public void testLoadJoinSample13()
         {
             Rete engine = new Rete();

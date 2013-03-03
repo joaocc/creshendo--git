@@ -19,14 +19,14 @@ using System.Collections;
 using System.IO;
 using Creshendo.Util.Parser.Clips2;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    //[TestFixture]
+    //[TestClass]
     public class MemoryBenchmark : FileTestBase
     {
-        //[Test]
+        //[TestMethod]
         public void mainTest()
         {
             String rulefile = getRoot("random_5_w_50Kdata.clp");

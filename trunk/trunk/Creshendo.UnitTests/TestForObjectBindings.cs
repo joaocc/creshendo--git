@@ -4,11 +4,11 @@ using System.Text;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
 using Creshendo.Util.Rule;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class TestForObjectBindings : FileTestBase
     {
         private Account GetAcct1()
@@ -91,7 +91,7 @@ namespace Creshendo.UnitTests
             return new MemoryStream(ASCIIEncoding.ASCII.GetBytes(sb.ToString()));
         }
 
-        [Test]
+        [TestMethod]
         public void BasicObjectBindingTest1()
         {
             long ts = DateTime.Now.Ticks;
@@ -127,7 +127,7 @@ namespace Creshendo.UnitTests
         }
 
 
-        [Test]
+        [TestMethod]
         public void ObjectBindingTest1()
         {
             long ts = DateTime.Now.Ticks;
@@ -155,7 +155,7 @@ namespace Creshendo.UnitTests
             //AppDomain.Unload(AppDomain.CurrentDomain);
         }
 
-        [Test]
+        [TestMethod]
         public void ObjectBindingTest2()
         {
             long ts = DateTime.Now.Ticks;

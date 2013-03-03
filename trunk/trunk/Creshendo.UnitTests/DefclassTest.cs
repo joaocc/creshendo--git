@@ -26,11 +26,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class DefclassTest
     {
         /**
@@ -42,14 +42,14 @@ namespace Creshendo.UnitTests
          * Test TestBean and get the BeanInfo
          */
 
-        [Test]
+        [TestMethod]
         public void testBeanInfo()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
             Assert.IsNotNull(dc.BeanInfo);
         }
 
-        [Test]
+        [TestMethod]
         public void testDeclareObject()
         {
             Rete engine = new Rete();
@@ -70,7 +70,7 @@ namespace Creshendo.UnitTests
          * Defclass can create a deftemplate for the given Defclass.
          */
 
-        [Test]
+        [TestMethod]
         public void testGetDeftemplate()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -86,7 +86,7 @@ namespace Creshendo.UnitTests
          * Test defclass using an interface, which defines a domain object
          */
 
-        [Test]
+        [TestMethod]
         public void testInterface()
         {
             Defclass dc = new Defclass(typeof (IAccount));
@@ -100,7 +100,7 @@ namespace Creshendo.UnitTests
          * Test defclass using an object that implements an interface
          */
 
-        [Test]
+        [TestMethod]
         public void testInterfaceSlot()
         {
             Defclass dc = new Defclass(typeof (IAccount));
@@ -110,7 +110,7 @@ namespace Creshendo.UnitTests
             Assert.AreEqual(14, dtemp.AllSlots.Length);
         }
 
-        [Test]
+        [TestMethod]
         public void testJavaBean()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -122,14 +122,14 @@ namespace Creshendo.UnitTests
          * listener.
          */
 
-        [Test]
+        [TestMethod]
         public void testNonJavaBeans()
         {
             Defclass dc = new Defclass(typeof (TestBean));
             Assert.AreEqual(false, dc.JavaBean);
         }
 
-        [Test]
+        [TestMethod]
         public void testObject()
         {
             Defclass dc = new Defclass(typeof (Account));
@@ -138,7 +138,7 @@ namespace Creshendo.UnitTests
             Assert.IsNotNull(dtemp);
         }
 
-        [Test]
+        [TestMethod]
         public void testPropertyCount()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -160,7 +160,7 @@ namespace Creshendo.UnitTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void testPropertyDescriptor()
         {
             Defclass dc = new Defclass(typeof (TestBean2));

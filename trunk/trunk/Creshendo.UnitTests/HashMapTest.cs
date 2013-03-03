@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using Creshendo.UnitTests.Support;
 using Creshendo.Util.Collections;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class HashMapTest
     {
-        [Test]
+        [TestMethod]
         public void HashPerformance()
         {
             //int[] series = new int[] {1000, 10000, 100000, 1000000, 10000000};
@@ -35,7 +35,7 @@ namespace Creshendo.UnitTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void GenericHashPerformance()
         {
             //int[] series = new int[] {1000, 10000, 100000, 1000000, 10000000};

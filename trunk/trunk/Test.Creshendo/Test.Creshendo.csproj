@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD089743-D48A-421D-AE91-1CBC07F8D4A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.Creshendo</RootNamespace>
+    <AssemblyName>Test.Creshendo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssertObjectTest.cs" />
+    <Compile Include="AssertRetractTest.cs" />
+    <Compile Include="AssertWRules.cs" />
+    <Compile Include="BasicTest.cs" />
+    <Compile Include="Benchmarks.cs" />
+    <Compile Include="BindingTest.cs" />
+    <Compile Include="CompositeIndexTest.cs" />
+    <Compile Include="DeclareClassTest.cs" />
+    <Compile Include="DefclassTest.cs" />
+    <Compile Include="DeffactTest.cs" />
+    <Compile Include="DeftemplateTest.cs" />
+    <Compile Include="EvaluateTest.cs" />
+    <Compile Include="FileTestBase.cs" />
+    <Compile Include="HashMapTest.cs" />
+    <Compile Include="IndexTest.cs" />
+    <Compile Include="LoadRulesetTest.cs" />
+    <Compile Include="LoadRulesetWithJoinTest.cs" />
+    <Compile Include="MeasureDeffact.cs" />
+    <Compile Include="MemoryBenchmark.cs" />
+    <Compile Include="MemoryBenchmark2.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Account2.cs" />
+    <Compile Include="Model\Account3.cs" />
+    <Compile Include="Model\Account4.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\BackupAccount.cs" />
+    <Compile Include="Model\Basic.cs" />
+    <Compile Include="Model\DeletedAccount.cs" />
+    <Compile Include="Model\GenerateJoinRule.cs" />
+    <Compile Include="Model\GroupTransaction.cs" />
+    <Compile Include="Model\IAccount.cs" />
+    <Compile Include="Model\Security.cs" />
+    <Compile Include="Model\SubTransaction.cs" />
+    <Compile Include="Model\TestBean.cs" />
+    <Compile Include="Model\TestBean2.cs" />
+    <Compile Include="Model\TestBean3.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="NotNodeTest.cs" />
+    <Compile Include="ObjectTypeNodeTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyChangedTest.cs" />
+    <Compile Include="ReteInitTest.cs" />
+    <Compile Include="RulesetBenchmark2.cs" />
+    <Compile Include="SimpleDataGenerator.cs" />
+    <Compile Include="SimpleJoinTest.cs" />
+    <Compile Include="Support\HashMapBenchmark.cs" />
+    <Compile Include="TestForObjectBindings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Creshendo\Creshendo.csproj">
+      <Project>{9D196D14-9007-49A1-91E4-6388B7953927}</Project>
+      <Name>Creshendo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\100K-load.dat" />
+    <None Include="Data\100K.dat" />
+    <None Include="Data\128guest.dat" />
+    <None Include="Data\16guest.dat" />
+    <None Include="Data\64guest.dat" />
+    <None Include="Data\account_5.clp" />
+    <None Include="Data\generated_file.clp" />
+    <None Include="Data\generate_facts_sample1.clp" />
+    <None Include="Data\generate_facts_sample2.clp" />
+    <None Include="Data\generate_facts_sample3.clp" />
+    <None Include="Data\generate_facts_sample4.clp" />
+    <None Include="Data\join_sample13.clp" />
+    <None Include="Data\manners128guestsd.clp" />
+    <None Include="Data\manners16guestsd.clp" />
+    <None Include="Data\manners64guests.clp" />
+    <None Include="Data\random_5_w_50Kdata.clp" />
+    <None Include="Data\run-100k.clp" />
+    <None Include="Data\runload-100k.clp" />
+    <None Include="Data\share_5nodes.clp" />
+    <None Include="Data\templates.clp" />
+    <None Include="Data\test.clp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

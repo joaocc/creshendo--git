@@ -17,11 +17,11 @@
 using System;
 using Creshendo.UnitTests.Model;
 using Creshendo.Util.Rete;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Creshendo.UnitTests
 {
-    [TestFixture]
+    [TestClass]
     public class DeftemplateTest
     {
         /**
@@ -29,7 +29,7 @@ namespace Creshendo.UnitTests
          * uses TestBean2 to create a Defclass.
          */
 
-        [Test]
+        [TestMethod]
         public void testCreateFactFromInstance()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -48,7 +48,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(fact.toFactString());
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateTemplate2()
         {
             Defclass dc = new Defclass(typeof (Account));
@@ -58,7 +58,7 @@ namespace Creshendo.UnitTests
             Console.WriteLine(dtemp.toPPString());
         }
 
-        [Test]
+        [TestMethod]
         public void testCreateTemplateFromClass()
         {
             Defclass dc = new Defclass(typeof (TestBean2));
@@ -73,7 +73,7 @@ namespace Creshendo.UnitTests
          * toPPEString.
          */
 
-        [Test]
+        [TestMethod]
         public void testCreateTemplateFromSlots()
         {
             Slot[] slots = new Slot[4];
@@ -115,7 +115,7 @@ namespace Creshendo.UnitTests
          * sure that we can efficiently update facts using the slot id.
          */
 
-        [Test]
+        [TestMethod]
         public void testCreateTemplateSlot()
         {
             String acc = "account";
@@ -134,7 +134,7 @@ namespace Creshendo.UnitTests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void testSlotID()
         {
             Slot[] slots = new Slot[4];
