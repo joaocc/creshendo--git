@@ -1,0 +1,12 @@
+Testing deffunction:
+This is a deffunction
+This is a simple argument: foo
+This is a wildcard argument: (foo bar baz)
+This is a wildcard argument: ()
+OK
+This is mixed arguments: foo (bar baz)
+Testing functional return values: 6
+Testing simple return values: foo
+Testing return values in the middle of a block: 21
+Testing return values in the middle of a foreach: TRUE
+Test done.

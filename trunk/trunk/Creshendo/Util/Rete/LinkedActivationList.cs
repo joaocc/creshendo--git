@@ -15,6 +15,7 @@
 * 
 */
 using System;
+using Creshendo.Util.Rete.Strategies;
 
 namespace Creshendo.Util.Rete
 {
@@ -37,6 +38,7 @@ namespace Creshendo.Util.Rete
 
         public LinkedActivationList()
         {
+            stratey = new DepthStrategy(); 
         }
 
         public override bool AscendingOrder

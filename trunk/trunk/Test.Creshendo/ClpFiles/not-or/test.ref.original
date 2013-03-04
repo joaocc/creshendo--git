@@ -1,0 +1,26 @@
+Testing (not (and (or))) :
+MAIN::rule-1
+For a total of 1 rules.
+(defrule MAIN::rule-1 
+   (MAIN::initial-fact) 
+   (not (and (MAIN::x) (MAIN::y))) 
+   (not (and (MAIN::x) (MAIN::z))) 
+   =>)
+ ==> Focus MAIN
+ ==> f-0 (MAIN::initial-fact)
+==> Activation: MAIN::rule-1 :  f-0,,
+ ==> f-1 (MAIN::x)
+ ==> f-2 (MAIN::y)
+<== Activation: MAIN::rule-1 :  f-0,,
+ ==> f-3 (MAIN::z)
+ <== f-1 (MAIN::x)
+==> Activation: MAIN::rule-1 :  f-0,,
+ ==> f-4 (MAIN::x)
+<== Activation: MAIN::rule-1 :  f-0,,
+ <== f-2 (MAIN::y)
+==> Activation: MAIN::rule-1 :  f-0,,
+ ==> f-5 (MAIN::y)
+<== Activation: MAIN::rule-1 :  f-0,,
+ <== f-3 (MAIN::z)
+ ==> f-6 (MAIN::z)
+Test done.

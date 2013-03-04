@@ -1,0 +1,26 @@
+FIRE 1 MAIN::change-phase f-1
+ <== Focus MAIN
+ ==> Focus DETECTION
+FIRE 2 DETECTION::change-phase f-2
+Detection
+ <== Focus DETECTION
+ ==> Focus MAIN
+FIRE 3 MAIN::change-phase f-2
+ <== Focus MAIN
+ ==> Focus ISOLATION
+FIRE 4 ISOLATION::change-phase f-3
+Isolation
+ <== Focus ISOLATION
+ ==> Focus MAIN
+FIRE 5 MAIN::change-phase f-3
+ <== Focus MAIN
+ ==> Focus RECOVERY
+FIRE 6 RECOVERY::change-phase f-4
+Recovery
+ <== Focus RECOVERY
+ ==> Focus MAIN
+FIRE 7 MAIN::change-phase f-4
+ <== Focus MAIN
+ ==> Focus DETECTION
+MAIN
+DETECTION

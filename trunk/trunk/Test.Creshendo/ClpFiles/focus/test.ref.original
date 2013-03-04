@@ -1,0 +1,34 @@
+Testing focus :
+Default: MAIN
+ <== Focus MAIN
+ ==> Focus foo
+explicit foo: foo
+foo
+MAIN
+ <== Focus foo
+ ==> Focus bar
+explicit bar: bar
+bar
+foo
+MAIN
+Good, got error with bad module name.
+ <== Focus bar
+ ==> Focus foo
+ <== Focus foo
+ ==> Focus MAIN
+ <== Focus MAIN
+Back to default: MAIN
+ <== Focus MAIN
+ ==> Focus foo
+ <== Focus foo
+ ==> Focus bar
+Focus multiple: MAIN
+bar
+foo
+Get-focus-stack: (bar foo)
+ <== Focus bar
+ ==> Focus foo
+Pop-focus: bar
+foo
+Get-focus-stack after clear: ()
+Test done.

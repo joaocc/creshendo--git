@@ -1,0 +1,4 @@
+ ==> f-0 (MAIN::bar 1)
+==> Activation: MAIN::foo :  f-0
+ <== f-0 (MAIN::bar 1)
+<== Activation: MAIN::foo :  f-0

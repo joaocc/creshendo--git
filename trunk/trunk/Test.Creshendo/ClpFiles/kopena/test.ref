@@ -1,0 +1,10 @@
+Testing kopena rule :
+No facts: should fire
+FIRED
+(a 1 2): should fire
+FIRED
+(a 1 1): should not fire
+(b 1 2): should fire
+FIRED
+(a 1 2) and (b 1 2): should not fire
+Test done.

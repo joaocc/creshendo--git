@@ -1,0 +1,60 @@
+Testing the 'or' CE :
+*** Testing separate paths:
+MAIN::a
+MAIN::b
+*** Testing multibranch erase:
+c
+*** Testing nesting:
+Example 1: Should... Fire.
+Example 2: Should not.
+Example 3: Should... Fire.
+Example 4: Should... Fire.
+Example 5: Should not.
+Example 1: Should not.
+Example 2: Should not.
+Example 3: Should... Fire.
+Example 4: Should not.
+Example 1: Should...Fire.
+Example 2: Should...Fire.
+Example 3: Should not.
+Example 4: Should...Fire.
+*** Testing bad binding
+Good, got compiler error
+*** Tests from Mariusz Nowostawski
+f1 Should print 'Good' 1 time(s)..Good
+f2 Should print 'Good' 1 time(s)..Good
+f3 Should print 'Good' 1 time(s)..Good
+f4 Should print 'Good' 1 time(s)..Good
+f5 Should print 'Good' 2 time(s)..Good
+Good
+f6 Should print 'Good' 1 time(s)..Good
+f7 Should print 'Good' 3 time(s)..Good
+Good
+Good
+f8 Should print 'Good' 3 time(s)..Good
+Good
+Good
+f9 Should print 'Good' 6 time(s)..Good
+Good
+Good
+Good
+Good
+Good
+f10 Should print 'Good' 3 time(s)..Good
+Good
+Good
+f11 Should print 'Good' 3 time(s)..Good
+Good
+Good
+b1 Should not print anything
+b2 Should not print anything
+b3 Should not print anything
+b4 Should not print anything
+b5 Should not print anything
+b6 Should not print anything
+b7 Should not print anything
+b8 Should not print anything
+b9 Should not print anything
+b10 Should not print anything
+b11 Should not print anything
+Test done.

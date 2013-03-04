@@ -1,0 +1,8 @@
+Testing Olga's bug :
+==> Activation: MAIN::set-direct-next-step :  f-1,,
+==> Activation: MAIN::set-direct-next-step :  f-2,,
+<== Activation: MAIN::set-direct-next-step :  f-2,,
+<== Activation: MAIN::set-direct-next-step :  f-1,,
+==> Activation: MAIN::set-direct-next-step :  f-2,,
+<== Activation: MAIN::set-direct-next-step :  f-2,,
+Test done.

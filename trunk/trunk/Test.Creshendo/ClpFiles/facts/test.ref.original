@@ -1,0 +1,68 @@
+Testing facts:
+>>> ppdeftemplate default-dynamic
+(deftemplate MAIN::dyntemp extends MAIN::__fact 
+ (slot normal) 
+ (slot dyn (default-dynamic (+ 2 3))))
+>>> Duplicate asserts
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar)
+f-2   (MAIN::bar foo)
+For a total of 3 facts.
+>>> Reset clears
+[Activation: MAIN::rule1  f-1 ; time=2 ; salience=0]
+For a total of 1 activations.
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+For a total of 0 activations.
+>>> Assert-string
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar foo)
+For a total of 2 facts.
+>>> Assert-string + default-dynamic
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::dyntemp (normal 1) (dyn 5))
+For a total of 2 facts.
+>>> Deftemplate
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::dtfoo (bar 1) (baz 2))
+For a total of 2 facts.
+>>> load facts
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::a 2 "3" iv)
+f-2   (MAIN::dtfoo (bar 2) (baz nil))
+f-3   (MAIN::dtfoo (bar "two") (baz nil))
+f-4   (MAIN::dtfoo (bar ii) (baz nil))
+For a total of 5 facts.
+>>> modify
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::dtfoo (bar 1) (baz nil))
+For a total of 2 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::dtfoo (bar 2) (baz 3))
+For a total of 2 facts.
+>>> fact-slot-value
+foobar
+>>> retract
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar)
+For a total of 2 facts.
+f-1   (MAIN::foo bar)
+For a total of 1 facts.
+>>> retract-string
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar)
+For a total of 2 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar)
+For a total of 2 facts.
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+>>> many facts
+57
+257
+357
+657
+857
+Test done.

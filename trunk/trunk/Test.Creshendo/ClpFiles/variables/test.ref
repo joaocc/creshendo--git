@@ -1,0 +1,18 @@
+Testing variables:
+>>> bind
+3 4 3
+>>> defglobal
+3 4 4
+>>> rule variable bindings
+bar
+foo
+baz
+>>> globals on rule LHS
+OK
+>>> context
+4
+>>> get/set-reset-globals
+37 0 TRUE
+79 79 FALSE
+Good, bogus globals undefined
+Test done.

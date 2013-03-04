@@ -1,0 +1,6 @@
+ ==> f-0 (MAIN::bar 1)
+ ==> f-1 (MAIN::bar 2)
+ ==> f-2 (MAIN::bar 0)
+==> Activation: MAIN::foo-1 :  f-2
+ ==> f-3 (MAIN::foo)
+==> Activation: MAIN::foo-2 :  f-3, f-2

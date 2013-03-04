@@ -1,0 +1,6 @@
+Testing backwards chaining in during defqueries:
+#1, in WM 1
+#1, not in WM 0
+#2, in WM 1
+( Calculating the factorial of 10... )
+#2, not in WM 1

@@ -1,0 +1,17 @@
+Testing not inside an and inside a not :
+(defrule MAIN::rule-1 
+   (MAIN::initial-fact) 
+   (not (MAIN::x ?_2_x)) 
+   (MAIN::b ?x) 
+   =>)
+(defrule MAIN::rule-2 
+   (MAIN::initial-fact) 
+   (not (MAIN::x ?_2_x)) 
+   (MAIN::b ?x) 
+   =>)
+(defrule MAIN::rule-3 
+   (MAIN::initial-fact) 
+   (not (and (not (MAIN::x ?_3_x)) (MAIN::b ?_2_x))) 
+   =>)
+TRUE
+Test done.

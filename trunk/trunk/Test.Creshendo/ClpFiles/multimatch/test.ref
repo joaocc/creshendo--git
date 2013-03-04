@@ -1,0 +1,12 @@
+Testing edges of multifield matching:
+*** Unordered facts:
+3
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo (bar ))
+For a total of 2 facts.
+*** Ordered facts:
+3
+f-0   (MAIN::initial-fact)
+f-4   (MAIN::bar)
+For a total of 2 facts.
+Test done.

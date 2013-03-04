@@ -1,0 +1,5 @@
+FIRE 1 MAIN::startup f-0
+FIRE 2 MAIN::start-path f-19, f-18,
+FIRE 3 MAIN::add-path-to-list f-22, f-20,, f-21
+FIRE 4 MAIN::expand-best-node f-22, f-5, f-20, f-21
+FIRE 5 MAIN::add-path-to-list f-23, f-20,, f-21

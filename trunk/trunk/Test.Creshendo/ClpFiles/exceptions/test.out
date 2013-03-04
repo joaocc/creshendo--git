@@ -1,0 +1,93 @@
+Testing Exception:
+>>> Exceptions during reflection:
+Failed to create a foo.bar.NoSuchClass, as expected
+
+>>> Exceptions during jess function calls:
+(+ 3 foo) generated an error:
+Jess reported an error in routine Value.numericValue
+	while executing (+ 3 foo)
+	while executing (printout t "(+ 3 foo) is " (+ 3 foo) crlf).
+  Message: Not a number: "foo" (type = ).
+
+>>> Using exceptions to test for command presence
+foobar command not present!
+
+>>> Throwing my own exceptions
+Whew!
+
+>>> Return inside try; empty catch
+42
+
+TRY-CATCH... no exception
+Entering try block, x = 0
+Exiting try block, x = 0
+y = 0
+
+TRY-CATCH... exception in try block (caught)
+Entering try block, x = 1
+Entering catch block, x = 1
+Exiting catch block, x = 1
+y = 1
+
+TRY-CATCH... exception in catch block (uncaught)
+Entering try block, x = 10
+Entering catch block, x = 10
+Exception = System.Exception: in catch block
+
+TRY-FINALLY... no exception
+Entering try block, x = 0
+Exiting try block, x = 0
+Entering finally block, x = 0
+Exiting finally block, x = 0
+y = 0
+
+TRY-FINALLY... exception in try block (uncaught)
+Entering try block, x = 1
+Entering finally block, x = 1
+Exiting finally block, x = 1
+Exception = System.Exception: in try block
+
+TRY-FINALLY... exception in finally block (uncaught)
+Entering try block, x = 100
+Entering finally block, x = 100
+Exception = System.Exception: in finally block
+
+TRY-CATCH-FINALLY... no exception
+Entering try block, x = 0
+Exiting try block, x = 0
+Entering finally block, x = 0
+Exiting finally block, x = 0
+y = 0
+
+TRY-CATCH-FINALLY... exception in try block (caught)
+Entering try block, x = 1
+Entering catch block, x = 1
+Exiting catch block, x = 1
+Entering finally block, x = 1
+Exiting finally block, x = 1
+y = 1
+
+TRY-CATCH-FINALLY... exception in catch block (uncaught)
+Entering try block, x = 10
+Entering catch block, x = 10
+Entering finally block, x = 10
+Exiting finally block, x = 10
+Exception = System.Exception: in catch block
+
+TRY-CATCH-FINALLY... exception in finally block (uncaught)
+Entering try block, x = 100
+Entering catch block, x = 100
+Entering finally block, x = 100
+Exception = System.Exception: in finally block
+
+RETURN-FROM-TRY
+Entering try block
+Entering finally block
+Exiting finally block
+
+RETURN-FROM-CATCH
+Entering try block
+Entering catch block
+Entering finally block
+Exiting finally block
+Test done.

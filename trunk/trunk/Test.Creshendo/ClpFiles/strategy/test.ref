@@ -1,0 +1,50 @@
+Testing conflict-resolution strategies:
+>>> default
+depth
+==> Activation: MAIN::rule-1 :  f-1
+==> Activation: MAIN::rule-2 :  f-2
+==> Activation: MAIN::rule-3 :  f-3
+==> Activation: MAIN::rule-4 :  f-4
+==> Activation: MAIN::rule-6 :  f-5, f-4
+==> Activation: MAIN::rule-7 :  f-5, f-4, f-3
+==> Activation: MAIN::rule-5 :  f-5
+RULE 7 FIRED (salience 100)
+RULE 6 FIRED (salience 100)
+RULE 5 FIRED (salience 100)
+RULE 4 FIRED (salience 100)
+RULE 3 FIRED (salience 0)
+RULE 2 FIRED (salience -100)
+RULE 1 FIRED (salience -100)
+>>> breadth
+breadth
+==> Activation: MAIN::rule-1 :  f-1
+==> Activation: MAIN::rule-2 :  f-2
+==> Activation: MAIN::rule-3 :  f-3
+==> Activation: MAIN::rule-4 :  f-4
+==> Activation: MAIN::rule-6 :  f-5, f-4
+==> Activation: MAIN::rule-7 :  f-5, f-4, f-3
+==> Activation: MAIN::rule-5 :  f-5
+RULE 4 FIRED (salience 100)
+RULE 5 FIRED (salience 100)
+RULE 6 FIRED (salience 100)
+RULE 7 FIRED (salience 100)
+RULE 3 FIRED (salience 0)
+RULE 1 FIRED (salience -100)
+RULE 2 FIRED (salience -100)
+>>> depth
+depth
+==> Activation: MAIN::rule-1 :  f-1
+==> Activation: MAIN::rule-2 :  f-2
+==> Activation: MAIN::rule-3 :  f-3
+==> Activation: MAIN::rule-4 :  f-4
+==> Activation: MAIN::rule-6 :  f-5, f-4
+==> Activation: MAIN::rule-7 :  f-5, f-4, f-3
+==> Activation: MAIN::rule-5 :  f-5
+RULE 7 FIRED (salience 100)
+RULE 6 FIRED (salience 100)
+RULE 5 FIRED (salience 100)
+RULE 4 FIRED (salience 100)
+RULE 3 FIRED (salience 0)
+RULE 2 FIRED (salience -100)
+RULE 1 FIRED (salience -100)
+Test done.

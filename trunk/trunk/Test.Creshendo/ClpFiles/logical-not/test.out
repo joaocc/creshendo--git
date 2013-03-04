@@ -1,0 +1,25 @@
+Testing (logical (not)) :
+Logical not, not first logical
+ ==> f-0 (MAIN::A)
+ ==> f-1 (MAIN::C)
+ ==> f-2 (MAIN::B)
+ <== f-1 (MAIN::C)
+
+Logical not, first logical
+ ==> f-0 (MAIN::initial-fact)
+ ==> f-1 (MAIN::E)
+ ==> f-2 (MAIN::D)
+ <== f-1 (MAIN::E)
+
+Logical exists
+ ==> f-0 (MAIN::initial-fact)
+ ==> f-1 (MAIN::D)
+ ==> f-2 (MAIN::F 1)
+ ==> f-3 (MAIN::F 2)
+ ==> f-4 (MAIN::F 3)
+ ==> f-5 (MAIN::G)
+ <== f-2 (MAIN::F 1)
+ <== f-3 (MAIN::F 2)
+ <== f-4 (MAIN::F 3)
+ <== f-5 (MAIN::G)
+Test done.

@@ -1,0 +1,12 @@
+(defrule MAIN::rule-1 
+   ?x <- (MAIN::a) 
+   =>)
+(defrule MAIN::rule-1&1 
+   ?x <- (MAIN::b) 
+   =>)
+(defrule MAIN::rule-2 
+   ?x <- (MAIN::a) 
+   =>)
+(defrule MAIN::rule-2&1 
+   ?y <- (MAIN::b) 
+   =>)

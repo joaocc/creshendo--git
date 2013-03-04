@@ -1,0 +1,11 @@
+Testing fact-saving:
+f-0   (MAIN::foo bar baz)
+f-1   (MAIN::foo 1 2 3)
+f-2   (MAIN::foo 1.00 2.00 3.00)
+f-3   (MAIN::foo "A String")
+f-4   (MAIN::foo "A String with \"embedded quotes\"")
+For a total of 5 facts.
+f-0   (MAIN::foo bar baz)
+f-1   (MAIN::foo 1 2 3)
+For a total of 2 facts.
+Test done.

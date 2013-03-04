@@ -1,0 +1,5 @@
+Testing dependencies/dependents :
+(<Fact-4> <Fact-6>)
+[Token: size=1;sortcode=3;tag=ADD;negcnt=0;facts=(MAIN::foz);]
+[Token: size=2;sortcode=10;tag=ADD;negcnt=0;facts=(MAIN::foo);(MAIN::bar);]
+Test done.

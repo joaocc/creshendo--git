@@ -1,0 +1,22 @@
+Testing strings:
+>>> lowcase
+hello, world
+hello, world
+hello, world
+>>> upcase
+HELLO, WORLD
+HELLO, WORLD
+HELLO, WORLD
+>>> str-cat
+abc1.00def TRUE
+>>> sym-cat
+abc1.00def TRUE
+>>> str-compare
+0 -1 1
+>>> str-index
+1 FALSE 4
+>>> str-length
+10 0 5
+>>> sub-string
+1 2 0 1234567890 23456789
+Test done.

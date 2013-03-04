@@ -1,0 +1,7 @@
+Testing modify :
+For a total of 0 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::ab (a 234))
+For a total of 2 facts.
+No such slot abc in template
+Test done.

@@ -1,0 +1,61 @@
+(deffunction test-something ()
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> printout" crlf)
+  (printout t 1 " " 2.0 " " a " " "a" " " (create$ a b c) crlf)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> open" crlf)
+  (open testfile testfile w)
+  (printout testfile 1 " " 2.0 " " a " " "a" " " crlf)
+  (printout testfile "This is a test, this is only a test" crlf)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> close" crlf)
+  (close testfile)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> read" crlf)
+  (open testfile testfile r)
+  (foreach ?i (create$ 1 2 3 4)
+    (printout t (read testfile) " "))
+  (printout t crlf)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> readline" crlf)
+  (readline testfile)
+  (printout t (readline testfile) crlf)
+  (close testfile)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> console" crlf)
+  (printout t (read) crlf)
+  (printout t (read) crlf)
+  (printout t (readline) crlf)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> format" crlf)
+  (printout t (format nil "%s -->%d<-- %s" "I ate" 9 "pies!") crlf)
+  (format t "%s -->%.3f<-- !" "My average is " 0.333)
+  (printout t crlf
+            (format nil " %d %i %x %X %o" 1234 1234 1234 1234 1234)
+            crlf)
+  (printout t (format nil "%1.1f" 4.9) crlf)
+  (printout t (format nil "%1.1f" 4.99) crlf)
+  (printout t (format nil "%1.2f" 4.99) crlf)
+  (printout t (format nil "%1.2f" 4.999) crlf)
+  (printout t (format nil "%1.3f" 4.999) crlf)
+  (printout t (format nil "%1.3f" 4.9999) crlf)
+  (printout t (format nil "%1.1f" 0.0) crlf)
+  (printout t (format nil "X%nX") crlf)
+  (printout t crlf)
+  ;; ----------------------------------------------------------------------
+  (printout t ">>> multithreaded io" crlf)
+  (set-multithreaded-io FALSE)
+  (foreach ?i (create$ 1 2 3 4 5 6 7 8 9 10)
+           (printout t ?i crlf))
+  (printout t (get-multithreaded-io) crlf)
+  (set-multithreaded-io TRUE)
+  (foreach ?i (create$ 1 2 3 4 5 6 7 8 9 10)
+           (printout t ?i crlf))
+  (printout t (get-multithreaded-io) crlf)
+)
+
+
+(printout t "Testing io:" crlf)
+(test-something)
+(printout t "Test done." crlf)
+(exit)  

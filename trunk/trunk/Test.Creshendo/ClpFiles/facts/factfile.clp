@@ -1,0 +1,5 @@
+(MAIN::initial-fact)
+(MAIN::a 2 "3" iv)
+(MAIN::dtfoo (bar 2) (baz nil))
+(MAIN::dtfoo (bar "two") (baz nil))
+(MAIN::dtfoo (bar ii) (baz nil))

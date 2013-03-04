@@ -1,0 +1,15 @@
+Testing forall CE :
+No facts
+>>> FIRED 1
+a only
+a, b and c
+>>> FIRED 1
+b and c only
+>>> FIRED 1
+a and b only
+a and c only
+c only
+>>> FIRED 1
+b only
+>>> FIRED 1
+Test done.

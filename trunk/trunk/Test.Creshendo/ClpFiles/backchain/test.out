@@ -1,0 +1,27 @@
+Testing backwards chaining in deftemplates:
+( Calculating the factorial of 12... )
+( Calculating the factorial of 10... )
+The factorial of 12 is 479001600, and of 10 is 3628800, and of 5 is 120
+The factorial of 12 is 479001600, and of 10 is 3628800
+The factorial of 10 is 3628800
+Test part 1 done.
+Testing backwards chaining in ordered facts:
+( Calculating the factorial of 12... )
+( Calculating the factorial of 10... )
+The factorial of 12 is 479001600, and of 10 is 3628800, and of 5 is 120
+The factorial of 12 is 479001600, and of 10 is 3628800
+The factorial of 10 is 3628800
+Test part 2 done.
+Testing multiple need-x rules with one x rule
+points at 0,0 and 1,1
+Test part 3 done.
+Testing multistage chaining
+foo
+Test part 4 done.
+Testing multi-item ordered fact chaining
+ ==> f-0 (MAIN::bar a b)
+ ==> f-1 (MAIN::need-foo a b)
+(MAIN::need-foo a b)
+a
+b
+Test part 5 done.

@@ -1,0 +1,30 @@
+**** INITIAL FACTS ****
+For a total of 0 facts.
+**** AFTER RUN ****
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::in (cpt chp) (in Staff))
+f-2   (MAIN::in (cpt Staff) (in Person))
+f-3   (MAIN::in (cpt Person) (in Thing))
+f-4   (MAIN::inc (cpt Staff) (in Thing))
+f-5   (MAIN::inc (cpt chp) (in Person))
+f-6   (MAIN::inc (cpt chp) (in Thing))
+For a total of 7 facts.
+**** AFTER DEFRULE ****
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::in (cpt chp) (in Staff))
+f-2   (MAIN::in (cpt Staff) (in Person))
+f-3   (MAIN::in (cpt Person) (in Thing))
+f-4   (MAIN::inc (cpt Staff) (in Thing))
+f-5   (MAIN::inc (cpt chp) (in Person))
+f-6   (MAIN::inc (cpt chp) (in Thing))
+For a total of 7 facts.
+**** AFTER NEW RUN ****
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::in (cpt chp) (in Staff))
+f-2   (MAIN::in (cpt Staff) (in Person))
+f-3   (MAIN::in (cpt Person) (in Thing))
+f-4   (MAIN::top (cpt Thing))
+f-5   (MAIN::inc (cpt Staff) (in Thing))
+f-6   (MAIN::inc (cpt chp) (in Person))
+f-7   (MAIN::inc (cpt chp) (in Thing))
+For a total of 8 facts.

@@ -1,0 +1,22 @@
+Testing predicates:
+>>> evenp
+TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+>>> oddp
+TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+>>> numberp
+TRUE TRUE TRUE TRUE TRUE
+>>> floatp
+TRUE TRUE TRUE TRUE
+>>> integerp
+TRUE TRUE TRUE
+>>> longp
+TRUE TRUE TRUE
+>>> lexemep
+TRUE TRUE TRUE TRUE TRUE
+>>> symbolp
+TRUE TRUE TRUE TRUE
+>>> stringp
+TRUE TRUE TRUE TRUE
+>>> external-addressp
+TRUE TRUE TRUE
+Test done.
