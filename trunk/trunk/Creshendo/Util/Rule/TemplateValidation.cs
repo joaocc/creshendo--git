@@ -32,24 +32,10 @@ namespace Creshendo.Util.Rule
     /// </author>
     public class TemplateValidation : IAnalysis
     {
-        //UPGRADE_NOTE: Final was removed from the declaration of 'INVALID_SLOT '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'INVALID_SLOT' was moved to static method 'org.jamocha.rule.TemplateValidation'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static readonly String INVALID_FUNCTION;
         public static readonly String INVALID_SLOT;
-        //$NON-NLS-1$
-        //UPGRADE_NOTE: Final was removed from the declaration of 'INVALID_TEMPLATE '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'INVALID_TEMPLATE' was moved to static method 'org.jamocha.rule.TemplateValidation'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static readonly String INVALID_TEMPLATE;
-        //$NON-NLS-1$
-        //UPGRADE_NOTE: Final was removed from the declaration of 'INVALID_FUNCTION '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'INVALID_FUNCTION' was moved to static method 'org.jamocha.rule.TemplateValidation'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
-        //$NON-NLS-1$
-        //UPGRADE_NOTE: Final was removed from the declaration of 'NO_FUNCTION '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'NO_FUNCTION' was moved to static method 'org.jamocha.rule.TemplateValidation'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static readonly String NO_FUNCTION;
-        //$NON-NLS-1$
-        //UPGRADE_NOTE: Final was removed from the declaration of 'NO_MODULE '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'NO_MODULE' was moved to static method 'org.jamocha.rule.TemplateValidation'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static readonly String NO_MODULE;
         private Rete.Rete engine = null;
         private ErrorSummary error = null;

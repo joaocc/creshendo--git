@@ -22,7 +22,7 @@ namespace Creshendo.Util.Rete
     /// <author>  Peter Lin
     /// *
     /// LinkedActivationWrapper is a container for LinkedActivation. It provdes
-    /// the logic for modifying a org.jamocha.rete.util.LinkedList created from LinkedActivation.
+    /// the logic for modifying a Creshendo.rete.util.LinkedList created from LinkedActivation.
     /// Null values are not permitted, and are silently ignored. Generally speaking,
     /// it doesn't make sense to Add a null activation to the agenda.
     /// 
@@ -307,7 +307,7 @@ namespace Creshendo.Util.Rete
             return contain;
         }
 
-        /// <summary> Iterate over the org.jamocha.rete.util.LinkedList and null the references to previous
+        /// <summary> Iterate over the Creshendo.rete.util.LinkedList and null the references to previous
         /// and Current in the LinkedActivation
         /// </summary>
         public override void clear()
@@ -342,7 +342,7 @@ namespace Creshendo.Util.Rete
         }
 
         /// <summary> Current implemenation will return the index of the activation, if
-        /// it is in the org.jamocha.rete.util.LinkedList. If activation isn't in the list, the method
+        /// it is in the Creshendo.rete.util.LinkedList. If activation isn't in the list, the method
         /// returns -1.
         /// </summary>
         public virtual int indexOf(Object activation)
@@ -377,7 +377,6 @@ namespace Creshendo.Util.Rete
         /// </summary>
         public override IActivationList cloneActivationList()
         {
-            //UPGRADE_NOTE: Final was removed from the declaration of 'la '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
             LinkedActivationList la = new LinkedActivationList();
             la.count = count;
             la.first = first.cloneActivation();

@@ -58,7 +58,6 @@ namespace Creshendo.Functions
                 for (int idx = 0; idx < params_Renamed.Length; idx++)
                 {
                     String func = params_Renamed[idx].StringValue;
-                    //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
                     try
                     {
                         engine.declareFunction(func);

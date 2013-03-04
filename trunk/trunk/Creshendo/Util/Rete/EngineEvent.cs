@@ -24,7 +24,6 @@ namespace Creshendo.Util.Rete
     /// event subclasses, the current design uses event type code.
     /// 
     /// </author>
-    //UPGRADE_ISSUE: Class 'java.util.EventObject' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javautilEventObject"'
     public class EngineEvent //:EventObject
     {
         public const int ASSERT_EVENT = 0;
@@ -38,7 +37,6 @@ namespace Creshendo.Util.Rete
 
         /// <summary> the default value is assert event
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'typeCode' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private int typeCode;
 
         /// <summary> 
@@ -53,7 +51,6 @@ namespace Creshendo.Util.Rete
         public EngineEvent(Object source, int typeCode, BaseNode sourceNode, IFact[] facts)
         {
             InitBlock();
-            //UPGRADE_ISSUE: Constructor 'java.util.EventObject.EventObject' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javautilEventObject"'
             this.typeCode = typeCode;
             this.sourceNode = sourceNode;
             this.facts = facts;

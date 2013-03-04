@@ -112,7 +112,7 @@
 )
 (assert (context (name "startup") ) )
 (assert (count (c 1) ) )
-(load-facts D:/Src/Creshendo/trunk/Test.Creshendo/Data/64guest.dat)
+(load-facts C:/Src/Creshendo/Test.Creshendo/Data/64guest.dat)
 (bind ?*start* (ms-time) )
 (fire)
 (bind ?*end* (ms-time) )

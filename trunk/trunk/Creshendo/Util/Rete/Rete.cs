@@ -83,7 +83,7 @@ namespace Creshendo.Util.Rete
 
         private int lastNodeId = 0;
 
-        /// <summary> an org.jamocha.rete.util.List for the listeners
+        /// <summary> an Creshendo.rete.util.List for the listeners
         /// </summary>
         protected internal List<object> listeners;
 
@@ -899,10 +899,8 @@ namespace Creshendo.Util.Rete
         /// <param name="parent">The parent.</param>
         public virtual void declareObject(String className, String templateName, String parent)
         {
-            //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             try
             {
-                //UPGRADE_TODO: Format of parameters of method 'java.lang.Class.forName' are different in the equivalent in .NET. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1092"'
                 Type clzz = Type.GetType(className);
                 declareObject(clzz, templateName, parent);
             }
@@ -1080,11 +1078,8 @@ namespace Creshendo.Util.Rete
         /// <param name="name">The name.</param>
         public virtual void declareFunction(String name)
         {
-            //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
-            //UPGRADE_NOTE: Exception 'java.lang.InstantiationException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             try
             {
-                //UPGRADE_TODO: Format of parameters of method 'java.lang.Class.forName' are different in the equivalent in .NET. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1092"'
                 Type fclaz = Type.GetType(name);
                 IFunction func = (IFunction) CreateNewInstance(fclaz);
                 declareFunction(func);

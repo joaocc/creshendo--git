@@ -28,7 +28,6 @@ namespace Creshendo.Util.Rete
     {
         /// <summary> The operator to compare two values
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'operator_Renamed' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal int operator_Renamed;
 
 

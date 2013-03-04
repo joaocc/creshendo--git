@@ -88,8 +88,6 @@ namespace Creshendo.Functions
                         args[idx - 1] = rval.firstReturnValue().Value;
                     }
                 }
-                //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
-                //UPGRADE_NOTE: Exception 'java.lang.InstantiationException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
                 try
                 {
                     Type classDefinition = classnameResolver.resolveClass(classname);
@@ -97,7 +95,6 @@ namespace Creshendo.Functions
                     for (int idx = 0; idx < classDefinition.GetConstructors().Length; idx++)
                     {
                         ConstructorInfo constructor = classDefinition.GetConstructors()[idx];
-                        //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.reflect.Constructor.getParameterTypes' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                         ParameterInfo[] parameterClasses = constructor.GetParameters();
                         if (parameterClasses.Length == args.Length)
                         {
@@ -115,7 +112,6 @@ namespace Creshendo.Functions
                     }
                     if (foundConstructor != null)
                     {
-                        //UPGRADE_ISSUE: Method 'java.lang.reflect.Constructor.newInstance' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangreflectConstructornewInstance_javalangObject[]"'
                         o = foundConstructor.Invoke(args);
                     }
                 }

@@ -30,7 +30,6 @@ namespace Creshendo.Util.Rete
     {
         protected internal Index index = null;
 
-        //UPGRADE_NOTE: The initialization of  'matches' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IGenericMap<object, object> matches;
 
         /// <summary> 

@@ -67,8 +67,6 @@ namespace Creshendo.Util.Rule
             }
         }
 
-        //UPGRADE_NOTE: The initialization of  'nestedCE' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
-
         public virtual bool compare(ICondition cond)
         {
             return false;

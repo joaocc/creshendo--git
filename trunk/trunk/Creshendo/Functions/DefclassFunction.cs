@@ -70,7 +70,6 @@ namespace Creshendo.Functions
                 {
                     parent = params_Renamed[2].StringValue;
                 }
-                //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
                 try
                 {
                     engine.declareObject(clazz, template, parent);

@@ -75,9 +75,6 @@ namespace Creshendo.Util.Rete
             valueType = Constants.SLOT_TYPE;
         }
 
-        //UPGRADE_NOTE: The initialization of  'valueType' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
-
-
         /// <summary> Slot parameter is only used internally, so normal user functions
         /// should not need to deal with slot parameters.
         /// </summary>

@@ -280,8 +280,6 @@ namespace Creshendo.Util.Rete
             return buf.ToString();
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
-
         /// <summary> evaluate will extra the values from each side and evaluate it
         /// </summary>
         /// <param name="">left

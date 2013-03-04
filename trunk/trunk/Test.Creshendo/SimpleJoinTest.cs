@@ -19,7 +19,7 @@ namespace woolfel.rete{
 import java.util.ArrayList;
 import java.util.Random;
 
-import org.jamocha.rete.Rete;
+import Creshendo.rete.Rete;
 
 import woolfel.examples.model.Account4;
 import woolfel.examples.model.Transaction;

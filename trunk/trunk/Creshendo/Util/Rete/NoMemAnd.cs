@@ -26,8 +26,8 @@ namespace Creshendo.Util.Rete
     /// operator.
     /// <br/>
     /// Although there is a class called Alpha memory, Alpha nodes use a
-    /// simple org.jamocha.rete.util.IList to remember which facts matched. A decision was made to
-    /// use a simple org.jamocha.rete.util.List, since assert only takes a single Fact object.
+    /// simple Creshendo.rete.util.IList to remember which facts matched. A decision was made to
+    /// use a simple Creshendo.rete.util.List, since assert only takes a single Fact object.
     /// If we change assert to take an array of facts, we would need to
     /// replace the List with a map of AlphaMemory.<br/>
     /// 
@@ -198,7 +198,6 @@ namespace Creshendo.Util.Rete
         /// </summary>
         public override String hashString()
         {
-            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
             return ToString();
         }
 

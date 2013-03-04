@@ -22,7 +22,6 @@ namespace Creshendo.Util
 {
     public class DeffactSort : IComparer
     {
-        //UPGRADE_NOTE: The initialization of  'Comparator' was moved to static method 'org.jamocha.rete.util.DeffactSort'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static DeffactSort Comparator;
 
         static DeffactSort()

@@ -29,7 +29,6 @@ namespace Creshendo.Util.Rete
     /// </author>
     public class DefaultReturnVector : IReturnVector
     {
-        //UPGRADE_NOTE: The initialization of  'items' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal List<Object> items;
 
 
@@ -70,7 +69,6 @@ namespace Creshendo.Util.Rete
         /// </returns>
         public virtual IReturnValue firstReturnValue()
         {
-            //UPGRADE_TODO: Method java.util.Vector.Get was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
             return (IReturnValue) items[0];
         }
 

@@ -362,7 +362,6 @@ namespace Creshendo.Util.Rete
                         }
                         else if (values[idx].ValueType == Constants.STRING_TYPE && !(s.Value is BoundParam))
                         {
-                            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                             values[idx].Value = s.Value.ToString();
                         }
                         else
@@ -415,7 +414,6 @@ namespace Creshendo.Util.Rete
                             }
                             else if (values[idx].ValueType == Constants.STRING_TYPE && !(s.Value is BoundParam))
                             {
-                                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                                 values[idx].Value = s.Value.ToString();
                             }
                             else if (s.Value is BoundParam)
@@ -488,7 +486,6 @@ namespace Creshendo.Util.Rete
                             }
                             else if (values[idx].ValueType == Constants.STRING_TYPE && !(s.Value is BoundParam))
                             {
-                                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                                 values[idx].Value = s.Value.ToString();
                             }
                             else if (s.Value is BoundParam)

@@ -66,7 +66,6 @@ namespace Creshendo.Util.Rete
         /// <returns>
         /// 
         /// </returns>
-        //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
         public virtual PropertyInfo[] PropertyDescriptors
         {
             get { return PROPS; }
@@ -77,7 +76,6 @@ namespace Creshendo.Util.Rete
         /// <returns>
         /// 
         /// </returns>
-        //UPGRADE_TODO: Interface java.beans.BeanInfo was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
         public virtual BeanInfo BeanInfo
         {
             get { return INFO; }
@@ -240,9 +238,7 @@ namespace Creshendo.Util.Rete
                 // since a class may inherit the addListener method from
                 // a parent, we lookup all methods and not just the
                 // declared methods.
-                //UPGRADE_TODO: Interface java.beans.PropertyChangeListener was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 addListener = OBJECT_CLASS.GetMethod(Constants.PCS_ADD, (Type[]) new Type[] {typeof (PropertyChangedHandler)});
-                //UPGRADE_TODO: Interface java.beans.PropertyChangeListener was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 removeListener = OBJECT_CLASS.GetMethod(Constants.PCS_REMOVE, (Type[])new Type[] { typeof(PropertyChangedHandler) });
             }
             catch (MethodAccessException e)
@@ -261,16 +257,11 @@ namespace Creshendo.Util.Rete
         public virtual bool checkParameter(MethodInfo desc)
         {
             bool ispcl = false;
-            //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.reflect.Method.getParameterTypes' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
-            //UPGRADE_TODO: Method java.beans.MethodDescriptor.getMethod was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
 
             ParameterInfo[] parms = desc.GetParameters();
 
             if (parms.Length == 1)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.reflect.Method.getParameterTypes' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
-                //UPGRADE_TODO: Method java.beans.MethodDescriptor.getMethod was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
-                //UPGRADE_TODO: Interface java.beans.PropertyChangeListener was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 if (parms[0].ParameterType == typeof(PropertyChangedHandler))
                 {
                     ispcl = true;
@@ -294,7 +285,6 @@ namespace Creshendo.Util.Rete
         {
             try
             {
-                //UPGRADE_TODO: Method java.beans.PropertyDescriptor.getReadMethod was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 return PROPS[col].GetGetMethod().Invoke(data, (Object[]) null);
             }
             catch (UnauthorizedAccessException e)
@@ -321,18 +311,14 @@ namespace Creshendo.Util.Rete
             Slot[] st = new Slot[PROPS.Length];
             for (int idx = 0; idx < st.Length; idx++)
             {
-                //UPGRADE_TODO: Method java.beans.PropertyDescriptor.getPropertyType was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 if (PROPS[idx].PropertyType.IsArray)
                 {
-                    //UPGRADE_TODO: Method java.beans.FeatureDescriptor.getName was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                     st[idx] = new MultiSlot(PROPS[idx].Name);
                     st[idx].Id = idx;
                 }
                 else
                 {
-                    //UPGRADE_TODO: Method java.beans.FeatureDescriptor.getName was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                     st[idx] = new Slot(PROPS[idx].Name);
-                    //UPGRADE_TODO: Method java.beans.PropertyDescriptor.getPropertyType was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                     st[idx].ValueType = ConversionUtils.getTypeCode(PROPS[idx].PropertyType);
                     // set the column id for the slot
                     st[idx].Id = idx;
@@ -366,7 +352,6 @@ namespace Creshendo.Util.Rete
             List<Object> desc = null;
             bool add = false;
             Slot[] pslots = parent.AllSlots;
-            //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
             PropertyInfo[] newprops = new PropertyInfo[PROPS.Length];
             // first thing is to make sure the existing slots from the parent
             // are in the same column
@@ -389,7 +374,6 @@ namespace Creshendo.Util.Rete
                 List<Object> newfields = new List<Object>();
                 for (int idz = 0; idz < PROPS.Length; idz++)
                 {
-                    //UPGRADE_TODO: Method java.beans.FeatureDescriptor.getName was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                     if (!desc.Contains(PROPS[idz].Name))
                     {
                         // we Add it to the new fields
@@ -400,7 +384,6 @@ namespace Creshendo.Util.Rete
                 // now we start from where parent slots left off
                 for (int n = pslots.Length; n < newprops.Length; n++)
                 {
-                    //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                     newprops[n] = (PropertyInfo)newfields[c];
                     c++;
                 }
@@ -408,7 +391,6 @@ namespace Creshendo.Util.Rete
             PROPS = newprops;
         }
 
-        //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
         /// <summary>
         /// Find the PropertyDescriptor with the same name
         /// </summary>
@@ -416,11 +398,9 @@ namespace Creshendo.Util.Rete
         /// <returns></returns>
         protected internal virtual PropertyInfo getDescriptor(String name)
         {
-            //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
             PropertyInfo pd = null;
             for (int idx = 0; idx < PROPS.Length; idx++)
             {
-                //UPGRADE_TODO: Method java.beans.FeatureDescriptor.getName was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 if (PROPS[idx].Name.Equals(name))
                 {
                     pd = PROPS[idx];
@@ -438,8 +418,6 @@ namespace Creshendo.Util.Rete
         /// <returns></returns>
         public virtual MethodInfo getWriteMethod(String name)
         {
-            //UPGRADE_TODO: Method java.beans.PropertyDescriptor.getWriteMethod was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
-            //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
             return ((PropertyInfo) methods.Get(name)).GetSetMethod();
         }
 
@@ -450,8 +428,6 @@ namespace Creshendo.Util.Rete
         /// <returns></returns>
         public virtual MethodInfo getReadMethod(String name)
         {
-            //UPGRADE_TODO: Method java.beans.PropertyDescriptor.getReadMethod was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
-            //UPGRADE_TODO: Class java.beans.PropertyDescriptor was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
             return ((PropertyInfo)methods.Get(name)).GetGetMethod();
         }
 

@@ -32,7 +32,6 @@ namespace Creshendo.Util.Rete
         private String name = null;
 
         // by default, we set it to Equals
-        //UPGRADE_NOTE: The initialization of  'operator_Renamed' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private int operator_Renamed;
 
         private Object value_Renamed = null;

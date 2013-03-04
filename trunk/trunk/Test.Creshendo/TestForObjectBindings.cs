@@ -115,12 +115,13 @@ namespace Test.Creshendo
                 activations = engine.CurrentFocus.ActivationCount;
                 fired = engine.fire();
                 engine.printWorkingMemory(true, false);
+double endTime = DateTime.Now.Ticks - ts;
+            Console.WriteLine(String.Format("BasicObjectBindingTest1 completed in {0} seconds.", (endTime/10000000).ToString("0.000000")));
                 writer.Flush();
                 writer.Close();
                 engine.close();
             }
-            double endTime = DateTime.Now.Ticks - ts;
-            Console.WriteLine(String.Format("BasicObjectBindingTest1 completed in {0} seconds.", (endTime/10000000).ToString("0.000000")));
+            
             Assert.IsTrue(fired == 1);
             Assert.IsTrue(activations == 1);
             //AppDomain.Unload(AppDomain.CurrentDomain);
@@ -144,12 +145,14 @@ namespace Test.Creshendo
                 activations = engine.CurrentFocus.ActivationCount;
                 fired = engine.fire();
                 engine.printWorkingMemory(true, false);
+
+double endTime = DateTime.Now.Ticks - ts;
+            Console.WriteLine(String.Format("ObjectBindingTest1 completed in {0} seconds.", (endTime/10000000).ToString("0.000000")));
                 writer.Flush();
                 writer.Close();
                 engine.close();
             }
-            double endTime = DateTime.Now.Ticks - ts;
-            Console.WriteLine(String.Format("ObjectBindingTest1 completed in {0} seconds.", (endTime/10000000).ToString("0.000000")));
+            
             Assert.IsTrue(fired == 1);
             Assert.IsTrue(activations == 1);
             //AppDomain.Unload(AppDomain.CurrentDomain);
@@ -166,7 +169,7 @@ namespace Test.Creshendo
                 Rete engine = new Rete();
                 engine.Watch = WatchType.WATCH_ALL;
                 engine.addPrintWriter("Console", writer);
-                engine.declareObject(typeof (Account), "Account");
+                engine.declareObject(typeof(Account), "Account");
                 engine.loadRuleset(getRule1());
                 engine.assertObject(GetAcct0(), "Account", false, false);
 
@@ -179,12 +182,14 @@ namespace Test.Creshendo
                 activations = engine.CurrentFocus.ActivationCount;
                 fired = engine.fire();
                 engine.printWorkingMemory(true, false);
+                double endTime = DateTime.Now.Ticks - ts;
+                Console.WriteLine(String.Format("ObjectBindingTest2 completed in {0} seconds.", (endTime / 10000000).ToString("0.000000")));
+
                 writer.Flush();
                 writer.Close();
                 engine.close();
             }
-            double endTime = DateTime.Now.Ticks - ts;
-            Console.WriteLine(String.Format("ObjectBindingTest2 completed in {0} seconds.", (endTime/10000000).ToString("0.000000")));
+            
             Assert.IsTrue(fired == 2);
             Assert.IsTrue(activations == 2);
             //AppDomain.Unload(AppDomain.CurrentDomain);

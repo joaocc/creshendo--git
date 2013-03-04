@@ -43,7 +43,6 @@ namespace Creshendo.Functions
                 if (params_Renamed[0] is BoundParam && params_Renamed[1] is BoundParam)
                 {
                     param1 = ((BoundParam) params_Renamed[0]).ObjectRef;
-                    //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
                     try
                     {
                         Type clazz = classnameResolver.resolveClass(((BoundParam) params_Renamed[1]).StringValue);

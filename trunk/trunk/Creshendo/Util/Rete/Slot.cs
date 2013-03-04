@@ -124,7 +124,6 @@ namespace Creshendo.Util.Rete
             }
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
         /// <summary> A convienance method to clone slots
         /// </summary>
         public override Object Clone()
@@ -141,12 +140,10 @@ namespace Creshendo.Util.Rete
         {
             if (ValueType == Constants.STRING_TYPE)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return "\"" + _value + "\"";
             }
             else
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return _value.ToString();
             }
         }

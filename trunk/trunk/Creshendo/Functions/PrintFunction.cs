@@ -88,7 +88,6 @@ namespace Creshendo.Functions
                         }
                         else
                         {
-                            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                             engine.writeMessage(v.ToString(), output);
                         }
                     }
@@ -110,7 +109,6 @@ namespace Creshendo.Functions
                         }
                         else
                         {
-                            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                             engine.writeMessage(val.ToString(), output);
                         }
                     }
@@ -165,7 +163,6 @@ namespace Creshendo.Functions
                 }
                 else
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     engine.writeMessage(arry[idz].ToString() + " ", output);
                 }
                 if (linebreak)

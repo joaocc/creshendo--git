@@ -12,7 +12,7 @@ namespace Test.Creshendo
     public abstract class FileTestBase
     {
         protected static Random ran = new Random();
-        private const string mypath = @"D:\Src\Creshendo\trunk\Test.Creshendo\Data";
+        private const string mypath = @"C:\Src\Creshendo\Test.Creshendo\Data";
 
 
         protected string getRoot(string fileName)

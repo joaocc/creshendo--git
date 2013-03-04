@@ -32,7 +32,6 @@ namespace Creshendo.Functions
     [Serializable]
     public class BooleanFunctions : IFunctionGroup
     {
-        //UPGRADE_NOTE: The initialization of  'funcs' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private List<object> funcs;
 
         public BooleanFunctions() 

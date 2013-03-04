@@ -152,6 +152,5 @@ namespace Creshendo.Util.Rete
             --nodeCount;
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
     }
 }

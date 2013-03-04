@@ -36,7 +36,6 @@ namespace Creshendo.Util.Rule
     public class OrLiteralConstraint : IConstraint
     {
         protected internal String name;
-        //UPGRADE_NOTE: The initialization of  'value_Renamed' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal bool negated = false;
         protected internal List<object> value_Renamed;
 

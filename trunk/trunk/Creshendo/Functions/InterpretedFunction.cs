@@ -80,10 +80,6 @@ namespace Creshendo.Functions
             get { return Constants.OBJECT_TYPE; }
         }
 
-        /* (non-Javadoc)
-		* @see org.jamocha.rete.Function#executeFunction(org.jamocha.Creshendo.Util.Rete.Rete, org.jamocha.rete.Parameter[])
-		*/
-
         public virtual IReturnVector executeFunction(Rete engine, IParameter[] params_Renamed)
         {
             // the first thing we do is set the values

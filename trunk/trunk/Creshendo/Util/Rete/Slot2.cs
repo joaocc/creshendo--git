@@ -35,9 +35,8 @@ namespace Creshendo.Util.Rete
     /// 
     public class Slot2 : Slot
     {
-        //UPGRADE_NOTE: The initialization of  'equalsList' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IList equalsList;
-        //UPGRADE_NOTE: The initialization of  'notEqualList' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
+
         private IList notEqualList;
 
         public Slot2()
@@ -150,7 +149,6 @@ namespace Creshendo.Util.Rete
             return buf.ToString();
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
         /// <summary> A convienance method to clone slots
         /// </summary>
         public Object Clone()

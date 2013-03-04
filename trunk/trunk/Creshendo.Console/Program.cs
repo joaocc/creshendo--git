@@ -1,7 +1,7 @@
 using System;
 using System.IO;
-using Creshendo.UnitTests;
-using Creshendo.UnitTests.Support;
+using Test.Creshendo;
+using Test.Creshendo.Support;
 using Creshendo.Util.Rete;
 
 namespace Creshendo.Console

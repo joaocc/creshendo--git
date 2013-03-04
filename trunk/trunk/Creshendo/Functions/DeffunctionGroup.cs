@@ -29,7 +29,6 @@ namespace Creshendo.Functions
     /// </author>
     public class DeffunctionGroup : IFunctionGroup
     {
-        //UPGRADE_NOTE: The initialization of  'funcs' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IList funcs;
 
         /// <summary> 
@@ -45,11 +44,6 @@ namespace Creshendo.Functions
         {
             get { return typeof (DeffunctionGroup).FullName; }
         }
-
-
-        /* (non-Javadoc)
-		* @see org.jamocha.rete.FunctionGroup#listFunctions()
-		*/
 
         public virtual IList listFunctions()
         {

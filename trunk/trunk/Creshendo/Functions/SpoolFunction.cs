@@ -70,7 +70,6 @@ namespace Creshendo.Functions
                     if (writer != null)
                     {
                         writer.Flush();
-                        //UPGRADE_NOTE: Exceptions thrown by the equivalent in .NET of method 'java.io.PrintWriter.close' may be different. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1099"'
                         writer.Close();
                     }
                 }

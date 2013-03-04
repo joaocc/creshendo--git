@@ -41,7 +41,6 @@ namespace Creshendo.Util.Rete
 
     public interface ITemporalFact : IFact
     {
-        //UPGRADE_NOTE: Members of interface 'TemporalFact' were extracted into structure 'TemporalFact_Fields'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1045"'
         long ExpirationTime { get; set; }
         String Source { get; set; }
         String ServiceType { get; set; }
