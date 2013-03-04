@@ -52,7 +52,6 @@ namespace Creshendo.Functions
             Process rt = Process.GetCurrentProcess();
             long free = GC.GetTotalMemory(false);
             long total = GC.GetTotalMemory(false);
-            //UPGRADE_WARNING: Narrowing conversions may produce unexpected results in C#. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1042"'
             double percentfree = ((double) free/(double) total)*100;
             free = free/1024;
             total = total/1024;

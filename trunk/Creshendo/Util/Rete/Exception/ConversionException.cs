@@ -33,7 +33,6 @@ namespace Creshendo.Util.Rete.Exception
         {
         }
 
-        //UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
         /// <param name="">cause
         /// 
         /// </param>
@@ -42,7 +41,6 @@ namespace Creshendo.Util.Rete.Exception
         {
         }
 
-        //UPGRADE_NOTE: Exception 'java.lang.Throwable' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
         /// <param name="">message
         /// </param>
         /// <param name="">cause

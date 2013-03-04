@@ -408,7 +408,6 @@ namespace Creshendo.Util.Rete
                 {
                     if (slts[idx].ValueType == Constants.STRING_TYPE)
                     {
-                        //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                         slts[idx].Value = ((BoundParam) slots[idx].Value).Value.ToString();
                     }
                     else

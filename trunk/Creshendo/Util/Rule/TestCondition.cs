@@ -75,7 +75,7 @@ namespace Creshendo.Util.Rule
         #region Condition Members
 
         /// <summary>
-        /// the current implementation creates a new org.jamocha.rete.util.List, adds the
+        /// the current implementation creates a new Creshendo.rete.util.List, adds the
         /// TestNode to it and returns the list.
         /// </summary>
         /// <value></value>
@@ -96,7 +96,7 @@ namespace Creshendo.Util.Rule
             get { return node; }
         }
 
-        /// <summary> return an org.jamocha.rete.util.IList of the bindings. in the case of TestCondition, the
+        /// <summary> return an Creshendo.rete.util.IList of the bindings. in the case of TestCondition, the
         /// bindings are BoundParam
         /// </summary>
         public virtual IList BindConstraints

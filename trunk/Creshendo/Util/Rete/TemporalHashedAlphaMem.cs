@@ -168,7 +168,7 @@ namespace Creshendo.Util.Rete
             IGenericMap<Object, Object> list = (IGenericMap<Object, Object>) memory[index];
             if (list != null)
             {
-                // we have to create a new org.jamocha.rete.util.List<Object> with the values
+                // we have to create a new Creshendo.rete.util.List<Object> with the values
                 // so the GetEnumerator will work correctly. if we didn't
                 // do this, we might Get a NullPointerException or a
                 // possibly a concurrent modification exception, since

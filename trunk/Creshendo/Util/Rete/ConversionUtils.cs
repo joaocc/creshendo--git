@@ -149,7 +149,6 @@ namespace Creshendo.Util.Rete
             {
                 if (val is Decimal)
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.shortValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return Convert.ToInt16(val);
                 }
             }
@@ -532,12 +531,10 @@ namespace Creshendo.Util.Rete
             {
                 if (s is Boolean)
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return s.ToString().ToUpper();
                 }
                 else if (s is String)
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return "\"" + s.ToString() + "\"";
                 }
                 else if (s.GetType() != null && s.GetType().IsArray)
@@ -556,7 +553,6 @@ namespace Creshendo.Util.Rete
                 }
                 else
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return s.ToString();
                 }
             }

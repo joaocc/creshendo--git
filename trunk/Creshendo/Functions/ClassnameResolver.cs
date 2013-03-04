@@ -11,15 +11,11 @@ namespace Creshendo.Functions
 
     public class ClassnameResolver
     {
-        //UPGRADE_NOTE: The initialization of  'classes' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
+
         private List<Object> classes;
 
-        //UPGRADE_NOTE: Final was removed from the declaration of 'classnamePattern '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'classnamePattern' was moved to static method 'org.jamocha.rete.functions.ClassnameResolver'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         //private static readonly Pattern classnamePattern;
 
-        //UPGRADE_NOTE: Final was removed from the declaration of 'packagePattern '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_NOTE: The initialization of  'packagePattern' was moved to static method 'org.jamocha.rete.functions.ClassnameResolver'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         //private static readonly Pattern packagePattern;
 
         private Rete engine;
@@ -55,7 +51,6 @@ namespace Creshendo.Functions
             //}
             //else
             //{
-            //    //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             //    throw new System.Exception("The import \"" + s + "\" is neither a valid class nor package name.");
             //}
         }
@@ -65,10 +60,9 @@ namespace Creshendo.Functions
             return null;
             //if (!isValidClassname(name))
             //{
-            //    //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             //    throw new System.Exception("\"" + name + "\" is not a valid class name.");
             //}
-            //org.jamocha.rete.util.IList possibleNames = new org.jamocha.rete.util.List<Object>();
+            //Creshendo.rete.util.IList possibleNames = new Creshendo.rete.util.List<Object>();
             //possibleNames.Add(name);
             //if (!isQualifiedClassname(name))
             //{
@@ -90,10 +84,8 @@ namespace Creshendo.Functions
             //for (int idx = 0; idx < possibleNames.Count(); idx++)
             //{
             //    System.String possibleClassName = (System.String) possibleNames.Get(idx);
-            //    //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             //    try
             //    {
-            //        //UPGRADE_TODO: Format of parameters of method 'java.lang.Class.forName' are different in the equivalent in .NET. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1092"'
             //        return System.Type.GetType(possibleClassName);
             //    }
             //    catch (System.Exception e)
@@ -101,7 +93,6 @@ namespace Creshendo.Functions
             //        /* just try the Current name */
             //    }
             //}
-            ////UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             //throw new System.Exception("Class \"" + name + "\" could ot be found.");
         }
 
@@ -114,7 +105,7 @@ namespace Creshendo.Functions
 
         public virtual bool isQualifiedClassname(String s)
         {
-            return isValidClassname(s) && (s.IndexOf(".") > - 1);
+            return isValidClassname(s) && (s.IndexOf(".") > -1);
         }
     }
 }

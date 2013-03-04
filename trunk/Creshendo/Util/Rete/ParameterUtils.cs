@@ -22,7 +22,6 @@ namespace Creshendo.Util.Rete
 {
     public class ParameterUtils
     {
-        //UPGRADE_TODO: Interface java.util was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
         /// <summary> The method takes a list containing Parameters and converts it to
         /// an array of Parameter[]. Do not pass a list with other types
         /// </summary>

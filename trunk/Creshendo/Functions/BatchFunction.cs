@@ -78,7 +78,6 @@ namespace Creshendo.Functions
                         // String. If we have one use a URL.
                         if (Regex.IsMatch(input, "^[a-zA-Z]+://.*"))
                         {
-                            //UPGRADE_TODO: Class 'java.net.URL' was converted to a 'System.Uri' which does not throw an exception if a URL specifies an unknown protocol. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1132"'
                             Uri url = new Uri(input);
                             inStream = ((HttpWebRequest) WebRequest.Create(url)).GetResponse().GetResponseStream();
                             // Otherwise treat it as normal file on the Filesystem
@@ -98,13 +97,11 @@ namespace Creshendo.Functions
                     {
                         // we should report the error
                         rv.addReturnValue(new DefaultReturnValue(Constants.BOOLEAN_OBJECT, false));
-                        //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                         engine.writeMessage(e.Message + Constants.LINEBREAK, Constants.DEFAULT_OUTPUT);
                     }
                     catch (IOException e)
                     {
                         rv.addReturnValue(new DefaultReturnValue(Constants.BOOLEAN_OBJECT, false));
-                        //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                         engine.writeMessage(e.Message + Constants.LINEBREAK, Constants.DEFAULT_OUTPUT);
                     }
                 }
@@ -180,7 +177,6 @@ namespace Creshendo.Functions
             }
             catch (ParseException e)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 engine.writeMessage(e.Message + Constants.LINEBREAK, Constants.DEFAULT_OUTPUT);
             }
         }

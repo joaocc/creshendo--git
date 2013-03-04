@@ -39,7 +39,7 @@ namespace Creshendo.Util.Rule
 
     public interface IAnalysis
     {
-        //UPGRADE_NOTE: Members of interface 'Analysis' were extracted into structure 'Analysis_Fields'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1045"'
+
         ISummary Errors { get; }
         ISummary Warnings { get; }
 

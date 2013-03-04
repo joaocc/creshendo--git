@@ -27,9 +27,8 @@ namespace Creshendo.Util
     /// </author>
     public class FactUtils
     {
-        //UPGRADE_NOTE: Final was removed from the declaration of 'COMPARATOR '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
         public static readonly FactComparator COMPARATOR = new FactComparator();
-        //UPGRADE_NOTE: Final was removed from the declaration of 'TEMPLATECOMP '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
+
         public static readonly FactTemplateComparator TEMPLATECOMP = new FactTemplateComparator();
 
         public FactUtils() 

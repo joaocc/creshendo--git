@@ -93,7 +93,6 @@ namespace Creshendo.Util.Rete
                         }
                         catch (RetractException e)
                         {
-                            //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                             throw new AssertException("NotJion - " + e.Message);
                         }
                     }
@@ -153,7 +152,6 @@ namespace Creshendo.Util.Rete
                         }
                         catch (AssertException e)
                         {
-                            //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Throwable.getMessage' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                             throw new RetractException("NotJion - " + e.Message);
                         }
                     }

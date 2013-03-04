@@ -37,9 +37,8 @@ namespace Creshendo.Util.Rete
     {
         private Rete engine = null;
 
-        /// <summary> The org.jamocha.rete.util.List for the modules.
+        /// <summary> The Creshendo.rete.util.List for the modules.
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'modules' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IGenericMap<object, object> modules;
 
         private bool profAdd = false;

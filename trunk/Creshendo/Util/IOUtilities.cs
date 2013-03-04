@@ -34,7 +34,6 @@ namespace Creshendo.Util
             try
             {
                 StreamWriter writer = new StreamWriter(output);
-                //UPGRADE_TODO: Interface java.util was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1095"'
                 IEnumerator<Object> itr = facts.GetEnumerator();
                 while (itr.MoveNext())
                 {

@@ -46,7 +46,6 @@ namespace Creshendo.Util.Rete
         /// we have to first test the slot is not nill, and then do the hash
         /// lookup. not sure that it's worth it, so removed it instead.
         /// </summary>
-        //UPGRADE_NOTE: Final was removed from the declaration of 'operators '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
         public static readonly int[] operators = new int[] {Constants.EQUAL, Constants.NILL};
 
         /// <summary> The Class that defines object type
@@ -55,16 +54,14 @@ namespace Creshendo.Util.Rete
 
         /// <summary> HashMap entries for unique AlphaNodes
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'entries' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IGenericMap<object, object> entries;
 
         /// <summary> If we can gaurantee Uniqueness of the AlphaNodes, set it to true
         /// </summary>
         private bool gauranteeUnique = true;
 
-        /// <summary> Second org.jamocha.rete.util.List for all nodes that do not use ==, null operators
+        /// <summary> Second Creshendo.rete.util.List for all nodes that do not use ==, null operators
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'successor2' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal List<object> successor2;
 
         /// <summary> 
@@ -402,7 +399,6 @@ namespace Creshendo.Util.Rete
         /// </summary>
         public override String hashString()
         {
-            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
             return ToString();
         }
 

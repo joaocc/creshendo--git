@@ -28,7 +28,6 @@ namespace Creshendo.Util.Rete
     {
         /// <summary> By default the action is assert
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'actionType' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal int actionType;
 
         /// <summary> Column refers to the column of the fact. the value of the column
@@ -159,7 +158,6 @@ namespace Creshendo.Util.Rete
             get { return fact; }
         }
 
-        //UPGRADE_TODO: Method 'setFact' was converted to a set modifier. This name conflicts with another property. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1137"'
         /// <summary>
         /// The TestNode should call this method to set the fact. The fact should
         /// never be null, since it has to have matched preceding patterns. We

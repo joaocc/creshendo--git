@@ -31,7 +31,7 @@ namespace Creshendo.Util.Rete
     [Serializable]
     public class Defmodule : IModule
     {
-        /// <summary> A simple org.jamocha.rete.util.IList of the activations for the given module
+        /// <summary> A simple Creshendo.rete.util.IList of the activations for the given module
         /// </summary>
         protected internal IActivationList activations = null;
 
@@ -39,7 +39,6 @@ namespace Creshendo.Util.Rete
         /// from the shell, or the defclass if it was created from
         /// an Object.
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'deftemplates' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IGenericMap<object, object> deftemplates;
 
         protected internal int id;
@@ -53,7 +52,6 @@ namespace Creshendo.Util.Rete
         /// activation is added to the module, the class should
         /// check to see if the rule is in the module first.
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'rules' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IGenericMap<object, object> rules;
 
         private int templateCount = 0;
@@ -86,7 +84,6 @@ namespace Creshendo.Util.Rete
         /// called to make sure any activations in the module are
         /// processed.
         /// </summary>
-        //UPGRADE_NOTE: Synchronized keyword was removed from method 'getActivationCount'. Lock expression was added. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1027"'
         public virtual int ActivationCount
         {
             get

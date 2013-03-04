@@ -44,7 +44,7 @@ namespace Creshendo.Util.Rule
         /// </returns>
         BaseNode LastNode { get; }
 
-        /// <summary> Get the bind Constraint org.jamocha.rete.util.IList including BoundConstraint (isObjectBinding==false) 
+        /// <summary> Get the bind Constraint Creshendo.rete.util.IList including BoundConstraint (isObjectBinding==false) 
         /// and PredicateConstraint (isPredicateJoin==true)
         /// </summary>
         /// <returns>

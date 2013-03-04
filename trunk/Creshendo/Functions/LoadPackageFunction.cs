@@ -65,8 +65,6 @@ namespace Creshendo.Functions
                     IReturnVector rval = (IReturnVector) n.Value;
                     classname = rval.firstReturnValue().StringValue;
                 }
-                //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
-                //UPGRADE_NOTE: Exception 'java.lang.InstantiationException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
                 try
                 {
                     Type classDefinition = classnameResolver.resolveClass(classname);

@@ -59,13 +59,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Creshendo.UnitTests\Creshendo.UnitTests.csproj">
-      <Project>{864D02AA-1689-4E51-93B1-6CBAC7190F22}</Project>
-      <Name>Creshendo.UnitTests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Creshendo\Creshendo.csproj">
       <Project>{9D196D14-9007-49A1-91E4-6388B7953927}</Project>
       <Name>Creshendo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.Creshendo\Test.Creshendo.csproj">
+      <Project>{DD089743-D48A-421D-AE91-1CBC07F8D4A5}</Project>
+      <Name>Test.Creshendo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

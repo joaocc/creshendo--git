@@ -22,8 +22,8 @@ namespace Creshendo.Util.Collections
 {
     /// <author>  Peter Lin
     /// *
-    /// The purpose of this factory is to centralize the creation of org.jamocha.rete.util.List,
-    /// org.jamocha.rete.util.IList, Collection, Set and org.jamocha.rete.util.Map data structures. This is done so that
+    /// The purpose of this factory is to centralize the creation of Creshendo.rete.util.List,
+    /// Creshendo.rete.util.IList, Collection, Set and Creshendo.rete.util.Map data structures. This is done so that
     /// we can easily drop in some other implementation, like Tangosol's
     /// Coherence product, which uses distributed HashMaps.
     /// 
@@ -91,9 +91,9 @@ namespace Creshendo.Util.Collections
             return new GenericHashMap<Object, Object>();
         }
 
-        /// <summary> the sole purpose of this method is to return a org.jamocha.rete.util.Map that is not
+        /// <summary> the sole purpose of this method is to return a Creshendo.rete.util.Map that is not
         /// clustered. The other methods will return a map, but depending
-        /// on the settings, they may return a org.jamocha.rete.util.Map that is hooked into a
+        /// on the settings, they may return a Creshendo.rete.util.Map that is hooked into a
         /// JCache compliant product like Tangosol's Coherence.
         /// </summary>
         /// <returns>

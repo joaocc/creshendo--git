@@ -79,9 +79,6 @@ namespace Creshendo.Util.Rete
             operator_Renamed = Constants.EQUAL;
         }
 
-        //UPGRADE_NOTE: The initialization of  'operator_Renamed' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
-
-
         public virtual bool evaluate(IFact[] left, IFact right, Rete engine)
         {
             if (function != null)

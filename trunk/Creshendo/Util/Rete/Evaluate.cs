@@ -139,7 +139,6 @@ namespace Creshendo.Util.Rete
         {
             if (right is Boolean)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Convert.ToBoolean(left) == Convert.ToBoolean(right);
             }
             else
@@ -166,7 +165,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is String)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Boolean.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Convert.ToBoolean(left) == Convert.ToBoolean(right);
             }
             else
@@ -191,7 +189,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Single) right);
             }
             else if (right is Int64)
@@ -228,7 +225,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Single) right);
             }
             else if (right is Int64)
@@ -253,37 +249,30 @@ namespace Creshendo.Util.Rete
         {
             if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == ((Double) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Int16) right);
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Single) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Int64) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left <= Decimal.ToDouble(((Decimal) right));
             }
             else if (right is String)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left.ToString().Equals(right);
             }
             else
@@ -308,7 +297,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left == (double) ((Single) right);
             }
             else if (right is Int64)
@@ -345,7 +333,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left == (double) ((Single) right);
             }
             else if (right is Int64)
@@ -382,7 +369,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToDouble(left) == (double) ((Single) right);
             }
             else if (right is Int64)
@@ -496,7 +482,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Single) right);
             }
             else if (right is Int64)
@@ -533,7 +518,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Single) right);
             }
             else if (right is Int64)
@@ -558,37 +542,30 @@ namespace Creshendo.Util.Rete
         {
             if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != ((Double) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Int16) right);
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Single) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Int64) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != Decimal.ToDouble(((Decimal) right));
             }
             else if (right is String)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return !left.ToString().Equals(right);
             }
             else
@@ -613,7 +590,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left != (double) ((Single) right);
             }
             else if (right is Int64)
@@ -650,7 +626,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left != (double) ((Single) right);
             }
             else if (right is Int64)
@@ -687,7 +662,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToDouble(left) != (double) ((Single) right);
             }
             else if (right is Int64)
@@ -844,7 +818,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Int16)
             {
-                //UPGRADE_ISSUE: Method 'java.lang.Number.shortValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 return Convert.ToInt16(left) >= (short) ((Int16) right);
             }
             else if (right is Int64)
@@ -853,7 +826,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToSingle(left) >= (float) ((Single) right);
             }
             else if (right is Double)
@@ -909,7 +881,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Single) right);
             }
             else if (right is Double)
@@ -942,7 +913,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Single) right);
             }
             else if (right is Double)
@@ -959,7 +929,6 @@ namespace Creshendo.Util.Rete
             }
         }
 
-        //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
         public static bool evaluateGreater(Int32 left, object right)
         {
             if (right is Int32)
@@ -976,7 +945,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Single) right);
             }
             else if (right is Double)
@@ -1009,7 +977,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Single) right);
             }
             else if (right is Double)
@@ -1039,7 +1006,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Single) right);
             }
             else if (right is Int64)
@@ -1072,7 +1038,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Single) right);
             }
             else if (right is Int64)
@@ -1105,7 +1070,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Single) right);
             }
             else if (right is Int64)
@@ -1138,7 +1102,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Single) right);
             }
             else if (right is Int64)
@@ -1176,7 +1139,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Single) right);
             }
             else if (right is Double)
@@ -1209,7 +1171,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Single) right);
             }
             else if (right is Double)
@@ -1242,7 +1203,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Single) right);
             }
             else if (right is Double)
@@ -1275,7 +1235,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Single) right);
             }
             else if (right is Double)
@@ -1297,32 +1256,26 @@ namespace Creshendo.Util.Rete
         {
             if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Single) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Int16) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left < (float) ((Int64) right);
             }
             else if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left < ((Double) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left < Decimal.ToDouble(((Decimal) right));
             }
             else
@@ -1335,32 +1288,26 @@ namespace Creshendo.Util.Rete
         {
             if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Single) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Int16) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left <= (float) ((Int64) right);
             }
             else if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left <= ((Double) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left <= Decimal.ToDouble(((Decimal) right));
             }
             else
@@ -1373,32 +1320,26 @@ namespace Creshendo.Util.Rete
         {
             if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Single) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Int16) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left > (float) ((Int64) right);
             }
             else if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left > ((Double) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left > Decimal.ToDouble(((Decimal) right));
             }
             else
@@ -1411,32 +1352,26 @@ namespace Creshendo.Util.Rete
         {
             if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Single) right);
             }
             else if (right is Int32)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Int32) right);
             }
             else if (right is Int16)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Int16) right);
             }
             else if (right is Int64)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.floatValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (float) left >= (float) ((Int64) right);
             }
             else if (right is Double)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left >= ((Double) right);
             }
             else if (right is Decimal)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return (double) left >= Decimal.ToDouble(((Decimal) right));
             }
             else
@@ -1462,7 +1397,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left < (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1495,7 +1429,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToDouble(left) < (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1528,7 +1461,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left <= (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1561,7 +1493,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToDouble(left) <= (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1594,7 +1525,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return Decimal.ToDouble(left) > (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1627,7 +1557,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left > (double) ((Single) right);
             }
             else if (right is Int64)
@@ -1660,7 +1589,6 @@ namespace Creshendo.Util.Rete
             }
             else if (right is Single)
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.lang.Float.doubleValue' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return left >= (double) ((Single) right);
             }
             else if (right is Int64)

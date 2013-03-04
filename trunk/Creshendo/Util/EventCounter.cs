@@ -31,10 +31,7 @@ namespace Creshendo.Util
     /// </author>
     public class EventCounter : EngineEventListener
     {
-        //UPGRADE_NOTE: The initialization of  'asserts' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private List<Object> asserts;
-        //UPGRADE_NOTE: The initialization of  'retracts' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
-        //UPGRADE_NOTE: The initialization of  'nodeFilter' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IGenericMap<Object, Object> nodeFilter;
         private List<Object> profiles;
         private List<Object> retracts;

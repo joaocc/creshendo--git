@@ -26,7 +26,7 @@ namespace Creshendo.Util.Rule
     /// </author>
     public class WarningSummary : ISummary
     {
-        //UPGRADE_NOTE: The initialization of  'warnings' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
+
         private String[] warnings;
 
         /// <summary> 

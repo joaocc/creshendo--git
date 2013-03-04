@@ -118,14 +118,11 @@ namespace Creshendo.Util.Rete
         public const String SUBTRACT_SYMBOL = "-";
         public const int USERDEFINED = 13;
 
-        //UPGRADE_NOTE: Final was removed from the declaration of 'FILE_SEPARATOR '. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1003"'
-        //UPGRADE_ISSUE: Method 'java.lang.System.getProperty' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangSystemgetProperty_javalangString"'
-        //UPGRADE_NOTE: The initialization of  'FILE_SEPARATOR' was moved to static method 'org.jamocha.rete.Constants'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         public static readonly String FILE_SEPARATOR;
         public static readonly String LINEBREAK;
         public static String DEFAULT_OUTPUT = "t";
         public static String INITIAL_FACT = "_initialFact";
-        public static String SHELL_PROMPT = "Jamocha> ";
+        public static String SHELL_PROMPT = "Creshendo> ";
         public static String VERSION = "0.8";
 
         static Constants()

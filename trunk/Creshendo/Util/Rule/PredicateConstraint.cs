@@ -117,7 +117,6 @@ namespace Creshendo.Util.Rule
             }
             else
             {
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 return "    (" + name + " ?" + varName + "&:(" + functionName + " ?" + varName + " " + value_Renamed.ToString() + ") )" + Constants.LINEBREAK;
             }
         }

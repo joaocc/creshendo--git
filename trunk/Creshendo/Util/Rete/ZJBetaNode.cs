@@ -79,7 +79,7 @@ namespace Creshendo.Util.Rete
             */
 
             // now that we've cleared the list for each fact, we
-            // can Clear the org.jamocha.rete.util.Map.
+            // can Clear the Creshendo.rete.util.Map.
             leftmem.Clear();
             rightmem.Clear();
         }

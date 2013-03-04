@@ -34,7 +34,6 @@ namespace Creshendo.Util.Rete
     {
         /// <summary> later on we should replace this and have it
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'variables' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IGenericMap<object, object> variables;
 
         public DefglobalMap() 
@@ -87,7 +86,6 @@ namespace Creshendo.Util.Rete
             {
                 String key = (String) itr.Current;
                 Object val = variables.Get(key);
-                //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                 engine.writeMessage(key + "=" + val.ToString());
             }
         }

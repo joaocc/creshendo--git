@@ -70,7 +70,7 @@ namespace Creshendo.Util.Rete
 
         private IModule main = null;
 
-        /// <summary> The org.jamocha.rete.util.List for the modules.
+        /// <summary> The Creshendo.rete.util.List for the modules.
         /// </summary>
         protected internal IGenericMap<object, object> modules;
 

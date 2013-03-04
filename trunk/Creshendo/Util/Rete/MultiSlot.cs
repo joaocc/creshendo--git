@@ -26,7 +26,6 @@ namespace Creshendo.Util.Rete
     /// </author>
     public class MultiSlot : Slot
     {
-        //UPGRADE_NOTE: The initialization of  'type' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal new int type;
 
         /// <summary> 
@@ -96,11 +95,9 @@ namespace Creshendo.Util.Rete
 
         public override String valueToString()
         {
-            //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
             return Value.ToString();
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
         /// <summary> method returns a clone and set id, name and value.
         /// </summary>
         public Object Clone()

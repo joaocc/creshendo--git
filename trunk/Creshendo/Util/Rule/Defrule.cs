@@ -582,9 +582,6 @@ namespace Creshendo.Util.Rule
             {
                 try
                 {
-                    //UPGRADE_ISSUE: Class 'java.text.SimpleDateFormat' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javatextSimpleDateFormat"'
-                    //UPGRADE_ISSUE: Constructor 'java.text.SimpleDateFormat.SimpleDateFormat' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javatextSimpleDateFormat"'
-                    //java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("mm/dd/yyyy HH:mm");
                     return ((Convert.ToDateTime(date).Ticks - 621355968000000000)/10000) - (long) TimeZone.CurrentTimeZone.GetUtcOffset(Convert.ToDateTime(date)).TotalMilliseconds;
                 }
                 catch (Exception e)
@@ -610,7 +607,6 @@ namespace Creshendo.Util.Rule
             joins.Clear();
         }
 
-        //UPGRADE_TODO: The equivalent of method 'java.lang.Object.clone' is not an override method. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1143"'
         /// <summary> TODO need to finish implementing the clone method
         /// </summary>
         public Object Clone()

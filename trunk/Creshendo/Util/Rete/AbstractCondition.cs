@@ -10,7 +10,6 @@ namespace Creshendo.Util.Rule
     {
         /// <summary> the constraints for the condition element
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'constraints' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IList constraints;
 
         /// <summary> In the case the object pattern is negated, the boolean
@@ -20,7 +19,6 @@ namespace Creshendo.Util.Rule
 
         /// <summary> a list for the RETE nodes created by RuleCompiler
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'nodes' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         protected internal IList nodes;
 
         /// <summary> the deftemplate associated with the ObjectCondition
@@ -180,8 +178,8 @@ namespace Creshendo.Util.Rule
         //     * method returns all bindings include predicateConstraints that
         //     * aren't predicate joins
         //     */
-        //    public org.jamocha.rete.util.IList getAllBindings() {
-        //        org.jamocha.rete.util.List<Object> binds = new org.jamocha.rete.util.List<Object>();
+        //    public Creshendo.rete.util.IList getAllBindings() {
+        //        Creshendo.rete.util.List<Object> binds = new Creshendo.rete.util.List<Object>();
         //        IEnumerator itr = constraints.GetEnumerator();
         //        while (itr.MoveNext()) {
         //            Object c = itr.Current();

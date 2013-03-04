@@ -84,11 +84,8 @@ namespace Creshendo.Util.Rule.Util
         /// </returns>
         public static Object generateJavaFacts(ObjectCondition cond, Deftemplate templ, Rete.Rete engine)
         {
-            //UPGRADE_NOTE: Exception 'java.lang.ClassNotFoundException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
-            //UPGRADE_NOTE: Exception 'java.lang.InstantiationException' was converted to 'System.Exception' which has different behavior. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1100"'
             try
             {
-                //UPGRADE_TODO: Format of parameters of method 'java.lang.Class.forName' are different in the equivalent in .NET. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1092"'
                 Type theclz = Type.GetType(templ.ClassName);
                 Defclass dfc = engine.findDefclass(theclz);
                 Object data = CreateNewInstance(theclz);

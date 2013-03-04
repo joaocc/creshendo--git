@@ -49,7 +49,6 @@ namespace Creshendo.Util.Rete
                 Object value_Renamed = Value;
                 if (value_Renamed != null)
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return Value.ToString();
                 }
                 else
@@ -81,15 +80,12 @@ namespace Creshendo.Util.Rete
         {
             get
             {
-                //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 if (Value != null && !(Value is int))
                 {
                     throw new FormatException("Value is not a number");
                 }
                 else
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.intValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
-                    //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return ((int) Value);
                 }
             }
@@ -99,15 +95,12 @@ namespace Creshendo.Util.Rete
         {
             get
             {
-                //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 if (Value != null && !(Value is short))
                 {
                     throw new FormatException("Value is not a number");
                 }
                 else
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.shortValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
-                    //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return ((short) Value);
                 }
             }
@@ -117,15 +110,12 @@ namespace Creshendo.Util.Rete
         {
             get
             {
-                //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 if (Value != null && !(Value is long))
                 {
                     throw new FormatException("Value is not a number");
                 }
                 else
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.longValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
-                    //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return ((long) Value);
                 }
             }
@@ -135,15 +125,12 @@ namespace Creshendo.Util.Rete
         {
             get
             {
-                //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 if (Value != null && !(Value is float))
                 {
                     throw new FormatException("Value is not a number");
                 }
                 else
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.floatValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
-                    //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return ((float) Value);
                 }
             }
@@ -153,15 +140,12 @@ namespace Creshendo.Util.Rete
         {
             get
             {
-                //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                 if (Value != null && !(Value is double))
                 {
                     throw new FormatException("Value is not a number");
                 }
                 else
                 {
-                    //UPGRADE_ISSUE: Method 'java.lang.Number.doubleValue' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
-                    //UPGRADE_ISSUE: Class 'java.lang.Number' was not converted. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1000_javalangNumber"'
                     return ((double) Value);
                 }
             }
@@ -177,7 +161,6 @@ namespace Creshendo.Util.Rete
                 }
                 else
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return Decimal.Parse(Value.ToString());
                 }
             }
@@ -193,7 +176,6 @@ namespace Creshendo.Util.Rete
                 }
                 else
                 {
-                    //UPGRADE_TODO: The equivalent in .NET for method 'java.Object.toString' may return a different value. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1043"'
                     return Decimal.Parse(Value.ToString());
                 }
             }

@@ -21,7 +21,7 @@ namespace Creshendo.Util.Rete
 {
     /// <summary> OrderedFactTypeNode is the object type node for ordered facts. The
     /// difference between the two is this type node is used only for
-    /// ordered facts. Jamocha groups the ordered facts by the number of slots
+    /// ordered facts. Creshendo groups the ordered facts by the number of slots
     /// first. The second thing is it uses a HashMap for the successors, since
     /// the first slot in the ordered fact is a symbol. This means it is always
     /// an equality test, which means we shouldn't iterate over all successors.
@@ -39,7 +39,6 @@ namespace Creshendo.Util.Rete
 
         /// <summary> HashMap entries for unique AlphaNodes
         /// </summary>
-        //UPGRADE_NOTE: The initialization of  'entries' was moved to method 'InitBlock'. 'ms-help://MS.VSCC.2003/commoner/redir/redirect.htm?keyword="jlca1005"'
         private IGenericMap<object, object> entries;
 
         /// <param name="">id
