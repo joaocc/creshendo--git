@@ -1,0 +1,10 @@
+Testing io:
+>>> printout
+1 2 a a (a b c)
+>>> open
+>>> close
+>>> read
+1 2 a a 
+>>> readline
+This is a test, this is only a test
+>>> console

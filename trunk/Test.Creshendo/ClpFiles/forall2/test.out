@@ -1,0 +1,16 @@
+Testing forall CE :
+No facts
+>>> FIRED 1
+One A
+One A, matching B
+>>> FIRED 1
+One A, non-matching B
+One pair, extra A
+One pair, A, nonmatching B
+Two pairs
+>>> FIRED 1
+One B
+>>> FIRED 1
+One pair, One B
+>>> FIRED 1
+Test done.

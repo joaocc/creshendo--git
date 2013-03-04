@@ -1,0 +1,7 @@
+Testing deftemplates :
+(deftemplate MAIN::foo extends MAIN::__fact "This is a comment" 
+ (slot bar))
+(deftemplate MAIN::bar extends MAIN::foo "This is a comment" 
+ (slot bar) 
+ (slot foo))
+Test done.

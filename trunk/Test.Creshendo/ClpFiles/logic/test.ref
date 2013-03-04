@@ -1,0 +1,13 @@
+Testing logic:
+>>> and, not and or
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+TRUE
+>>> bit-and, bit-not and bit-or
+0
+3
+-256
+Test done.

@@ -1,0 +1,3 @@
+Testing multiple '(not (and' with bindings to earlier vars:
+Latch at point (4,10)
+Test done.

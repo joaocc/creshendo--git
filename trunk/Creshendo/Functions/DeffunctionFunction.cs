@@ -119,12 +119,12 @@ namespace Creshendo.Functions
 
         public void setParameters(IParameter[] parameters1)
         {
-            throw new NotImplementedException();
+            parameters = parameters1;
         }
 
         public void setFunction(IList infunc)
         {
-            throw new NotImplementedException();
+            functions = infunc;
         }
     }
 }

@@ -1,0 +1,20 @@
+Testing return in rules :
+ ==> Focus MAIN
+ ==> f-0 (MAIN::initial-fact)
+==> Activation: MAIN::start :  f-0
+==> Activation: DETECTION::example-1 :  f-0
+==> Activation: DETECTION::example-2 :  f-0
+FIRE 1 MAIN::start f-0
+ <== Focus MAIN
+ ==> Focus DETECTION
+FIRE 2 DETECTION::example-1 f-0
+ <== Focus DETECTION
+ ==> Focus MAIN
+ <== Focus MAIN
+ <== Focus MAIN
+ ==> Focus DETECTION
+FIRE 1 DETECTION::example-2 f-0
+Finally!
+ <== Focus DETECTION
+ ==> Focus MAIN
+Test done.

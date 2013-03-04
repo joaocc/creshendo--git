@@ -1,0 +1,51 @@
+Testing io:
+>>> printout
+1 2.0 a a (a b c)
+>>> open
+>>> close
+>>> read
+1 2.0 a a 
+>>> readline
+This is a test, this is only a test
+>>> console
+A
+D
+The last line
+>>> format
+I ate -->9<-- pies!
+My average is  -->0.333<-- !
+ 1234 1234 4d2 4D2 2322
+4.9
+5.0
+4.99
+5.00
+4.999
+5.000
+0.0
+X
+X
+
+>>> multithreaded io
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+FALSE
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+TRUE
+Test done.

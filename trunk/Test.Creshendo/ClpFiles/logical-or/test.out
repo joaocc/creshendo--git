@@ -1,0 +1,17 @@
+Testing '|' inside logical :
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::person (name john) (city denver))
+For a total of 2 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::person (name john) (city denver))
+f-2   (MAIN::person (name judy) (city boston))
+f-3   (MAIN::someone-on-eastcoast)
+For a total of 4 facts.
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::person (name john) (city denver))
+For a total of 2 facts.
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+Test done.

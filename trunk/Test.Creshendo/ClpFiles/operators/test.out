@@ -1,0 +1,60 @@
+Testing operators:
+>>> Multiplication
+12 12 -12
+>>> Addition
+7 7 1
+>>> Subtraction
+1 1 -7
+>>> Division
+5 3.33333333333333 3 0
+>>> less-than
+FALSE TRUE TRUE FALSE TRUE FALSE
+>>> lte
+FALSE TRUE TRUE TRUE TRUE TRUE
+>>> not-equal
+TRUE TRUE FALSE TRUE TRUE FALSE
+>>> equal
+FALSE FALSE TRUE FALSE FALSE TRUE
+>>> greater-than
+TRUE FALSE FALSE FALSE FALSE FALSE
+>>> gte
+TRUE FALSE TRUE FALSE FALSE TRUE
+>>> power
+100 1024 100 9 1 1
+>>> eq
+TRUE FALSE TRUE FALSE FALSE TRUE FALSE
+>>> neq
+FALSE TRUE FALSE TRUE TRUE FALSE TRUE
+>>> eq*
+TRUE FALSE TRUE FALSE FALSE TRUE TRUE
+>>> abs
+0 1 1 1 1
+>>> e
+2.71828182845905
+>>> pi
+3.14159265358979
+>>> div
+3 3 5 10 0 0 -3
+>>> mod
+1 1 0 0 1 -1 -1
+>>> min
+1 1 -1 0
+>>> max
+3 3 1 0
+>>> round
+1 2 2 0 -1 -2 1
+>>> sqrt
+1.4142135623731 1.4142135623731 2 2 NaN
+>>> exp
+2.71828182845905 7.38905609893065 20.0855369231877 0.367879441171442 0.367879441171442
+>>> log
+2.30258509299405 1 NaN
+>>> log10
+1 2 0
+>>> float
+10 -10 0
+>>> integer
+1 1 -1
+>>> random
+FALSE FALSE FALSE TRUE FALSE
+Test done.

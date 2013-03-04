@@ -1,0 +1,36 @@
+Testing pretty-printing :
+(defrule MAIN::rule-1 
+   "An easy one" 
+   (MAIN::foo A B C) 
+   => 
+   (printout t "Hi" crlf))
+
+(defrule MAIN::rule-2 
+   "Groups" 
+   (MAIN::initial-fact) 
+   (not (and (MAIN::A) (MAIN::B))) 
+   (MAIN::C) 
+   (MAIN::D) 
+   (MAIN::E) 
+   (not (and (MAIN::F) (MAIN::G))) 
+   =>)
+
+(defrule MAIN::rule-3 
+   "Bindings 1" 
+   ?x <- (MAIN::x) 
+   ?y <- (MAIN::y) 
+   ?z <- (MAIN::z) 
+   (not (MAIN::a)) 
+   =>)
+
+(defrule MAIN::rule-4 
+   "Bindings 2" 
+   ?a <- (MAIN::a) 
+   =>)
+
+(defrule MAIN::rule-4&1 
+   "Bindings 2" 
+   ?a <- (MAIN::b) 
+   =>)
+
+Test done.

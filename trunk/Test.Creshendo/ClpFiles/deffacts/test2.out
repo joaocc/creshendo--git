@@ -1,0 +1,4 @@
+(deffacts WORK::quit-job 
+     (WORK::job (salary 1000)) 
+     (HOME::hobby (name nil) (income 1000)) 
+     (MAIN::mortgage-payment 2000))

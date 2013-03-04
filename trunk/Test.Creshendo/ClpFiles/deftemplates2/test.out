@@ -1,0 +1,22 @@
+Test part 1 OK
+ALL
+MAIN::__clear
+MAIN::__not_or_test_CE
+MAIN::__fact
+MAIN::initial-fact
+A::foo
+For a total of 5 deftemplates.
+MAIN
+MAIN::__clear
+MAIN::__not_or_test_CE
+MAIN::__fact
+MAIN::initial-fact
+For a total of 4 deftemplates.
+A
+A::foo
+For a total of 1 deftemplates.
+B
+For a total of 0 deftemplates.
+Focus
+A::foo
+For a total of 1 deftemplates.

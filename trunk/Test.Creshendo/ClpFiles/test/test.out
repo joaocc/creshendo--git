@@ -1,0 +1,13 @@
+Testing test CE:
+>>> rules 1 and 2
+X is 1
+X is not 1
+>>> rule 3
+X is red, not blue
+>>> rule 4
+foo and bar match
+bar OK
+>>> No rules
+>>> rule 5
+bar OK
+Test done.

@@ -1,0 +1,55 @@
+Testing multifields:
+>>> create$
+(a b c d e)
+(a b c d e)
+(a b c d e)
+(a b c d e)
+>>> multifieldp
+TRUE FALSE
+>>> explode$
+(a b c d e)
+(a b "c" d e)
+(a b "c d" e)
+(1.00 2 a "b")
+>>> implode$
+1.00 2 a "b" TRUE
+>>> first$
+(a)
+(a)
+()
+>>> rest$
+(b c)
+()
+()
+>>> nth$
+a b c a
+>>> length$
+3 c
+>>> union$
+(a b c d e f) (a b c d e)
+>>> intersection$
+() (b c) (c)
+>>> complement$
+(d e f) (d e) (d) ()
+>>> subseq$
+(a) (a b) (a b c) (b c) (c)
+>>> subsetp
+FALSE FALSE TRUE TRUE FALSE
+>>> member$
+1 FALSE
+>>> list-function$
+TRUE TRUE
+>>> delete$
+() (a f) (b c d e f) (a b c d e) ()
+>>> insert$
+(a b c d e f) (a b c d e f) (a b c d e f) (b a) (a b)
+>>> replace$
+(a x y z c) (x y z) (x y z b c) (a b x y z)
+>>> Multifields in rules
+(A B C)
+f-0   (MAIN::foo A B C)
+f-1   (MAIN::bar A B C)
+For a total of 2 facts.
+f-1   (MAIN::bar A B C)
+For a total of 1 facts.
+Test done.

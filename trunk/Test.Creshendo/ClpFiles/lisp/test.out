@@ -1,0 +1,8 @@
+Testing LISP compatibility functions :
+Testing progn: 
+3
+35
+Testing apply: 
+6
+abc
+Test done.

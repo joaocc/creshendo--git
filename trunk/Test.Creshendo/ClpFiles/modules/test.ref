@@ -1,0 +1,21 @@
+Testing modules :
+Current module is MAIN
+(defrule MAIN::rule1 
+   (MAIN::initial-fact) 
+   =>)
+Good, got no error
+Current module is foo
+No such rule: MAIN::rule2
+(defrule foo::rule2 
+   (MAIN::initial-fact) 
+   =>)
+Lookup against current module
+(defrule foo::rule2 
+   (MAIN::initial-fact) 
+   =>)
+Good, got syntax error
+Good, got redefinition error
+Current module is bar
+Test change current module to foo:
+Current module is foo
+Test done.

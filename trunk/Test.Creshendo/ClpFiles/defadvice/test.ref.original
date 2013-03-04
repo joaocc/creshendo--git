@@ -1,0 +1,22 @@
+Testing defadvice:
+*** defadvice before a single function:
+2 and 2 is 5?
+*** undefadvice before a single function:
+2 and 2 is actually 4
+*** defadvice before with short-circuit:
+2 and 2 is 1?
+No, 2 and 2 is really 4
+*** defadvice after:
+2 and 2 is 5?
+No, 2 and 2 is really 4
+*** defadvice group:
+arithmetic: 2 and 2 is 4
+arithmetic: 2 times 2 is 4
+arithmetic: 2 minus 2 is 0
+arithmetic: 2 over 2 is 1.0
+*** undefadvice group:
+2 and 2 is 4
+2 times 2 is 4
+2 minus 2 is 0
+2 over 2 is 1.0
+Test done.

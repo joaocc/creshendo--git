@@ -1,0 +1,14 @@
+Testing dynamic salience :
+>>> when-defined
+rule-3 fired
+rule-2 fired
+rule-1 fired
+>>> when-activated
+rule-1 fired
+rule-2 fired
+rule-3 fired
+>>> every-cycle
+rule-3 fired
+rule-1 fired
+rule-2 fired
+Test done.

@@ -1,0 +1,10 @@
+Testing the '|' connective constraint:
+R4 FIRES with moe harry moe
+R4 FIRES with harry harry moe
+R3 FIRES with moe harry moe
+R3 FIRES with harry harry moe
+R2 FIRES with harry moe
+R2 FIRES with harry moe
+R1 FIRES with harry moe
+R1 FIRES with harry moe
+Test done.

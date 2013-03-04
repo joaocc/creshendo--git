@@ -1,0 +1,66 @@
+Testing not CE:
+>>> rule-1
+ ==> f-0 (MAIN::initial-fact)
+ ==> f-1 (MAIN::A)
+ ==> f-2 (MAIN::B)
+ ==> f-3 (MAIN::C)
+ ==> f-4 (MAIN::D)
+ ==> f-5 (MAIN::foo bam)
+ ==> f-6 (MAIN::foo baz)
+ ==> f-7 (MAIN::foo big)
+ ==> f-8 (MAIN::foo bad)
+ <== f-8 (MAIN::foo bad)
+>>> rule-2
+The variables are: X Y
+>>> rule-3
+No 'first' facts.
+>>> rule-4, rule-5
+rule-4 fired
+>>> rule-6
+ ==> Focus MAIN
+ ==> f-0 (MAIN::initial-fact)
+==> Activation: MAIN::rule-6 :  f-0,
+ ==> f-1 (MAIN::A)
+ ==> f-2 (MAIN::B)
+ ==> f-3 (MAIN::C)
+ ==> f-4 (MAIN::D)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-1 (MAIN::A)
+==> Activation: MAIN::rule-6 :  f-0,
+ ==> f-5 (MAIN::A)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-2 (MAIN::B)
+==> Activation: MAIN::rule-6 :  f-0,
+ ==> f-6 (MAIN::B)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-3 (MAIN::C)
+==> Activation: MAIN::rule-6 :  f-0,
+ ==> f-7 (MAIN::C)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-4 (MAIN::D)
+==> Activation: MAIN::rule-6 :  f-0,
+ ==> f-8 (MAIN::D)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-5 (MAIN::A)
+==> Activation: MAIN::rule-6 :  f-0,
+ <== f-6 (MAIN::B)
+ ==> f-9 (MAIN::A)
+ ==> f-10 (MAIN::B)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-10 (MAIN::B)
+==> Activation: MAIN::rule-6 :  f-0,
+ <== f-7 (MAIN::C)
+ <== f-8 (MAIN::D)
+ ==> f-11 (MAIN::B)
+ ==> f-12 (MAIN::C)
+ ==> f-13 (MAIN::D)
+<== Activation: MAIN::rule-6 :  f-0,
+ <== f-9 (MAIN::A)
+==> Activation: MAIN::rule-6 :  f-0,
+ <== f-11 (MAIN::B)
+ <== f-12 (MAIN::C)
+ <== f-13 (MAIN::D)
+FIRE 1 MAIN::rule-6 f-0,
+rule-6 fired
+ <== Focus MAIN
+Test done.

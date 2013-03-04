@@ -1,0 +1,5 @@
+Testing ppdefquery :
+(defquery MAIN::query 
+   (declare (variables ?a ?b ?c)) 
+   (MAIN::foo ?a ?b ?c))
+Test done.

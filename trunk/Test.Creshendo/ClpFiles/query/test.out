@@ -1,0 +1,24 @@
+Testing defquery:
+(defquery MAIN::foo 
+   (declare (variables ?X)) 
+   (MAIN::foo ?X ?Y))
+red
+blue
+purple
+There are 3 results.
+(defquery MAIN::bar 
+   (declare (variables ?X ?Y)) 
+   (MAIN::foo ?X ?Y))
+(MAIN::foo blue red)
+There are 1 results.
+Testing multipart queries:
+(defquery MAIN::foo 
+   (MAIN::a))
+(defquery MAIN::foo&1 
+   (MAIN::b))
+(defquery MAIN::foo&2 
+   (MAIN::c))
+(defquery MAIN::foo&3 
+   (MAIN::d))
+There are 4 results.
+Test done.

@@ -1,0 +1,8 @@
+Testing modify under logical support :
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo)
+f-2   (MAIN::myfact (myslot 2))
+For a total of 3 facts.
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+Test done.

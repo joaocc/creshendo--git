@@ -1,0 +1,31 @@
+Testing control structures:
+>>> foreach
+a b c d e f g 
+>>> eval
+5
+123aaabbb
+<Fact-1>
+f-0   (MAIN::initial-fact)
+f-1   (MAIN::foo bar)
+For a total of 2 facts.
+>>> build
+RULE FIRED
+>>> if
+3 is greater than one
+3 is greater than one
+(D E F)
+>>> halt
+FIRE!
+>>> while
+10 9 8 7 6 5 4 3 2 1 
+>>> system
+Jess reported an error in routine Funcall.execute
+	while executing (system ls test.clp)
+	while executing deffunction test-something
+	while executing (test-something)
+	while executing definition for defglobal ?*x*.
+  Message: Error during execution.
+  Program text: ( defglobal ?*x* = ( test-something )  at line 76.
+Nested exception is:
+The system cannot find the file specified
+Error in the application.

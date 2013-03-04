@@ -1,0 +1,41 @@
+Testing rules:
+>>> errors
+No such slot baz in template
+>>> ppdefrule
+(defrule MAIN::foo 
+   (MAIN::A B 1.00) 
+   (not (MAIN::B C D)) 
+   (MAIN::foo (bar ?X)) 
+   => 
+   (printout t ?X crlf))
+>>> rules
+MAIN::foobar
+MAIN::foo
+MAIN::bar
+For a total of 3 rules.
+>>> undefrule
+MAIN::foobar
+MAIN::bar
+For a total of 2 rules.
+>>> watch
+ ==> Focus MAIN
+ ==> f-0 (MAIN::initial-fact)
+ ==> f-1 (MAIN::bar A B C)
+==> Activation: MAIN::bar :  f-1
+FIRE 1 MAIN::bar f-1
+bar fired!
+ <== Focus MAIN
+>>> unwatch
+bar fired!
+>>> Zero-length ordered, and Test1 at nonzero index
+1 is less than ten.
+>>> matches
+>>> [Node2 ntests=0 ;usecount = 1]
+*** Left Memory:
+[Token: size=1;sortcode=1;tag=ADD;negcnt=0;facts=(MAIN::foobar);]
+*** RightMemory:
+[Token: size=1;sortcode=2;tag=ADD;negcnt=0;facts=(MAIN::foobar 1);]
+
+>>> clear
+For a total of 0 rules.
+Test done.

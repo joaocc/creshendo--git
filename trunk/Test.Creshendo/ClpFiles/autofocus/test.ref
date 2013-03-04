@@ -1,0 +1,9 @@
+Testing auto-focus :
+ ==> Focus MAIN
+ <== Focus MAIN
+ ==> Focus DETECTION
+Fire!
+ <== Focus DETECTION
+ ==> Focus MAIN
+ <== Focus MAIN
+Test done.

@@ -1,0 +1,4 @@
+Testing that negated patterns shouldn't trigger backward chaining :
+f-0   (MAIN::initial-fact)
+For a total of 1 facts.
+Test done.

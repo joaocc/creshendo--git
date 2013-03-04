@@ -1,0 +1,8 @@
+truetrueEncountered "(" at line 11, column 3.
+Was expecting:
+    ")" ...
+    
+AlphaNode count 2
+total AlphaMemories = 0
+BetaNode Count 0
+total BetaMemories = 0
